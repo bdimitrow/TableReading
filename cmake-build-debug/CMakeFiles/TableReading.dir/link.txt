@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/TableReading.dir/main.cpp.o  -o TableReading 
