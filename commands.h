@@ -30,16 +30,16 @@ void close(string filename) {
     cout << "Successfully closed " << filename << endl;
 }
 
-void save(matrix mat, string filename) {
-    fstream ftable;
-    ftable.open(filename, ios::in | ios::out | ios::trunc);
-    for(vec row : mat) {
-        for(string s : row) {
-            ftable >> s;
-        }
-        cout << endl;
-    }
-}
+//void save(matrix mat, string filename) {
+//    fstream ftable;
+//    ftable.open(filename, ios::in | ios::out | ios::trunc);
+//    for(vec row : mat) {
+//        for(string s : row) {
+//            ftable >> s;
+//        }
+//        cout << endl;
+//    }
+//}
 
 
 

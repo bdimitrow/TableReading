@@ -1,22 +1,20 @@
 //
-// Created by bozhidar on 5/7/20.
+// Created by bozhidar on 5/17/20.
 //
 
-#ifndef TABLEREADING_CELLCLASS_H
-#define TABLEREADING_CELLCLASS_H
+#ifndef TABLEREADING_CELLSTRINGCLASS_H
+#define TABLEREADING_CELLSTRINGCLASS_H
 
 #include <iostream>
 #include <cstring>
-#include <cmath>
 
 using namespace std;
 
-template<class T>
 class Cell {
 public:
     Cell() = default;
 
-    Cell(T _value) : value(_value) {}
+    Cell(string _value) : value(_value) {}
 
     Cell(const Cell &other) {
         value = other.value;
@@ -29,12 +27,16 @@ public:
         return *this;
     }
 
-    T getValue() const { return value; }
+    string getValue() const { return value; }
 
-    void setValue(T v) { value = v; }
+    void setValue(string v) { value = v; }
 
 private:
-    T value;
+    string value;
 };
 
 #endif //TABLEREADING_CELLCLASS_H
+
+
+
+#endif //TABLEREADING_CELLSTRINGCLASS_H

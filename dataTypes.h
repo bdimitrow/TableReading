@@ -17,9 +17,8 @@ using namespace std;
  */
 
 
-bool isNumeric(const std::string &str)
-{
-    return str.find_first_not_of("+-0123456789.") == std::string::npos;
+bool isNumeric(const string &str){
+    return str.find_first_not_of("+-0123456789.") == string::npos;
 }
 
 int stringToInt(string word) {
@@ -31,7 +30,7 @@ int stringToInt(string word) {
     }
 }
 
-double stringTodouble(string word) {
+double stringToDouble(string word) {
     if (isNumeric(word)) {
         for (int i = 0; i < word.size(); ++i) {
             if (word.at(i) >= '0' && word.at(i) <= '9') {
@@ -54,11 +53,13 @@ double stringToNumber(string word) {
     if (dotCount == 0) {
         return stringToInt(word);
     } else if (dotCount == 1 && (isNumeric(word))) {
-        return stringTodouble(word);
+        return stringToDouble(word);
     } else {
         return 0.0;
     }
 }
+
+
 
 
 #endif //TABLEREADING_DATATYPES_H

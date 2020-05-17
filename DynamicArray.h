@@ -10,16 +10,13 @@ struct DynamicArray {
 private:
     T* array;
     unsigned size{};
-
 public:
     DynamicArray() = default;
     explicit DynamicArray(unsigned n) : array{new T[n]}, size{n} {}
     ~DynamicArray() { delete[] array; }
 
     unsigned getSize() { return this->size; }
-
     T& operator[](unsigned i) { return array[i]; }
-
     void push(const T& newElement){
         T* extended = new T[size + 1];
         for (int i = 0; i < size; ++i){
@@ -30,7 +27,6 @@ public:
         size++;
         array = extended;
     }
-
     void deleteAt(unsigned n){
         T* shrunken = new T[size - 1];
         for (int i = 0; i < size; ++i) {
