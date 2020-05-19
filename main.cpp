@@ -12,7 +12,7 @@ int main() {
 //    menu();
 //        open("table.txt");
     matrix table = fileToMatrix("table.txt");
-    editCell(table, 2, 1, "100da");
+    editCell(table, 2, 1, "1ddadaa");
     save(table, "table.txt");
 //    string inte = "-333";
 //    string chislo = "123.32";

@@ -42,6 +42,9 @@ void close(string filename) {
 void save(matrix mat, string filename) {
     ofstream out;
     out.open(filename, ios::out | ios::trunc);
+    if(!out.is_open()){
+        cerr << "Unable to open file!\n";
+    }
     for (vec row : mat) {
         for (string s : row) {
             out << s << ",";

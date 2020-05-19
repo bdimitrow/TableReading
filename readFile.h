@@ -82,7 +82,7 @@ int maxElementPerRow(const matrix &mat) {
     return maxElements;
 }
 
-void editCell(matrix mat, int row, int col, string newValue) { // CELL
+void editCell(matrix &mat, int row, int col, string newValue) { // CELL
     if (row < mat.size() && col < mat[row].size()) {
         mat[row][col] = newValue;
     }
