@@ -12,8 +12,12 @@ int main() {
 //    menu();
 //        open("table.txt");
     matrix table = fileToMatrix("table.txt");
-    editCell(table, 2, 1, "1ddadaa");
-    save(table, "table.txt");
+    matrix test = fileToMatrix("test.txt");
+    printMatrix(table);
+//    cout << maxWidthOfCell(table);
+//    cout << maxElementPerRowWholeTable(table);
+//    editCell(table, 2, 1, "1ddadaa");
+//    save(table, "table.txt");
 //    string inte = "-333";
 //    string chislo = "123.32";
 //    string num = "123.32.32";

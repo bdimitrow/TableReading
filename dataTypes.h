@@ -32,15 +32,11 @@ int stringToInt(string word) {
 
 double stringToDouble(string word) {
     if (isNumeric(word)) {
-//        for (int i = 0; i < word.size(); ++i) {
-//            if (word.at(i) >= '0' && word.at(i) <= '9') {
-                stringstream ss(word);
-                double resultDouble = 0;
-                ss >> resultDouble;
-                return resultDouble;
-            }
-//        }
-//    }
+        stringstream ss(word);
+        double resultDouble = 0;
+        ss >> resultDouble;
+        return resultDouble;
+    }
 }
 
 double stringToNumber(string word) {

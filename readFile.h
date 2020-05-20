@@ -18,6 +18,22 @@ using namespace std;
 using vec = vector<string>;
 using matrix = vector<vec>;
 
+// saving the data from CSV file to a matrix of vectors
+matrix fileToMatrix(string filename);
+
+void printMatrix(const matrix &mat);
+
+int numberOfRowsInFile(const matrix &mat);
+
+int numberOfElementOnParticularRow(const matrix &mat, int rowN);
+
+int maxElementPerRowWholeTable(const matrix &mat);
+
+int maxWidthOfCell(const matrix &mat);
+
+void editCell(matrix &mat, int row, int col, string newValue);
+
+
 // saving the data from CSV file to a matrix of vecs
 matrix fileToMatrix(string filename) {
     char delimiter = ',';
@@ -38,13 +54,23 @@ matrix fileToMatrix(string filename) {
 }
 
 void printMatrix(const matrix &mat) {
+    int lenght = maxElementPerRowWholeTable(mat);
+    int coppiedAlready = 0;
     for (vec row : mat) {
+        cout << setw(maxWidthOfCell(mat));
         for (string s : row) {
-            cout << setw(5) << left << s << "|";
+            cout << setw(maxWidthOfCell(mat)) << s << "|";
+            ++coppiedAlready;
+        }
+        while (coppiedAlready < lenght) {
+            cout << setw(maxWidthOfCell(mat)) << "" << "|";
+            coppiedAlready++;
         }
         cout << endl;
+        coppiedAlready = 0;
     }
 }
+
 
 int numberOfRowsInFile(const matrix &mat) {
     int numOfRows = 0;
@@ -68,7 +94,7 @@ int numberOfElementOnParticularRow(const matrix &mat, int rowN) {
     return numOfElements;
 }
 
-int maxElementPerRow(const matrix &mat) {
+int maxElementPerRowWholeTable(const matrix &mat) {
     int maxElements = 0;
     int elementsCurrentRow = 0;
     for (vec row : mat) {
@@ -78,11 +104,27 @@ int maxElementPerRow(const matrix &mat) {
         if (elementsCurrentRow > maxElements) {
             maxElements = elementsCurrentRow;
         }
+        elementsCurrentRow = 0;
     }
     return maxElements;
 }
 
-void editCell(matrix &mat, int row, int col, string newValue) { // CELL
+int maxWidthOfCell(const matrix &mat) {
+    int maxWidth = 0;
+    int currentWidth = 0;
+    for (vec row: mat) {
+        for (string s : row) {
+            currentWidth = s.length();
+            if (currentWidth > maxWidth) {
+                maxWidth = currentWidth;
+            }
+        }
+
+    }
+    return maxWidth;
+}
+
+void editCell(matrix &mat, int row, int col, string newValue) {
     if (row < mat.size() && col < mat[row].size()) {
         mat[row][col] = newValue;
     }
