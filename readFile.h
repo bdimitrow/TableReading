@@ -179,7 +179,7 @@ void editString(matrix &mat, int row, int col) {
     }
 }
 
-void edit(matrix &mat, int row, int col) {
+matrix edit(matrix &mat, int row, int col) {
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
@@ -196,32 +196,32 @@ void edit(matrix &mat, int row, int col) {
             switch (choice) {
                 case 1: {
                     editInteger(mat, row, col);
-                    return;
+                    return mat;
                 }
                     break;
                 case 2: {
                     editDouble(mat, row, col);
-                    return;
+                    return mat;
                 }
                     break;
                 case 3: {
                     editString(mat, row, col);
-                    return;
+                    return mat;
                 }
                     break;
-                case 4:
-                    string input;
-                    cout << "Enter a formula: ";
-                    cin.ignore();
-                    getline(cin, input);
-                    double newValue;
-                    newValue = formula(input, mat);
-                    if (row < mat.size() && col < mat[row].size()) {
-                        string value = std::to_string(newValue);
-                        mat[row][col] = value;
-                    }
-                    return;
-                    break;
+//                case 4:
+//                    string input;
+//                    cout << "Enter a formula: ";
+//                    cin.ignore();
+//                    getline(cin, input);
+//                    double newValue;
+//                    newValue = formula(input, mat);
+//                    if (row < mat.size() && col < mat[row].size()) {
+//                        string value = std::to_string(newValue);
+//                        mat[row][col] = value;
+//                    }
+//                    return;
+//                    break;
             }
         } else {
             cout << "Invalid choice!" << endl;

@@ -21,7 +21,7 @@ public:
 
     matrix getMat() const { return mat; }
 
-    void setMat(const matrix &m) { mat = m; }
+    void setMat(matrix m) { mat = m; }
 
     const string &getFilename() const { return filename; }
 

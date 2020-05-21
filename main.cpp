@@ -62,17 +62,10 @@ int main() {
                 cin >> col;
                 matrix beingEditted = file.getMat();
                 try {
-                    edit(beingEditted, row - 1, col - 1);
-                    cout << "File was editted successfully! Do you want to save is? [Y/N]  ";
-                    char choice;
-                    cin >> choice;
-                    if(choice =='Y' || choice == 'y') {
-                        file.save(beingEditted, file.getFilename());
-                    }
+                    file.setMat(edit(beingEditted, row - 1, col - 1));
                 } catch (exception &e) {
                     cout << e.what() << endl;
                 }
-
             }
         } else {
             cout << "Invalid command!" << endl;
