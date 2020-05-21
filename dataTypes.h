@@ -7,6 +7,7 @@
 
 #include <string>
 #include <sstream>
+#include "readFile.h"
 
 using namespace std;
 
@@ -17,8 +18,24 @@ using namespace std;
  */
 
 
-bool isNumeric(const string &str){
+bool isNumeric(const string &str) {
     return str.find_first_not_of("+-0123456789.") == string::npos;
+}
+
+bool isInteger(const string &str) {
+    return str.find_first_not_of("+-0123456789") == string::npos;
+}
+
+bool isDouble(const string &str) {
+    int dotCounter = 0;
+    for (int i = 0; i < str.length(); ++i) {
+        if (str[i] == '.') {
+            dotCounter++;
+        } else if (!isdigit(str[i])) {
+            return false;
+        }
+    }
+    return dotCounter == 1;
 }
 
 int stringToInt(string word) {
@@ -54,8 +71,6 @@ double stringToNumber(string word) {
         return 0.0;
     }
 }
-
-
 
 
 #endif //TABLEREADING_DATATYPES_H

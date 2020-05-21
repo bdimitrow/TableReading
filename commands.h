@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void open(string);
+void openFile(string);
 
 void close(string);
 
@@ -24,7 +24,7 @@ void help();
 
 void exit();
 
-void open(string filename) {
+void openFile(string filename) {
     fstream fout;
     fout.open(filename, ios::out | ios::in | ios::app);
     if (fout.is_open()) {
@@ -52,6 +52,7 @@ void save(matrix mat, string filename) {
         out << endl;
     }
     out.close();
+    cout << filename << " was successfully saved!" << endl;
 }
 
 void saveAs(matrix mat) {

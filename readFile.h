@@ -10,6 +10,8 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <stdexcept>
+#include <exception>
 #include "CellClass.h"
 #include "dataTypes.h"
 
@@ -17,6 +19,7 @@ using namespace std;
 
 using vec = vector<string>;
 using matrix = vector<vec>;
+
 
 // saving the data from CSV file to a matrix of vectors
 matrix fileToMatrix(string filename);
@@ -31,8 +34,15 @@ int maxElementPerRowWholeTable(const matrix &mat);
 
 int maxWidthOfCell(const matrix &mat);
 
-void editCell(matrix &mat, int row, int col, string newValue);
+void editInteger(matrix &mat, int row, int col);
 
+void editDouble(matrix &mat, int row, int col);
+
+void editString(matrix &mat, int row, int col);
+
+
+double formula(string formula, matrix mat); // =R2C4 + R2C1
+void extractRowsCols(vector<int> &rowsCols, const string &str);
 
 // saving the data from CSV file to a matrix of vecs
 matrix fileToMatrix(string filename) {
@@ -70,7 +80,6 @@ void printMatrix(const matrix &mat) {
         coppiedAlready = 0;
     }
 }
-
 
 int numberOfRowsInFile(const matrix &mat) {
     int numOfRows = 0;
@@ -130,32 +139,130 @@ void editCell(matrix &mat, int row, int col, string newValue) {
     }
 }
 
-double addTwoCells(const matrix &mat) {
-    int row1, col1, row2, col2;
-    cout << "Enter row and col of the first cell: ";
-    cin >> row1 >> col1;
-    cout << "Enter row and col of the second cell: ";
-    cin >> row2 >> col2;
-    string cell1, cell2;
+void editInteger(matrix &mat, int row, int col) {
+    string input;
+    cout << "Enter an integer: ";
+    cin.ignore();
+    getline(cin, input);
+    if (isInteger(input)) {
+        if (row < mat.size() && col < mat[row].size()) {
+            mat[row][col] = input;
+        }
+    } else {
+        throw std::invalid_argument("Unknown data type!");
+    }
+}
+
+void editDouble(matrix &mat, int row, int col) {
+    string input;
+    cout << "Enter a double: ";
+    cin.ignore();
+    getline(cin, input);
+    if (isDouble(input)) {
+        if (row < mat.size() && col < mat[row].size()) {
+            mat[row][col] = input;
+        }
+    } else {
+        throw std::invalid_argument("Unknown data type!");
+    }
+}
+
+void editString(matrix &mat, int row, int col) {
+    string input;
+    cout << "Enter a string: ";
+    cin.ignore();
+    getline(cin, input);
+//                    string newValue = "\"" + input + "\"";
+    string newValue = input;
+    if (row < mat.size() && col < mat[row].size()) {
+        mat[row][col] = newValue;
+    }
+}
+
+void edit(matrix &mat, int row, int col) {
+    cout << "What type of data would you like to insert?" << endl;
+    cout << "1. Integer" << endl;
+    cout << "2. Double" << endl;
+    cout << "3. String" << endl;
+    cout << "4. Formula" << endl;
+    int choice;
+    do {
+        cout << "Choose an action: ";
+        if (!(cin >> choice)) {
+            cout << "Invalid choice! Please enter an integer! " << endl;
+            cin.clear();                            // reset any error flags
+            cin.ignore(10000, '\n');       // ignore any characters in the input buffer
+        } else if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
+            switch (choice) {
+                case 1: {
+                    editInteger(mat, row, col);
+                    return;
+                }
+                    break;
+                case 2: {
+                    editDouble(mat, row, col);
+                    return;
+                }
+                    break;
+                case 3: {
+                    editString(mat, row, col);
+                    return;
+                }
+                    break;
+                case 4:
+                    string input;
+                    cout << "Enter a formula: ";
+                    cin.ignore();
+                    getline(cin, input);
+                    double newValue;
+                    newValue = formula(input, mat);
+                    if (row < mat.size() && col < mat[row].size()) {
+                        string value = std::to_string(newValue);
+                        mat[row][col] = value;
+                    }
+                    return;
+                    break;
+            }
+        } else {
+            cout << "Invalid choice!" << endl;
+        }
+    } while (true);
+}
+
+
+double formula(string formula, matrix mat) {  // =R2C4 + R2C1
+    vector<int> rowsCols;
+    double firstCell, secondCell;
+    extractRowsCols(rowsCols, formula);
     for (int i = 0; i < mat.size(); ++i) {
-        if (i == row1) {
+        if (i == rowsCols.at(0) - 1) {
             for (int j = 0; i < mat[i].size(); ++i) {
-                if (j == col1) {
-                    cell1 = mat[i][j];
+                if (j == rowsCols.at(1) - 1) {
+                    firstCell = stringToNumber(mat[i][j]);
+                    goto label;
                 }
             }
         }
     }
+    label:
     for (int i = 0; i < mat.size(); ++i) {
-        if (i == row2) {
+        if (i == rowsCols.at(2) - 1) {
             for (int j = 0; i < mat[i].size(); ++i) {
-                if (j == col2) {
-                    cell2 = mat[i][j];
+                if (j == rowsCols.at(3) - 1) {
+                    secondCell = stringToNumber(mat[i][j]);
                 }
             }
         }
     }
-    return stringToNumber(cell1) + stringToNumber(cell2);
+    return firstCell + secondCell;
+}
+
+void extractRowsCols(vector<int> &rowsCols, const string &str) {
+    for (auto i : str) {
+        if (isdigit(i)) {
+            rowsCols.push_back(stoi(string{i}));
+        }
+    }
 }
 
 
