@@ -63,8 +63,10 @@ int main() {
                 matrix beingEditted = file.getMat();
                 try {
                     file.setMat(edit(beingEditted, row - 1, col - 1));
-                } catch (exception &e) {
+                } catch (invalid_argument &e) {
                     cout << e.what() << endl;
+                } catch (domain_error &c) {
+                    cout << c.what() << endl;
                 }
             }
         } else {
@@ -122,8 +124,8 @@ int main() {
 //    cout << isDouble(b) << endl;
 
 //    string formula = "=R12C14 + R5C2";
-//    vector<int> digits;
-//    extractRowsCols(digits, formula);
+//    vector<string> digits;
+//    extractNumbers(digits, formula);
 //    extractIntegersFromString(formula);
 
 
