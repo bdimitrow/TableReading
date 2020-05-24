@@ -53,6 +53,9 @@ void extractNumbers(vector<string> &rowsCols, const string &str);
 // parsing vector<string> to vector<int>
 vector<int> parseStringVecToIntVec(vector<string> rowsCols);
 
+vector<double> parseStringVecToDoubleVec(vector<string> rowsCols);
+
+bool isInteger(double num);
 
 // saving the data from CSV file to a matrix of vecs
 matrix fileToMatrix(string filename) {
@@ -182,6 +185,17 @@ void editString(matrix &mat, int row, int col) {
     }
 }
 
+string removeZeros(string str) {
+    int i = str.size();
+    int counter = 0;
+    while (str[i] == '0') {
+        i--;
+        counter++;
+    }
+    str.erase(0, counter);
+    return str;
+}
+
 matrix edit(matrix &mat, int row, int col) {
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
@@ -228,12 +242,18 @@ matrix edit(matrix &mat, int row, int col) {
                     } else if (Rcount == 0 && Ccount == 0) {
                         newValue = formulaWithTwoNumbers(input);
                     } else if (Rcount == 1 && Ccount == 1) {
-                        newValue = formulaWithNumberAndCell(input);
+                        newValue = formulaWithNumberAndCell(input, mat);
                     } else if (Rcount != Ccount) {
                         throw std::invalid_argument("Wrong formula!");
                     }
                     if (row < mat.size() && col < mat[row].size()) {
-                        string value = std::to_string(newValue);
+                        string value;
+                        if (ceil(newValue) == floor(newValue)) {
+                            int number = (int) newValue;
+                            value = std::to_string(number);
+                        } else {
+                            value = std::to_string(newValue);
+                        }
                         mat[row][col] = value;
                     }
                     return mat;
@@ -246,6 +266,11 @@ matrix edit(matrix &mat, int row, int col) {
 }
 
 double formulaWithNumberAndCell(string formula, const matrix &mat) {
+    formula.erase(0, 1);  //removing '=' from the formula;
+    // spliting the formula into two parts 
+
+
+
     vector<string> numbersString;
     extractNumbers(numbersString, formula);
     vector<int> numbers = parseStringVecToIntVec(numbersString);
@@ -258,8 +283,8 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
     int foundrAt = formula.find(r);
     if (foundRAt < formula.length() / 2 || foundrAt < formula.length() / 2) {
         // cell is first in the formula
-        int row = numbers.at(0) - 1;
-        int col = numbers.at(1) - 1;
+        int row = (int) numbers.at(0) - 1;
+        int col = (int) numbers.at(1) - 1;
         // getting the value of the cell
         for (int i = 0; i < mat.size(); ++i) {
             if (i == row) {
@@ -273,26 +298,26 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         cellDouble = stringToNumber(cellString);
         for (int i = 0; i < formula.length(); ++i) {
             if (formula.at(i) == '+') {
-                return cellDouble + numbers.at(2);
+                return cellDouble + (double) numbers.at(2);
             } else if (formula.at(i) == '-') {
-                return cellDouble + numbers.at(2);
+                return cellDouble - (double) numbers.at(2);
             } else if (formula.at(i) == '*') {
-                return cellDouble + numbers.at(2);
+                return cellDouble * (double) numbers.at(2);
             } else if (formula.at(i) == '/') {
                 if (numbers.at(2) == 0) {
                     throw std::domain_error("Can not divide by 0!");
                 } else {
-                    return cellDouble + numbers.at(2);
+                    return cellDouble / (double) numbers.at(2);
                 }
             } else if (formula.at(i) == '^') {
-                return pow(cellDouble, numbers.at(2));
+                return pow(cellDouble, (double) numbers.at(2));
             }
         }
         throw invalid_argument("Invalid operator!");
     } else {
         // number is first in the formula
-        int row = numbers.at(1) - 1;
-        int col = numbers.at(2) - 1;
+        int row = (int) numbers.at(1) - 1;
+        int col = (int) numbers.at(2) - 1;
         // getting the value of the cell
         for (int i = 0; i < mat.size(); ++i) {
             if (i == row) {
@@ -328,20 +353,20 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
 double formulaWithTwoNumbers(string formula) {
     vector<string> numbersString;
     extractNumbers(numbersString, formula);
-    vector<int> numbers = parseStringVecToIntVec(numbersString);
+    vector<double> numbers = parseStringVecToDoubleVec(numbersString);
     // determining the operator
     for (int i = 0; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             return numbers.at(0) + numbers.at(1);
         } else if (formula.at(i) == '-') {
-            return numbers.at(0) + numbers.at(1);
+            return numbers.at(0) - numbers.at(1);
         } else if (formula.at(i) == '*') {
-            return numbers.at(0) + numbers.at(1);
+            return numbers.at(0) * numbers.at(1);
         } else if (formula.at(i) == '/') {
             if (numbers.at(1) == 0) {
                 throw std::domain_error("Can not divide by 0!");
             } else {
-                return numbers.at(0) + numbers.at(1);
+                return numbers.at(0) / numbers.at(1);
             }
         } else if (formula.at(i) == '^') {
             return pow(numbers.at(0), numbers.at(1));
@@ -370,20 +395,16 @@ double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C
         if (i == row1) {
             for (int j = 0; j < mat[i].size(); ++j) {
                 if (j == col1) {
-//                    firstCell = stringToNumber(mat[i][j]);
                     first = mat[i][j];
-//                    goto label;
                 }
             }
         }
     }
     // getting the value of the second cell;
-//    label:
     for (int i = 0; i < mat.size(); ++i) {
         if (i == numbersRowsCols.at(2) - 1) {
             for (int j = 0; j < mat[i].size(); ++j) {
                 if (j == (numbersRowsCols.at(3) - 1)) {
-//                    secondCell = stringToNumber(mat[i][j]);
                     second = mat[i][j];
                 }
             }
@@ -417,6 +438,17 @@ vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
     for (auto &s : rowsCols) {
         stringstream parser(s);
         int x = 0;
+        parser >> x;
+        vectorOfNumbers.push_back(x);
+    }
+    return vectorOfNumbers;
+}
+
+vector<double> parseStringVecToDoubleVec(vector<string> rowsCols) {
+    vector<double> vectorOfNumbers;
+    for (auto &s : rowsCols) {
+        stringstream parser(s);
+        double x = 0;
         parser >> x;
         vectorOfNumbers.push_back(x);
     }

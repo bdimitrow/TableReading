@@ -56,7 +56,23 @@ double stringToDouble(string word) {
     }
 }
 
+string& ltrim(string& str, const string& chars = "\t\n\v\f\r ")
+{
+    str.erase(0, str.find_first_not_of(chars));
+    return str;
+}
+string& rtrim(string& str, const string& chars = "\t\n\v\f\r ")
+{
+    str.erase(str.find_last_not_of(chars) + 1);
+    return str;
+}
+string& trim(string& str, const string& chars = "\t\n\v\f\r ")
+{
+    return ltrim(rtrim(str, chars), chars);
+}
+
 double stringToNumber(string word) {
+    trim(word);
     int dotCount = 0;
     for (int i = 0; i < word.size(); ++i) {
         if (word.at(i) == '.') {
