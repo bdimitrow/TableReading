@@ -53,8 +53,6 @@ void extractNumbers(vector<string> &rowsCols, const string &str);
 // parsing vector<string> to vector<int>
 vector<int> parseStringVecToIntVec(vector<string> rowsCols);
 
-vector<double> parseStringVecToDoubleVec(vector<string> rowsCols);
-
 bool isInteger(double num);
 
 // saving the data from CSV file to a matrix of vecs
@@ -267,25 +265,45 @@ matrix edit(matrix &mat, int row, int col) {
 
 double formulaWithNumberAndCell(string formula, const matrix &mat) {
     formula.erase(0, 1);  //removing '=' from the formula;
-    // spliting the formula into two parts 
-
-
-
-    vector<string> numbersString;
-    extractNumbers(numbersString, formula);
-    vector<int> numbers = parseStringVecToIntVec(numbersString);
-    double cellDouble = 0;
-    string cellString;
-    // determining which one is first in the formula: number or cell
-    string R = "R";
-    string r = "r";
-    int foundRAt = formula.find(R);
-    int foundrAt = formula.find(r);
-    if (foundRAt < formula.length() / 2 || foundrAt < formula.length() / 2) {
-        // cell is first in the formula
-        int row = (int) numbers.at(0) - 1;
-        int col = (int) numbers.at(1) - 1;
-        // getting the value of the cell
+    // spliting the formula into two parts
+    char delim;
+    for (int i = 0; i < formula.length(); ++i) {
+        if (formula.at(i) == '+') {
+            delim = '+';
+        } else if (formula.at(i) == '-') {
+            delim = '-';
+        } else if (formula.at(i) == '*') {
+            delim = '*';
+        } else if (formula.at(i) == '/') {
+            delim = '/';
+        } else if (formula.at(i) == '^') {
+            delim = '^';
+        }
+    }
+    int pos = formula.find(delim);
+    string firstPartOfFormula = formula.substr(0, pos);
+    string secondPartOfFormula = formula.substr(pos + 1);
+    char R = 'R';
+    char r = 'r';
+    bool foundInFirst = false;
+    bool foundInSecond = false;
+    for (char i : firstPartOfFormula) {
+        if (i == R || i == r)
+            foundInFirst = true;
+    }
+    for (char i : secondPartOfFormula) {
+        if (i == R || i == r)
+            foundInSecond = true;
+    }
+    if (foundInFirst && !foundInSecond) {
+        // the first part of the formula is the cell
+        vector<string> coordinatesString;
+        extractNumbers(coordinatesString, firstPartOfFormula);
+        vector<int> coordinates = parseStringVecToIntVec(coordinatesString);
+        double cellDouble = 0;
+        string cellString;
+        int row = coordinates.at(0) - 1;
+        int col = coordinates.at(1) - 1;
         for (int i = 0; i < mat.size(); ++i) {
             if (i == row) {
                 for (int j = 0; j < mat[i].size(); ++j) {
@@ -296,29 +314,36 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
             }
         }
         cellDouble = stringToNumber(cellString);
+        double numberInFormula;
+        numberInFormula = stod(secondPartOfFormula);
         for (int i = 0; i < formula.length(); ++i) {
             if (formula.at(i) == '+') {
-                return cellDouble + (double) numbers.at(2);
+                return cellDouble + numberInFormula;
             } else if (formula.at(i) == '-') {
-                return cellDouble - (double) numbers.at(2);
+                return cellDouble - numberInFormula;
             } else if (formula.at(i) == '*') {
-                return cellDouble * (double) numbers.at(2);
+                return cellDouble * numberInFormula;
             } else if (formula.at(i) == '/') {
-                if (numbers.at(2) == 0) {
+                if (numberInFormula == 0) {
                     throw std::domain_error("Can not divide by 0!");
                 } else {
-                    return cellDouble / (double) numbers.at(2);
+                    return cellDouble / numberInFormula;
                 }
             } else if (formula.at(i) == '^') {
-                return pow(cellDouble, (double) numbers.at(2));
+                return pow(cellDouble, numberInFormula);
             }
         }
         throw invalid_argument("Invalid operator!");
-    } else {
-        // number is first in the formula
-        int row = (int) numbers.at(1) - 1;
-        int col = (int) numbers.at(2) - 1;
-        // getting the value of the cell
+    }
+    if (!foundInFirst && foundInSecond) {
+        // the second part of the formula is the cell
+        vector<string> coordinatesString;
+        extractNumbers(coordinatesString, secondPartOfFormula);
+        vector<int> coordinates = parseStringVecToIntVec(coordinatesString);
+        double cellDouble = 0;
+        string cellString;
+        int row = coordinates.at(0) - 1;
+        int col = coordinates.at(1) - 1;
         for (int i = 0; i < mat.size(); ++i) {
             if (i == row) {
                 for (int j = 0; j < mat[i].size(); ++j) {
@@ -329,21 +354,23 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
             }
         }
         cellDouble = stringToNumber(cellString);
+        double numberInFormula;
+        numberInFormula = stod(firstPartOfFormula);
         for (int i = 0; i < formula.length(); ++i) {
             if (formula.at(i) == '+') {
-                return numbers.at(0) + cellDouble;
+                return numberInFormula + cellDouble;
             } else if (formula.at(i) == '-') {
-                return numbers.at(0) + cellDouble;
+                return numberInFormula - cellDouble;
             } else if (formula.at(i) == '*') {
-                return numbers.at(0) + cellDouble;
+                return numberInFormula * cellDouble;
             } else if (formula.at(i) == '/') {
                 if (cellDouble == 0) {
                     throw std::domain_error("Can not divide by 0!");
                 } else {
-                    return numbers.at(0) + cellDouble;
+                    return numberInFormula / cellDouble;
                 }
             } else if (formula.at(i) == '^') {
-                return pow(numbers.at(0), cellDouble);
+                return pow(numberInFormula, cellDouble);
             }
         }
         throw invalid_argument("Invalid operator!");
@@ -351,25 +378,43 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
 }
 
 double formulaWithTwoNumbers(string formula) {
-    vector<string> numbersString;
-    extractNumbers(numbersString, formula);
-    vector<double> numbers = parseStringVecToDoubleVec(numbersString);
+    formula.erase(0, 1);  //removing '=' from the formula;
+    // spliting the formula into two parts
+    char delim;
+    for (int i = 0; i < formula.length(); ++i) {
+        if (formula.at(i) == '+') {
+            delim = '+';
+        } else if (formula.at(i) == '-') {
+            delim = '-';
+        } else if (formula.at(i) == '*') {
+            delim = '*';
+        } else if (formula.at(i) == '/') {
+            delim = '/';
+        } else if (formula.at(i) == '^') {
+            delim = '^';
+        }
+    }
+    int pos = formula.find(delim);
+    string firstPartOfFormula = formula.substr(0, pos);
+    string secondPartOfFormula = formula.substr(pos + 1);
+    double firstNumber = stod(firstPartOfFormula);
+    double secondNumber = stod(secondPartOfFormula);
     // determining the operator
     for (int i = 0; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
-            return numbers.at(0) + numbers.at(1);
+            return firstNumber + secondNumber;
         } else if (formula.at(i) == '-') {
-            return numbers.at(0) - numbers.at(1);
+            return firstNumber - secondNumber;
         } else if (formula.at(i) == '*') {
-            return numbers.at(0) * numbers.at(1);
+            return firstNumber * secondNumber;
         } else if (formula.at(i) == '/') {
-            if (numbers.at(1) == 0) {
+            if (secondNumber == 0) {
                 throw std::domain_error("Can not divide by 0!");
             } else {
-                return numbers.at(0) / numbers.at(1);
+                return firstNumber / secondNumber;
             }
         } else if (formula.at(i) == '^') {
-            return pow(numbers.at(0), numbers.at(1));
+            return pow(firstNumber, secondNumber);
         }
     }
     throw invalid_argument("Invalid operator!");
@@ -438,17 +483,6 @@ vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
     for (auto &s : rowsCols) {
         stringstream parser(s);
         int x = 0;
-        parser >> x;
-        vectorOfNumbers.push_back(x);
-    }
-    return vectorOfNumbers;
-}
-
-vector<double> parseStringVecToDoubleVec(vector<string> rowsCols) {
-    vector<double> vectorOfNumbers;
-    for (auto &s : rowsCols) {
-        stringstream parser(s);
-        double x = 0;
         parser >> x;
         vectorOfNumbers.push_back(x);
     }
