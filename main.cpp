@@ -3,12 +3,9 @@
 #include <cstring>
 #include <vector>
 #include <string>
-#include "commands.h"
 #include "readFile.h"
 #include "dataTypes.h"
-#include "CellClass.h"
 #include "application.h"
-#include "heterogeneousContainer.h"
 
 using namespace std;
 
@@ -62,11 +59,17 @@ int main() {
                 cin >> col;
                 matrix beingEditted = file.getMat();
                 try {
+                    if(row > beingEditted.size() || col > beingEditted[row].size()) {
+                        throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
+                    }
                     file.setMat(edit(beingEditted, row - 1, col - 1));
                 } catch (invalid_argument &e) {
                     cout << e.what() << endl;
                 } catch (domain_error &c) {
                     cout << c.what() << endl;
+                    matrix mat = file.getMat();
+                    mat[row - 1][col - 1] = "ERROR";
+                    file.setMat(mat);
                 }
             }
         } else {
@@ -75,63 +78,5 @@ int main() {
         cout << "What to do now? " << endl;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //    menu();
-//        open("table.txt");
-//    matrix table = fileToMatrix("table.txt");
-//    edit(table, 2, 3);
-//    save(table, "table.txt");
-//    cout << "blabla";
-//    matrix test = fileToMatrix("test.txt");
-//    printMatrix(test);
-//    cout << maxWidthOfCell(table);
-//    cout << maxElementPerRowWholeTable(table);
-//    editCell(table, 2, 1, "=nene da");
-//    printMatrix(table);
-//    save(table, "table.txt");
-//    string inte = "-333";
-//    string chislo = "123.32";
-//    string num = "123.32.32";
-//    string duma = "213.32ас";
-//    string prazen = "";
-//    string str = "\"123\"";
-//    cout << stringToNumber(str) << endl;
-//    cout << stringToNumber(inte) << endl;
-//    cout << stringToNumber(chislo) << endl;
-//    cout << stringToDouble(chislo) << endl;
-//    cout << stringToDouble(num) << endl;
-//    cout << stringToNumber(num) << endl;
-//    cout << stringToNumber(duma) << endl;
-//    cout << stringToNumber(prazen) << endl;
-
-//    string a = "123";
-//    string b ="123.13";
-//    cout << isInteger(a) << endl;
-//    cout << isDouble(a) << endl;
-//    cout << isInteger(b) << endl;
-//    cout << isDouble(b) << endl;
-
-//    string formula = "=R12C14 + R5C2";
-//    vector<string> digits;
-//    extractNumbers(digits, formula);
-//    extractIntegersFromString(formula);
-
-
-
     return 0;
 }
-
-
-

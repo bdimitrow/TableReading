@@ -27,10 +27,6 @@ matrix fileToMatrix(string filename);
 
 void printMatrix(const matrix &mat);
 
-int numberOfRowsInFile(const matrix &mat);
-
-int numberOfElementOnParticularRow(const matrix &mat, int rowN);
-
 int maxElementPerRowWholeTable(const matrix &mat);
 
 int maxWidthOfCell(const matrix &mat);
@@ -90,28 +86,6 @@ void printMatrix(const matrix &mat) {
         cout << endl;
         coppiedAlready = 0;
     }
-}
-
-int numberOfRowsInFile(const matrix &mat) {
-    int numOfRows = 0;
-    for (vec row : mat) {
-        ++numOfRows;
-    }
-    return numOfRows;
-}
-
-int numberOfElementOnParticularRow(const matrix &mat, int rowN) {
-    int numOfElements = 0;
-    int rowCurrent = 0;
-    for (vec row : mat) {
-        ++rowCurrent;
-        if (rowCurrent == rowN) {
-            for (string s : row) {
-                ++numOfElements;
-            }
-        }
-    }
-    return numOfElements;
 }
 
 int maxElementPerRowWholeTable(const matrix &mat) {
@@ -176,22 +150,11 @@ void editString(matrix &mat, int row, int col) {
     cout << "Enter a string: ";
     cin.ignore();
     getline(cin, input);
-//                    string newValue = "\"" + input + "\"";
-    string newValue = input;
+    string newValue = "\"" + input + "\"";
+//    string newValue = input;
     if (row < mat.size() && col < mat[row].size()) {
         mat[row][col] = newValue;
     }
-}
-
-string removeZeros(string str) {
-    int i = str.size();
-    int counter = 0;
-    while (str[i] == '0') {
-        i--;
-        counter++;
-    }
-    str.erase(0, counter);
-    return str;
 }
 
 matrix edit(matrix &mat, int row, int col) {
@@ -247,12 +210,16 @@ matrix edit(matrix &mat, int row, int col) {
                     if (row < mat.size() && col < mat[row].size()) {
                         string value;
                         if (ceil(newValue) == floor(newValue)) {
-                            int number = (int) newValue;
+                            int number;
+                            number = static_cast<int>(newValue);
                             value = std::to_string(number);
                         } else {
                             value = std::to_string(newValue);
                         }
                         mat[row][col] = value;
+                    } else if(row > mat.size() || col > mat[row].size()) {
+                        // TODO missing comma error
+                        throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     return mat;
                     break;
@@ -317,19 +284,19 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         double numberInFormula;
         numberInFormula = stod(secondPartOfFormula);
         for (int i = 0; i < formula.length(); ++i) {
-            if (formula.at(i) == '+') {
+            if (formula.at(pos) == '+') {
                 return cellDouble + numberInFormula;
-            } else if (formula.at(i) == '-') {
+            } else if (formula.at(pos) == '-') {
                 return cellDouble - numberInFormula;
-            } else if (formula.at(i) == '*') {
+            } else if (formula.at(pos) == '*') {
                 return cellDouble * numberInFormula;
-            } else if (formula.at(i) == '/') {
+            } else if (formula.at(pos) == '/') {
                 if (numberInFormula == 0) {
                     throw std::domain_error("Can not divide by 0!");
                 } else {
                     return cellDouble / numberInFormula;
                 }
-            } else if (formula.at(i) == '^') {
+            } else if (formula.at(pos) == '^') {
                 return pow(cellDouble, numberInFormula);
             }
         }
@@ -357,19 +324,19 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         double numberInFormula;
         numberInFormula = stod(firstPartOfFormula);
         for (int i = 0; i < formula.length(); ++i) {
-            if (formula.at(i) == '+') {
+            if (formula.at(pos) == '+') {
                 return numberInFormula + cellDouble;
-            } else if (formula.at(i) == '-') {
+            } else if (formula.at(pos) == '-') {
                 return numberInFormula - cellDouble;
-            } else if (formula.at(i) == '*') {
+            } else if (formula.at(pos) == '*') {
                 return numberInFormula * cellDouble;
-            } else if (formula.at(i) == '/') {
+            } else if (formula.at(pos) == '/') {
                 if (cellDouble == 0) {
                     throw std::domain_error("Can not divide by 0!");
                 } else {
                     return numberInFormula / cellDouble;
                 }
-            } else if (formula.at(i) == '^') {
+            } else if (formula.at(pos) == '^') {
                 return pow(numberInFormula, cellDouble);
             }
         }
@@ -401,19 +368,19 @@ double formulaWithTwoNumbers(string formula) {
     double secondNumber = stod(secondPartOfFormula);
     // determining the operator
     for (int i = 0; i < formula.length(); ++i) {
-        if (formula.at(i) == '+') {
+        if (formula.at(pos) == '+') {
             return firstNumber + secondNumber;
-        } else if (formula.at(i) == '-') {
+        } else if (formula.at(pos) == '-') {
             return firstNumber - secondNumber;
-        } else if (formula.at(i) == '*') {
+        } else if (formula.at(pos) == '*') {
             return firstNumber * secondNumber;
-        } else if (formula.at(i) == '/') {
+        } else if (formula.at(pos) == '/') {
             if (secondNumber == 0) {
                 throw std::domain_error("Can not divide by 0!");
             } else {
                 return firstNumber / secondNumber;
             }
-        } else if (formula.at(i) == '^') {
+        } else if (formula.at(pos) == '^') {
             return pow(firstNumber, secondNumber);
         }
     }
@@ -423,14 +390,14 @@ double formulaWithTwoNumbers(string formula) {
 double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C1
     vector<string> rowsCols;
     extractNumbers(rowsCols, formula);
-    vector<int> numbersRowsCols;
     // parsing from vector<string> to vector<int>
-    for (auto &s : rowsCols) {
-        std::stringstream parser(s);
-        int x = 0;
-        parser >> x;
-        numbersRowsCols.push_back(x);
-    }
+    vector<int> numbersRowsCols = parseStringVecToIntVec(rowsCols);
+//    for (auto &s : rowsCols) {
+//        std::stringstream parser(s);
+//        int x = 0;
+//        parser >> x;
+//        numbersRowsCols.push_back(x);
+//    }
     double firstCell = 0.0, secondCell = 0.0;
     string first, second;
     int row1 = numbersRowsCols.at(0) - 1;
@@ -501,6 +468,5 @@ void extractNumbers(vector<string> &rowsCols, const string &str) {
         ++iter;
     }
 }
-
 
 #endif //TABLEREADING_READFILE_H

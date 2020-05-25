@@ -11,21 +11,15 @@
 
 using namespace std;
 
-/*  1. int (123, -123, +123)
- *  2. double (123.456, -123,34, +123,32)
- *  3. string ("hello")
- *  4. formula ( + - * / ^) starts with =
- */
-
-
+// is the string made of just digits and +-.
 bool isNumeric(const string &str) {
     return str.find_first_not_of("+-0123456789.") == string::npos;
 }
-
+// is the string an integer
 bool isInteger(const string &str) {
     return str.find_first_not_of("+-0123456789") == string::npos;
 }
-
+// is the string a double
 bool isDouble(const string &str) {
     int dotCounter = 0;
     for (int i = 0; i < str.length(); ++i) {
@@ -37,7 +31,7 @@ bool isDouble(const string &str) {
     }
     return dotCounter == 1;
 }
-
+// converting string to int
 int stringToInt(string word) {
     if (isNumeric(word)) {
         stringstream ss(word);
@@ -46,7 +40,7 @@ int stringToInt(string word) {
         return resultInt;
     }
 }
-
+// converting string to double
 double stringToDouble(string word) {
     if (isNumeric(word)) {
         stringstream ss(word);
@@ -55,24 +49,33 @@ double stringToDouble(string word) {
         return resultDouble;
     }
 }
-
-string& ltrim(string& str, const string& chars = "\t\n\v\f\r ")
-{
+// removing the spaces from the left side of the stirng
+string &ltrim(string &str, const string &chars = "\t\n\v\f\r ") {
     str.erase(0, str.find_first_not_of(chars));
     return str;
 }
-string& rtrim(string& str, const string& chars = "\t\n\v\f\r ")
-{
+// removing the spaces from the right side of the stirng
+string &rtrim(string &str, const string &chars = "\t\n\v\f\r ") {
     str.erase(str.find_last_not_of(chars) + 1);
     return str;
 }
-string& trim(string& str, const string& chars = "\t\n\v\f\r ")
-{
+// removing the space from both sides of the string
+string &trim(string &str, const string &chars = "\t\n\v\f\r ") {
     return ltrim(rtrim(str, chars), chars);
 }
-
+// removing quotes from the string
+void removeQuotes(string &str) {
+    trim(str);
+    int size = str.size();
+    if (str[0] == '"' && str[size - 1] == '"') {
+        str.erase(0, 1);
+        str.erase(size - 2, 1);
+    }
+}
+// parsing the string into number
 double stringToNumber(string word) {
     trim(word);
+    removeQuotes(word);
     int dotCount = 0;
     for (int i = 0; i < word.size(); ++i) {
         if (word.at(i) == '.') {
@@ -87,6 +90,5 @@ double stringToNumber(string word) {
         return 0.0;
     }
 }
-
 
 #endif //TABLEREADING_DATATYPES_H
