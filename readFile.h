@@ -11,6 +11,7 @@
 #include <regex>
 #include <cmath>
 #include <string>
+#include "formula.h"
 #include "dataTypes.h"
 
 using namespace std;
@@ -196,6 +197,7 @@ matrix edit(matrix &mat, int row, int col) {
                     if (Rcount == 2 && Ccount == 2) {
                         newValue = formulaWithTwoCells(input, mat);
                     } else if (Rcount == 0 && Ccount == 0) {
+
                         newValue = formulaWithTwoNumbers(input);
                     } else if (Rcount == 1 && Ccount == 1) {
                         newValue = formulaWithNumberAndCell(input, mat);
@@ -226,7 +228,7 @@ matrix edit(matrix &mat, int row, int col) {
 
 double formulaWithNumberAndCell(string formula, const matrix &mat) {
     formula.erase(0, 1);  //removing '=' from the formula;
-    for (int i = 0; i < formula.length(); ++i) {
+    for (int i = 0; i < formula.length(); ++i) { // checking for invalid symbols
         if (formula.at(i) != '.' && formula.at(i) != '+' && formula.at(i) != '-' && formula.at(i) != '*' &&
             formula.at(i) != '/' && formula.at(i) != '^' && formula.at(i) != ' ' && formula.at(i) != '0' &&
             formula.at(i) != '1' && formula.at(i) != '2' && formula.at(i) != '3' && formula.at(i) != '4' &&
@@ -235,7 +237,7 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
             throw invalid_argument("ERROR! Invalid formula!");
         }
     }
-    // spliting the formula into two parts
+    // finding the operator and splitting the formula into two parts
     char delim;
     for (int i = 2; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
@@ -270,6 +272,7 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         if (i == R || i == r)
             foundInSecond = true;
     }
+    // determining which one is first in the formula: the cell or the number
     if (foundInFirst && !foundInSecond) {
         // the first part of the formula is the cell
         vector<string> coordinatesString;
@@ -291,6 +294,7 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         cellDouble = stringToNumber(cellString);
         double numberInFormula;
         numberInFormula = stod(secondPartOfFormula);
+        // returning result
         if (formula.at(pos) == '+') {
             return cellDouble + numberInFormula;
         } else if (formula.at(pos) == '-') {
@@ -328,6 +332,7 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         cellDouble = stringToNumber(cellString);
         double numberInFormula;
         numberInFormula = stod(firstPartOfFormula);
+        // returning result
         if (formula.at(pos) == '+') {
             return numberInFormula + cellDouble;
         } else if (formula.at(pos) == '-') {
@@ -348,7 +353,7 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
 
 double formulaWithTwoNumbers(string formula) {
     formula.erase(0, 1);  //removing '=' from the formula;
-    for (int i = 0; i < formula.length(); ++i) {
+    for (int i = 0; i < formula.length(); ++i) {    // checking for invalid symbols
         if (formula.at(i) != '0' && formula.at(i) != '9' && formula.at(i) != '.' && formula.at(i) != '+' &&
             formula.at(i) != '-' && formula.at(i) != '*' && formula.at(i) != '/' && formula.at(i) != '^' &&
             formula.at(i) != ' ' && formula.at(i) != '1' && formula.at(i) != '2' && formula.at(i) != '3' &&
@@ -381,7 +386,7 @@ double formulaWithTwoNumbers(string formula) {
     string secondPartOfFormula = formula.substr(pos + 1);
     double firstNumber = stod(firstPartOfFormula);
     double secondNumber = stod(secondPartOfFormula);
-    // determining the operator
+    // returning result
     if (formula.at(pos) == '+') {
         return firstNumber + secondNumber;
     } else if (formula.at(pos) == '-') {
@@ -430,7 +435,7 @@ double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C
     }
     firstCell = stringToNumber(first);
     secondCell = stringToNumber(second);
-    // determining the operator
+    // determining the operator and returning result
     for (int i = 0; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             return firstCell + secondCell;
