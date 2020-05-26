@@ -1,10 +1,6 @@
-#include <fstream>
 #include <iostream>
-#include <cstring>
-#include <vector>
 #include <string>
 #include "readFile.h"
-#include "dataTypes.h"
 #include "application.h"
 
 using namespace std;

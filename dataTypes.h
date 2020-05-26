@@ -1,7 +1,3 @@
-//
-// Created by bozhidar on 5/7/20.
-//
-
 #ifndef TABLEREADING_DATATYPES_H
 #define TABLEREADING_DATATYPES_H
 
