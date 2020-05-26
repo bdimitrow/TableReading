@@ -56,7 +56,7 @@ int main() {
                 matrix beingEditted = file.getMat();
                 try {
                     if (row > beingEditted.size() || col > beingEditted[row].size()) {
-                        throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
+                        throw invalid_argument("ERROR! You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     file.setMat(edit(beingEditted, row - 1, col - 1));
                 } catch (invalid_argument &e) {

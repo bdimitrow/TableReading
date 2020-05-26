@@ -226,6 +226,15 @@ matrix edit(matrix &mat, int row, int col) {
 
 double formulaWithNumberAndCell(string formula, const matrix &mat) {
     formula.erase(0, 1);  //removing '=' from the formula;
+    for (int i = 0; i < formula.length(); ++i) {
+        if (formula.at(i) != '.' && formula.at(i) != '+' && formula.at(i) != '-' && formula.at(i) != '*' &&
+            formula.at(i) != '/' && formula.at(i) != '^' && formula.at(i) != ' ' && formula.at(i) != '0' &&
+            formula.at(i) != '1' && formula.at(i) != '2' && formula.at(i) != '3' && formula.at(i) != '4' &&
+            formula.at(i) != '5' && formula.at(i) != '6' && formula.at(i) != '8' && formula.at(i) != '9' &&
+            formula.at(i) != 'R' && formula.at(i) != 'r' && formula.at(i) != 'C' && formula.at(i) != 'c') {
+            throw invalid_argument("ERROR! Invalid formula!");
+        }
+    }
     // spliting the formula into two parts
     char delim;
     for (int i = 2; i < formula.length(); ++i) {
@@ -282,24 +291,21 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         cellDouble = stringToNumber(cellString);
         double numberInFormula;
         numberInFormula = stod(secondPartOfFormula);
-        for (int i = 0; i < formula.length(); ++i) {
-            if (formula.at(pos) == '+') {
-                return cellDouble + numberInFormula;
-            } else if (formula.at(pos) == '-') {
-                return cellDouble - numberInFormula;
-            } else if (formula.at(pos) == '*') {
-                return cellDouble * numberInFormula;
-            } else if (formula.at(pos) == '/') {
-                if (numberInFormula == 0) {
-                    throw std::domain_error("Can not divide by 0!");
-                } else {
-                    return cellDouble / numberInFormula;
-                }
-            } else if (formula.at(pos) == '^') {
-                return pow(cellDouble, numberInFormula);
+        if (formula.at(pos) == '+') {
+            return cellDouble + numberInFormula;
+        } else if (formula.at(pos) == '-') {
+            return cellDouble - numberInFormula;
+        } else if (formula.at(pos) == '*') {
+            return cellDouble * numberInFormula;
+        } else if (formula.at(pos) == '/') {
+            if (numberInFormula == 0) {
+                throw std::domain_error("Can not divide by 0!");
+            } else {
+                return cellDouble / numberInFormula;
             }
+        } else if (formula.at(pos) == '^') {
+            return pow(cellDouble, numberInFormula);
         }
-        throw invalid_argument("Invalid operator!");
     }
     if (!foundInFirst && foundInSecond) {
         // the second part of the formula is the cell
@@ -322,32 +328,37 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
         cellDouble = stringToNumber(cellString);
         double numberInFormula;
         numberInFormula = stod(firstPartOfFormula);
-        for (int i = 0; i < formula.length(); ++i) {
-            if (formula.at(pos) == '+') {
-                return numberInFormula + cellDouble;
-            } else if (formula.at(pos) == '-') {
-                return numberInFormula - cellDouble;
-            } else if (formula.at(pos) == '*') {
-                return numberInFormula * cellDouble;
-            } else if (formula.at(pos) == '/') {
-                if (cellDouble == 0) {
-                    throw std::domain_error("Can not divide by 0!");
-                } else {
-                    return numberInFormula / cellDouble;
-                }
-            } else if (formula.at(pos) == '^') {
-                return pow(numberInFormula, cellDouble);
+        if (formula.at(pos) == '+') {
+            return numberInFormula + cellDouble;
+        } else if (formula.at(pos) == '-') {
+            return numberInFormula - cellDouble;
+        } else if (formula.at(pos) == '*') {
+            return numberInFormula * cellDouble;
+        } else if (formula.at(pos) == '/') {
+            if (cellDouble == 0) {
+                throw std::domain_error("ERROR! Can not divide by 0!");
+            } else {
+                return numberInFormula / cellDouble;
             }
+        } else if (formula.at(pos) == '^') {
+            return pow(numberInFormula, cellDouble);
         }
-        throw invalid_argument("Invalid operator!");
     }
 }
 
 double formulaWithTwoNumbers(string formula) {
     formula.erase(0, 1);  //removing '=' from the formula;
+    for (int i = 0; i < formula.length(); ++i) {
+        if (formula.at(i) != '0' && formula.at(i) != '9' && formula.at(i) != '.' && formula.at(i) != '+' &&
+            formula.at(i) != '-' && formula.at(i) != '*' && formula.at(i) != '/' && formula.at(i) != '^' &&
+            formula.at(i) != ' ' && formula.at(i) != '1' && formula.at(i) != '2' && formula.at(i) != '3' &&
+            formula.at(i) != '4' && formula.at(i) != '5' && formula.at(i) != '6' && formula.at(i) != '8') {
+            throw invalid_argument("ERROR! Invalid formula!");
+        }
+    }
     // spliting the formula into two parts
     char delim;
-    for (int i = 2; i < formula.length(); ++i) {
+    for (int i = 1; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             delim = '+';
             break;
@@ -371,24 +382,21 @@ double formulaWithTwoNumbers(string formula) {
     double firstNumber = stod(firstPartOfFormula);
     double secondNumber = stod(secondPartOfFormula);
     // determining the operator
-    for (int i = 0; i < formula.length(); ++i) {
-        if (formula.at(pos) == '+') {
-            return firstNumber + secondNumber;
-        } else if (formula.at(pos) == '-') {
-            return firstNumber - secondNumber;
-        } else if (formula.at(pos) == '*') {
-            return firstNumber * secondNumber;
-        } else if (formula.at(pos) == '/') {
-            if (secondNumber == 0) {
-                throw std::domain_error("Can not divide by 0!");
-            } else {
-                return firstNumber / secondNumber;
-            }
-        } else if (formula.at(pos) == '^') {
-            return pow(firstNumber, secondNumber);
+    if (formula.at(pos) == '+') {
+        return firstNumber + secondNumber;
+    } else if (formula.at(pos) == '-') {
+        return firstNumber - secondNumber;
+    } else if (formula.at(pos) == '*') {
+        return firstNumber * secondNumber;
+    } else if (formula.at(pos) == '/') {
+        if (secondNumber == 0) {
+            throw std::domain_error("ERROR! Can not divide by 0!");
+        } else {
+            return firstNumber / secondNumber;
         }
+    } else if (formula.at(pos) == '^') {
+        return pow(firstNumber, secondNumber);
     }
-    throw invalid_argument("Invalid operator!");
 }
 
 double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C1
@@ -432,7 +440,7 @@ double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C
             return firstCell * secondCell;
         } else if (formula.at(i) == '/') {
             if (secondCell == 0) {
-                throw std::domain_error("Can not divide by 0!");
+                throw std::domain_error("ERRO! Can not divide by 0!");
             } else {
                 return firstCell / secondCell;
             }
@@ -440,7 +448,7 @@ double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C
             return pow(firstCell, secondCell);
         }
     }
-    throw invalid_argument("Invalid operator!");
+    throw invalid_argument("ERROR! Invalid operator!");
 }
 
 vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
