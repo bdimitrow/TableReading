@@ -123,7 +123,7 @@ void editInteger(matrix &mat, int row, int col) {
             mat[row][col] = input;
         }
     } else {
-        throw std::invalid_argument("Unknown data type!");
+        throw std::invalid_argument("ERROR! Unknown data type!");
     }
 }
 
@@ -137,7 +137,7 @@ void editDouble(matrix &mat, int row, int col) {
             mat[row][col] = input;
         }
     } else {
-        throw std::invalid_argument("Unknown data type!");
+        throw std::invalid_argument("ERROR! Unknown data type!");
     }
 }
 
@@ -147,7 +147,6 @@ void editString(matrix &mat, int row, int col) {
     cin.ignore();
     getline(cin, input);
     string newValue = "\"" + input + "\"";
-//    string newValue = input;
     if (row < mat.size() && col < mat[row].size()) {
         mat[row][col] = newValue;
     }
@@ -213,8 +212,7 @@ matrix edit(matrix &mat, int row, int col) {
                             value = std::to_string(newValue);
                         }
                         mat[row][col] = value;
-                    } else if(row > mat.size() || col > mat[row].size()) {
-                        // TODO missing comma error
+                    } else if (row > mat.size() || col > mat[row].size()) {
                         throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     return mat;
@@ -230,17 +228,22 @@ double formulaWithNumberAndCell(string formula, const matrix &mat) {
     formula.erase(0, 1);  //removing '=' from the formula;
     // spliting the formula into two parts
     char delim;
-    for (int i = 0; i < formula.length(); ++i) {
+    for (int i = 2; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             delim = '+';
+            break;
         } else if (formula.at(i) == '-') {
             delim = '-';
+            break;
         } else if (formula.at(i) == '*') {
             delim = '*';
+            break;
         } else if (formula.at(i) == '/') {
             delim = '/';
+            break;
         } else if (formula.at(i) == '^') {
             delim = '^';
+            break;
         }
     }
     int pos = formula.find(delim);
@@ -344,17 +347,22 @@ double formulaWithTwoNumbers(string formula) {
     formula.erase(0, 1);  //removing '=' from the formula;
     // spliting the formula into two parts
     char delim;
-    for (int i = 0; i < formula.length(); ++i) {
+    for (int i = 2; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             delim = '+';
+            break;
         } else if (formula.at(i) == '-') {
             delim = '-';
+            break;
         } else if (formula.at(i) == '*') {
             delim = '*';
+            break;
         } else if (formula.at(i) == '/') {
             delim = '/';
+            break;
         } else if (formula.at(i) == '^') {
             delim = '^';
+            break;
         }
     }
     int pos = formula.find(delim);
@@ -388,12 +396,6 @@ double formulaWithTwoCells(string formula, const matrix &mat) {  // =R22C4 + R2C
     extractNumbers(rowsCols, formula);
     // parsing from vector<string> to vector<int>
     vector<int> numbersRowsCols = parseStringVecToIntVec(rowsCols);
-//    for (auto &s : rowsCols) {
-//        std::stringstream parser(s);
-//        int x = 0;
-//        parser >> x;
-//        numbersRowsCols.push_back(x);
-//    }
     double firstCell = 0.0, secondCell = 0.0;
     string first, second;
     int row1 = numbersRowsCols.at(0) - 1;

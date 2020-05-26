@@ -55,7 +55,7 @@ int main() {
                 cin >> col;
                 matrix beingEditted = file.getMat();
                 try {
-                    if(row > beingEditted.size() || col > beingEditted[row].size()) {
+                    if (row > beingEditted.size() || col > beingEditted[row].size()) {
                         throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     file.setMat(edit(beingEditted, row - 1, col - 1));
@@ -73,6 +73,5 @@ int main() {
         }
         cout << "What to do now? " << endl;
     }
-
     return 0;
 }
