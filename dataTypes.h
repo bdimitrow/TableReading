@@ -11,10 +11,12 @@ using namespace std;
 bool isNumeric(const string &str) {
     return str.find_first_not_of("+-0123456789.") == string::npos;
 }
+
 // is the string an integer
 bool isInteger(const string &str) {
     return str.find_first_not_of("+-0123456789") == string::npos;
 }
+
 // is the string a double
 bool isDouble(const string &str) {
     int dotCounter = 0;
@@ -27,6 +29,7 @@ bool isDouble(const string &str) {
     }
     return dotCounter == 1;
 }
+
 // converting string to int
 int stringToInt(string word) {
     if (isNumeric(word)) {
@@ -36,6 +39,7 @@ int stringToInt(string word) {
         return resultInt;
     }
 }
+
 // converting string to double
 double stringToDouble(string word) {
     if (isNumeric(word)) {
@@ -45,20 +49,24 @@ double stringToDouble(string word) {
         return resultDouble;
     }
 }
+
 // removing the spaces from the left side of the stirng
 string &ltrim(string &str, const string &chars = "\t\n\v\f\r ") {
     str.erase(0, str.find_first_not_of(chars));
     return str;
 }
+
 // removing the spaces from the right side of the stirng
 string &rtrim(string &str, const string &chars = "\t\n\v\f\r ") {
     str.erase(str.find_last_not_of(chars) + 1);
     return str;
 }
+
 // removing the space from both sides of the string
 string &trim(string &str, const string &chars = "\t\n\v\f\r ") {
     return ltrim(rtrim(str, chars), chars);
 }
+
 // removing quotes from the string
 void removeQuotes(string &str) {
     trim(str);
@@ -68,16 +76,18 @@ void removeQuotes(string &str) {
         str.erase(size - 2, 1);
     }
 }
+
 // parsing the string into number
 double stringToNumber(string word) {
-    trim(word);
-    removeQuotes(word);
-    int dotCount = 0;
+    trim(word);             // removing the spaces from both sides
+    removeQuotes(word);     // removing the quotes whether such exist
+    int dotCount = 0;          // counting the number of dots
     for (int i = 0; i < word.size(); ++i) {
         if (word.at(i) == '.') {
             ++dotCount;
         }
     }
+    // parsing the string into a number
     if (dotCount == 0) {
         return stringToInt(word);
     } else if (dotCount == 1 && (isNumeric(word))) {

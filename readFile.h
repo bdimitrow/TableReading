@@ -98,6 +98,7 @@ void printMatrix(const matrix &mat) {
             cout << setw(maxWidthOfCell(mat)) << s << "|";
             ++coppiedAlready;
         }
+        // adding '|' whether the row is shorter
         while (coppiedAlready < lenght) {
             cout << setw(maxWidthOfCell(mat)) << "" << "|";
             coppiedAlready++;
@@ -141,12 +142,13 @@ void editInteger(matrix &mat, int row, int col) {
     cout << "Enter an integer: ";
     cin.ignore();
     getline(cin, input);
+    // checking whether the input is an int
     if (isInteger(input)) {
         if (row < mat.size() && col < mat[row].size()) {
             mat[row][col] = input;
         }
     } else {
-        throw std::invalid_argument("ERROR! Unknown data type!");
+        throw invalid_argument("ERROR! Unknown data type!");
     }
 }
 
@@ -155,12 +157,13 @@ void editDouble(matrix &mat, int row, int col) {
     cout << "Enter a double: ";
     cin.ignore();
     getline(cin, input);
+    // checking whether the input is a double
     if (isDouble(input)) {
         if (row < mat.size() && col < mat[row].size()) {
             mat[row][col] = input;
         }
     } else {
-        throw std::invalid_argument("ERROR! Unknown data type!");
+        throw invalid_argument("ERROR! Unknown data type!");
     }
 }
 
@@ -169,6 +172,7 @@ void editString(matrix &mat, int row, int col) {
     cout << "Enter a string: ";
     cin.ignore();
     getline(cin, input);
+    // adding qoutes to the input
     string newValue = "\"" + input + "\"";
     if (row < mat.size() && col < mat[row].size()) {
         mat[row][col] = newValue;
@@ -187,24 +191,21 @@ matrix edit(matrix &mat, int row, int col) {
         if (!(cin >> choice)) {
             cout << "Invalid choice! Please enter an integer! " << endl;
             cin.clear();                            // reset any error flags
-            cin.ignore(10000, '\n');       // ignore any characters in the input buffer
+            cin.ignore(10000, '\n');                // ignore any characters in the input buffer
         } else if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
             switch (choice) {
                 case 1: {
                     editInteger(mat, row, col);
                     return mat;
                 }
-                    break;
                 case 2: {
                     editDouble(mat, row, col);
                     return mat;
                 }
-                    break;
                 case 3: {
                     editString(mat, row, col);
                     return mat;
                 }
-                    break;
                 case 4:
                     string input;
                     cout << "Enter a formula: ";
@@ -226,16 +227,16 @@ matrix edit(matrix &mat, int row, int col) {
                         Formula formula(input);
                         newValue = formula.formulaWithNumberAndCell(input, mat);
                     } else if (Rcount != Ccount) {
-                        throw std::invalid_argument("Wrong formula!");
+                        throw invalid_argument("ERROR! Wrong formula!");
                     }
                     if (row < mat.size() && col < mat[row].size()) {
                         string value;
                         if (ceil(newValue) == floor(newValue)) {
                             int number;
                             number = static_cast<int>(newValue);
-                            value = std::to_string(number);
+                            value = to_string(number);
                         } else {
-                            value = std::to_string(newValue);
+                            value = to_string(newValue);
                         }
                         mat[row][col] = value;
                     } else if (row > mat.size() || col > mat[row].size()) {
@@ -262,9 +263,9 @@ vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
 }
 
 void extractNumbers(vector<string> &rowsCols, const string &str) {
-    std::regex e(R"(\d+)");
-    std::sregex_iterator iter(str.begin(), str.end(), e);
-    std::sregex_iterator end;
+    regex e(R"(\d+)");
+    sregex_iterator iter(str.begin(), str.end(), e);
+    sregex_iterator end;
     while (iter != end) {
         for (unsigned i = 0; i < iter->size(); ++i) {
             string number = (*iter)[i];
@@ -290,7 +291,7 @@ double Formula::formulaWithTwoNumbers(string formula) {
         return firstNumber * secondNumber;
     } else if (formula.at(pos) == '/') {
         if (secondNumber == 0) {
-            throw std::domain_error("ERROR! Can not divide by 0!");
+            throw domain_error("ERROR! Can not divide by 0!");
         } else {
             return firstNumber / secondNumber;
         }
@@ -314,7 +315,7 @@ double Formula::formulaWithTwoCells(string formula, const matrix &mat) {
             return firstCell * secondCell;
         } else if (formula.at(i) == '/') {
             if (secondCell == 0) {
-                throw std::domain_error("ERRO! Can not divide by 0!");
+                throw domain_error("ERROR! Can not divide by 0!");
             } else {
                 return firstCell / secondCell;
             }
@@ -348,7 +349,7 @@ double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
             return cellDouble * numberInFormula;
         } else if (formula.at(pos) == '/') {
             if (numberInFormula == 0) {
-                throw std::domain_error("Can not divide by 0!");
+                throw domain_error("Can not divide by 0!");
             } else {
                 return cellDouble / numberInFormula;
             }
@@ -371,7 +372,7 @@ double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
             return numberInFormula * cellDouble;
         } else if (formula.at(pos) == '/') {
             if (cellDouble == 0) {
-                throw std::domain_error("ERROR! Can not divide by 0!");
+                throw domain_error("ERROR! Can not divide by 0!");
             } else {
                 return numberInFormula / cellDouble;
             }
