@@ -18,18 +18,37 @@ using namespace std;
 using vec = vector<string>;
 using matrix = vector<vec>;
 
+// saving the data from CSV file to a matrix of vectors
+matrix fileToMatrix(string filename);
 
+// displaying the matrix
+void printMatrix(const matrix &mat);
+
+// finding the max number of elements on row (from the whole matrix)
+int maxElementPerRowWholeTable(const matrix &mat);
+
+// finds the lenght of the longest cell
+int maxWidthOfCell(const matrix &mat);
+
+// used when editing cell with data of type int
+void editDouble(matrix &mat, int row, int col);
+
+// used when editing cell with data of type int
+void editInteger(matrix &mat, int row, int col);
+
+// used when editing cell with data of type string
+void editString(matrix &mat, int row, int col);
+
+// using regex to extract numbers from string(the numbers are saved as strings into a vector)
+void extractNumbers(vector<string> &rowsCols, const string &str);
+
+// parsing vector<string> to vector<int>
+vector<int> parseStringVecToIntVec(vector<string> rowsCols);
+
+// class formula used for editing a cell with data of type formula
 class Formula {
 public:
     Formula(string form) : formula(form) {}
-
-    matrix getMat() const { return mat; }
-
-    void setMat(matrix m) { mat = m; }
-
-    const string &getFormula() const { return formula; }
-
-    void setFormula(const string &form) { formula = form; }
 
     double formulaWithTwoNumbers(string formula);
 
@@ -39,7 +58,6 @@ public:
 
 private:
     string formula;
-    matrix mat;
 
     void splitFormula(const string &formula, string &firstPart, string &secondPart, int &p);
 
@@ -51,27 +69,6 @@ private:
 
     bool foundInPart(const string &str);
 };
-
-// saving the data from CSV file to a matrix of vectors
-matrix fileToMatrix(string filename);
-
-void printMatrix(const matrix &mat);
-
-int maxElementPerRowWholeTable(const matrix &mat);
-
-int maxWidthOfCell(const matrix &mat);
-
-void editInteger(matrix &mat, int row, int col);
-
-void editDouble(matrix &mat, int row, int col);
-
-void editString(matrix &mat, int row, int col);
-
-// using regex to extract numbers from string(the numbers are saved as strings into a vector)
-void extractNumbers(vector<string> &rowsCols, const string &str);
-
-// parsing vector<string> to vector<int>
-vector<int> parseStringVecToIntVec(vector<string> rowsCols);
 
 
 matrix fileToMatrix(string filename) {
