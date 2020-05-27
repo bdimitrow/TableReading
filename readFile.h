@@ -18,60 +18,76 @@ using namespace std;
 using vec = vector<string>;
 using matrix = vector<vec>;
 
-// saving the data from CSV file to a matrix of vectors
-matrix fileToMatrix(string filename);
+class Matrix {
+public:
+    Matrix() {}
 
-// displaying the matrix
-void printMatrix(const matrix &mat);
+    // saving the data from CSV file to a matrix of vectors
+    matrix fileToMatrix(string filename);
 
-// finding the max number of elements on row (from the whole matrix)
-int maxElementPerRowWholeTable(const matrix &mat);
+    // displaying the matrix
+    void printMatrix(const matrix &mat);
 
-// finds the lenght of the longest cell
-int maxWidthOfCell(const matrix &mat);
+    // editting the matrix
+    matrix edit(matrix &mat, int row, int col);
 
-// used when editing cell with data of type int
-void editDouble(matrix &mat, int row, int col);
+private:
+    // finding the max number of elements on row (from the whole matrix)
+    int maxElementPerRowWholeTable(const matrix &mat);
 
-// used when editing cell with data of type int
-void editInteger(matrix &mat, int row, int col);
+    // finds the lenght of the longest cell
+    int maxWidthOfCell(const matrix &mat);
 
-// used when editing cell with data of type string
-void editString(matrix &mat, int row, int col);
+    // used when editing cell with data of type int
+    void editInteger(matrix &mat, int rol, int col);
 
-// using regex to extract numbers from string(the numbers are saved as strings into a vector)
-void extractNumbers(vector<string> &rowsCols, const string &str);
+    // used when editing cell with data of type double
+    void editDouble(matrix &mat, int rol, int col);
 
-// parsing vector<string> to vector<int>
-vector<int> parseStringVecToIntVec(vector<string> rowsCols);
+    // used when editing cell with data of type string
+    void editString(matrix &mat, int rol, int col);
+};
 
 // class formula used for editing a cell with data of type formula
 class Formula {
 public:
     Formula(string form) : formula(form) {}
 
-    double formulaWithTwoNumbers(string formula);
-
+    // used to edit a cell with formula made of two cells
     double formulaWithTwoCells(string formula, const matrix &mat);
 
+    // used to edit a cell with formula made of two numbers
+    double formulaWithTwoNumbers(string formula);
+
+    // used to edit a cell with formula made of a cell and a number
     double formulaWithNumberAndCell(string formula, const matrix &mat);
 
 private:
     string formula;
 
+    // spliting the formula into two part(before the operator and after the operator)
     void splitFormula(const string &formula, string &firstPart, string &secondPart, int &p);
 
+    // throws an exception when the formula in incorrect
     void isValidFormulaWithTwoNumbers(const string &formula);
 
+    // throws an exception when the formula is incorrect
     void isValidFormulaWithNumberAndCell(const string &formula);
 
+    // return the value of a cell
     double getTheValueOfCell(const matrix &mat, int row, int col);
 
+    // used to determine on which side of the operator is the cell in the formula
     bool foundInPart(const string &str);
+
+    // using regex to extract numbers from string(the numbers are saved as strings into a vector)
+    void extractNumbers(vector<string> &rowsCols, const string &str);
+
+    // parsing vector<string> to vector<int>
+    vector<int> parseStringVecToIntVec(vector<string> rowsCols);
 };
 
-
-matrix fileToMatrix(string filename) {
+matrix Matrix::fileToMatrix(string filename) {
     char delimiter = ',';
     matrix result;
     string row, item;
@@ -89,7 +105,7 @@ matrix fileToMatrix(string filename) {
     return result;
 }
 
-void printMatrix(const matrix &mat) {
+void Matrix::printMatrix(const matrix &mat) {
     int lenght = maxElementPerRowWholeTable(mat);
     int coppiedAlready = 0;
     for (vec row : mat) {
@@ -108,7 +124,7 @@ void printMatrix(const matrix &mat) {
     }
 }
 
-int maxElementPerRowWholeTable(const matrix &mat) {
+int Matrix::maxElementPerRowWholeTable(const matrix &mat) {
     int maxElements = 0;
     int elementsCurrentRow = 0;
     for (vec row : mat) {
@@ -123,7 +139,7 @@ int maxElementPerRowWholeTable(const matrix &mat) {
     return maxElements;
 }
 
-int maxWidthOfCell(const matrix &mat) {
+int Matrix::maxWidthOfCell(const matrix &mat) {
     int maxWidth = 0;
     int currentWidth = 0;
     for (vec row: mat) {
@@ -137,7 +153,7 @@ int maxWidthOfCell(const matrix &mat) {
     return maxWidth;
 }
 
-void editInteger(matrix &mat, int row, int col) {
+void Matrix::editInteger(matrix &mat, int row, int col) {
     string input;
     cout << "Enter an integer: ";
     cin.ignore();
@@ -152,7 +168,7 @@ void editInteger(matrix &mat, int row, int col) {
     }
 }
 
-void editDouble(matrix &mat, int row, int col) {
+void Matrix::editDouble(matrix &mat, int row, int col) {
     string input;
     cout << "Enter a double: ";
     cin.ignore();
@@ -167,7 +183,7 @@ void editDouble(matrix &mat, int row, int col) {
     }
 }
 
-void editString(matrix &mat, int row, int col) {
+void Matrix::editString(matrix &mat, int row, int col) {
     string input;
     cout << "Enter a string: ";
     cin.ignore();
@@ -179,7 +195,7 @@ void editString(matrix &mat, int row, int col) {
     }
 }
 
-matrix edit(matrix &mat, int row, int col) {
+matrix Matrix::edit(matrix &mat, int row, int col) {
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
@@ -249,30 +265,6 @@ matrix edit(matrix &mat, int row, int col) {
             cout << "Invalid choice!" << endl;
         }
     } while (true);
-}
-
-vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
-    vector<int> vectorOfNumbers;
-    for (auto &s : rowsCols) {
-        stringstream parser(s);
-        int x = 0;
-        parser >> x;
-        vectorOfNumbers.push_back(x);
-    }
-    return vectorOfNumbers;
-}
-
-void extractNumbers(vector<string> &rowsCols, const string &str) {
-    regex e(R"(\d+)");
-    sregex_iterator iter(str.begin(), str.end(), e);
-    sregex_iterator end;
-    while (iter != end) {
-        for (unsigned i = 0; i < iter->size(); ++i) {
-            string number = (*iter)[i];
-            rowsCols.push_back(number);
-        }
-        ++iter;
-    }
 }
 
 double Formula::formulaWithTwoNumbers(string formula) {
@@ -452,6 +444,30 @@ bool Formula::foundInPart(const string &str) {
             return true;
     }
     return false;
+}
+
+void Formula::extractNumbers(vector<string> &rowsCols, const string &str) {
+    regex e(R"(\d+)");
+    sregex_iterator iter(str.begin(), str.end(), e);
+    sregex_iterator end;
+    while (iter != end) {
+        for (unsigned i = 0; i < iter->size(); ++i) {
+            string number = (*iter)[i];
+            rowsCols.push_back(number);
+        }
+        ++iter;
+    }
+}
+
+vector<int> Formula::parseStringVecToIntVec(vector<string> rowsCols) {
+    vector<int> vectorOfNumbers;
+    for (auto &s : rowsCols) {
+        stringstream parser(s);
+        int x = 0;
+        parser >> x;
+        vectorOfNumbers.push_back(x);
+    }
+    return vectorOfNumbers;
 }
 
 #endif //TABLEREADING_READFILE_H

@@ -42,7 +42,8 @@ int main() {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                printMatrix(file.getMat());
+                Matrix mat;
+                mat.printMatrix(file.getMat());
             }
         } else if (command == "edit") {
             if (file.getFilename().empty()) {
@@ -58,7 +59,8 @@ int main() {
                     if (row > beingEditted.size() || col > beingEditted[row].size()) {
                         throw invalid_argument("ERROR! You are trying to edit a cell that is beyond the ranges of the table");
                     }
-                    file.setMat(edit(beingEditted, row - 1, col - 1));
+                    Matrix mat;
+                    file.setMat(mat.edit(beingEditted, row - 1, col - 1));
                 } catch (invalid_argument &e) {
                     cout << e.what() << endl;
                 } catch (domain_error &c) {

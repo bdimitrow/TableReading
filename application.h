@@ -32,7 +32,8 @@ public:
         fout.open(filename, ios::out | ios::in | ios::app);
         if (fout.is_open()) {
             cout << "Successfully opened " << filename << endl;
-            matrix opened = fileToMatrix(filename);
+            Matrix mat;
+            matrix opened = mat.fileToMatrix(filename);
             return opened;
         } else
             cout << "Unable to open " << filename << "!" << endl;
