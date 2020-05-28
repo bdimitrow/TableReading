@@ -18,34 +18,42 @@ using namespace std;
 using vec = vector<string>;
 using matrix = vector<vec>;
 
+// used when editing cell with data of type int
+void editInteger(matrix &mat, int rol, int col);
+
+// used when editing cell with data of type double
+void editDouble(matrix &mat, int rol, int col);
+
+// used when editing cell with data of type string
+void editString(matrix &mat, int rol, int col);
+
+// editting the matrix
+matrix edit(matrix &mat, int row, int col);
+
 class Matrix {
 public:
     Matrix() {}
+
+    Matrix(matrix m) : mat(m) {}
 
     // saving the data from CSV file to a matrix of vectors
     matrix fileToMatrix(string filename);
 
     // displaying the matrix
-    void printMatrix(const matrix &mat);
+    void printMatrix();
 
-    // editting the matrix
-    matrix edit(matrix &mat, int row, int col);
+    const matrix &getMat() const;
+
+    void setMat(const matrix &mat);
 
 private:
+    matrix mat;
+
     // finding the max number of elements on row (from the whole matrix)
-    int maxElementPerRowWholeTable(const matrix &mat);
+    int maxElementPerRowWholeTable();
 
     // finds the lenght of the longest cell
-    int maxWidthOfCell(const matrix &mat);
-
-    // used when editing cell with data of type int
-    void editInteger(matrix &mat, int rol, int col);
-
-    // used when editing cell with data of type double
-    void editDouble(matrix &mat, int rol, int col);
-
-    // used when editing cell with data of type string
-    void editString(matrix &mat, int rol, int col);
+    int maxWidthOfCell();
 };
 
 // class formula used for editing a cell with data of type formula
@@ -105,18 +113,18 @@ matrix Matrix::fileToMatrix(string filename) {
     return result;
 }
 
-void Matrix::printMatrix(const matrix &mat) {
-    int lenght = maxElementPerRowWholeTable(mat);
+void Matrix::printMatrix() {
+    int lenght = maxElementPerRowWholeTable();
     int coppiedAlready = 0;
     for (vec row : mat) {
-        cout << setw(maxWidthOfCell(mat));
+        cout << setw(maxWidthOfCell());
         for (string s : row) {
-            cout << setw(maxWidthOfCell(mat)) << s << "|";
+            cout << setw(maxWidthOfCell()) << s << "|";
             ++coppiedAlready;
         }
         // adding '|' whether the row is shorter
         while (coppiedAlready < lenght) {
-            cout << setw(maxWidthOfCell(mat)) << "" << "|";
+            cout << setw(maxWidthOfCell()) << "" << "|";
             coppiedAlready++;
         }
         cout << endl;
@@ -124,7 +132,7 @@ void Matrix::printMatrix(const matrix &mat) {
     }
 }
 
-int Matrix::maxElementPerRowWholeTable(const matrix &mat) {
+int Matrix::maxElementPerRowWholeTable() {
     int maxElements = 0;
     int elementsCurrentRow = 0;
     for (vec row : mat) {
@@ -139,10 +147,18 @@ int Matrix::maxElementPerRowWholeTable(const matrix &mat) {
     return maxElements;
 }
 
-int Matrix::maxWidthOfCell(const matrix &mat) {
+const matrix &Matrix::getMat() const {
+    return mat;
+}
+
+void Matrix::setMat(const matrix &mat) {
+    Matrix::mat = mat;
+}
+
+int Matrix::maxWidthOfCell() {
     int maxWidth = 0;
     int currentWidth = 0;
-    for (vec row: mat) {
+    for (vec row : mat) {
         for (string s : row) {
             currentWidth = s.length();
             if (currentWidth > maxWidth) {
@@ -153,7 +169,7 @@ int Matrix::maxWidthOfCell(const matrix &mat) {
     return maxWidth;
 }
 
-void Matrix::editInteger(matrix &mat, int row, int col) {
+void editInteger(matrix &mat, int row, int col) {
     string input;
     cout << "Enter an integer: ";
     cin.ignore();
@@ -168,7 +184,7 @@ void Matrix::editInteger(matrix &mat, int row, int col) {
     }
 }
 
-void Matrix::editDouble(matrix &mat, int row, int col) {
+void editDouble(matrix &mat, int row, int col) {
     string input;
     cout << "Enter a double: ";
     cin.ignore();
@@ -183,7 +199,7 @@ void Matrix::editDouble(matrix &mat, int row, int col) {
     }
 }
 
-void Matrix::editString(matrix &mat, int row, int col) {
+void editString(matrix &mat, int row, int col) {
     string input;
     cout << "Enter a string: ";
     cin.ignore();
@@ -195,7 +211,7 @@ void Matrix::editString(matrix &mat, int row, int col) {
     }
 }
 
-matrix Matrix::edit(matrix &mat, int row, int col) {
+matrix edit(matrix &mat, int row, int col) {
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
