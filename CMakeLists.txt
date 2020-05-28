@@ -3,4 +3,4 @@ project(TableReading)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(TableReading main.cpp commands.h readFile.h isNumberic.h application.h matrix.cpp matrix.h formula.cpp formula.h)
+add_executable(TableReading main.cpp commands.h readFile.h application.h matrix.cpp matrix.h formula.cpp formula.h)

@@ -4,6 +4,8 @@
 
 #include "formula.h"
 
+bool isNumeric(const string &str);
+
 double Formula::formulaWithTwoNumbers(string formula) {
     formula.erase(0, 1);  //removing '=' from the formula;
     isValidFormulaWithTwoNumbers(formula);

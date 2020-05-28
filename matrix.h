@@ -25,7 +25,14 @@ using matrix = vector<vec>;
 
 class Matrix {
 public:
-    Matrix(){}
+//    Matrix() {}
+
+    static Matrix *getInstance(){
+        if(!instance){
+            instance = new Matrix;
+        }
+        return instance;
+    }
 
     Matrix(matrix m) : mat(m) {}
 
@@ -45,7 +52,9 @@ public:
 private:
     matrix mat;
 
-//    Matrix() {}
+    Matrix() {}
+
+    static Matrix *instance;
 
 //     finding the max number of elements on row (from the whole matrix)
     int maxElementPerRowWholeTable();

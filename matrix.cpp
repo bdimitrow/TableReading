@@ -4,6 +4,11 @@
 
 #include "matrix.h"
 
+bool isNumeric(const string &str) {
+    return str.find_first_not_of("+-0123456789.") == string::npos;
+}
+
+Matrix *Matrix::instance = 0;
 
 
 matrix Matrix::fileToMatrix(string filename) {
@@ -193,7 +198,6 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
         }
     } while (true);
 }
-
 
 
 // is the string an integer
