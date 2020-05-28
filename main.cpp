@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "readFile.h"
+#include "matrix.h"
 #include "application.h"
 
 using namespace std;
@@ -59,7 +59,8 @@ int main() {
                     if (row > beingEditted.size() || col > beingEditted[row].size()) {
                         throw invalid_argument("ERROR! You are trying to edit a cell that is beyond the ranges of the table");
                     }
-                    file.setMat(edit(beingEditted, row - 1, col - 1));
+                    Matrix mat;
+                    file.setMat(mat.edit(beingEditted, row - 1, col - 1));
                 } catch (invalid_argument &e) {
                     cout << e.what() << endl;
                 } catch (domain_error &c) {

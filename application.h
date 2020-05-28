@@ -7,8 +7,8 @@
 
 #include <string>
 #include <iostream>
-#include "commands.h"
-#include "readFile.h"
+#include "matrix.h"
+#include "formula.h"
 
 using namespace std;
 
