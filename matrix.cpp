@@ -39,21 +39,21 @@ matrix Matrix::fileToMatrix(string filename) {
 }
 
 void Matrix::printMatrix() {
-    int lenght = maxElementPerRowWholeTable();
-    int coppiedAlready = 0;
+    int length = maxElementPerRowWholeTable();
+    int copiedCounter = 0;
     for (vec row : mat) {
         cout << setw(maxWidthOfCell());
         for (string s : row) {
             cout << setw(maxWidthOfCell()) << s << "|";
-            ++coppiedAlready;
+            ++copiedCounter;
         }
         // adding '|' whether the row is shorter
-        while (coppiedAlready < lenght) {
+        while (copiedCounter < length) {
             cout << setw(maxWidthOfCell()) << "" << "|";
-            coppiedAlready++;
+            copiedCounter++;
         }
         cout << endl;
-        coppiedAlready = 0;
+        copiedCounter = 0;
     }
 }
 

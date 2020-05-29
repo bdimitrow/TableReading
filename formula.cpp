@@ -3,6 +3,7 @@
 
 double Formula::formulaWithTwoNumbers(string formula) {
     formula.erase(0, 1);  //removing '=' from the formula;
+    // TODO if .... else throw
     isValidFormulaWithTwoNumbers(formula);
     string firstPartOfFormula, secondPartOfFormula;
     int pos;
@@ -54,6 +55,7 @@ double Formula::formulaWithTwoCells(string formula, const matrix &mat) {
 
 double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
     formula.erase(0, 1);  //removing '=' from the formula;
+    // TODO if ... else throw
     isValidFormulaWithNumberAndCell(formula);
     string firstPartOfFormula, secondPartOfFormula;
     int pos;
@@ -138,7 +140,7 @@ void Formula::isValidFormulaWithTwoNumbers(const string &formula) {
         if (formula.at(i) != '0' && formula.at(i) != '9' && formula.at(i) != '.' && formula.at(i) != '+' &&
             formula.at(i) != '-' && formula.at(i) != '*' && formula.at(i) != '/' && formula.at(i) != '^' &&
             formula.at(i) != ' ' && formula.at(i) != '1' && formula.at(i) != '2' && formula.at(i) != '3' &&
-            formula.at(i) != '4' && formula.at(i) != '5' && formula.at(i) != '6' && formula.at(i) != '8') {
+            formula.at(i) != '4' && formula.at(i) != '5' && formula.at(i) != '6' && formula.at(i) != '7' && formula.at(i) != '8') {
             throw invalid_argument("ERROR! Invalid formula!");
         }
     }
@@ -165,8 +167,8 @@ void Formula::isValidFormulaWithNumberAndCell(const string &formula) {
         if (formula.at(i) != '.' && formula.at(i) != '+' && formula.at(i) != '-' && formula.at(i) != '*' &&
             formula.at(i) != '/' && formula.at(i) != '^' && formula.at(i) != ' ' && formula.at(i) != '0' &&
             formula.at(i) != '1' && formula.at(i) != '2' && formula.at(i) != '3' && formula.at(i) != '4' &&
-            formula.at(i) != '5' && formula.at(i) != '6' && formula.at(i) != '8' && formula.at(i) != '9' &&
-            formula.at(i) != 'R' && formula.at(i) != 'r' && formula.at(i) != 'C' && formula.at(i) != 'c') {
+            formula.at(i) != '5' && formula.at(i) != '6' && formula.at(i) != '7' && formula.at(i) != '8' &&
+            formula.at(i) != '9' && formula.at(i) != 'R' && formula.at(i) != 'r' && formula.at(i) != 'C' && formula.at(i) != 'c') {
             throw invalid_argument("ERROR! Invalid formula!");
         }
     }

@@ -10,7 +10,7 @@ int main() {
     string command;
     cout << "Enter command: ";
     Application file;
-    while (cin >> command || command == "exit") {
+    while (cin >> command ) {
         if (command == "open") {
             string filename;
             cin >> filename;

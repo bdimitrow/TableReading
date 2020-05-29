@@ -31,14 +31,14 @@ double stringToDouble(string numberString) {
     }
 }
 
-// removing the spaces from the left side of the stirng
+// removing the spaces from the left side of the string
 string &ltrim(string &str) {
     const string &chars = "\t\n\v\f\r ";
     str.erase(0, str.find_first_not_of(chars));
     return str;
 }
 
-// removing the spaces from the right side of the stirng
+// removing the spaces from the right side of the string
 string &rtrim(string &str) {
     const string &chars = "\t\n\v\f\r ";
     str.erase(str.find_last_not_of(chars) + 1);
