@@ -16,7 +16,6 @@
 #include <cmath>
 #include <string>
 #include "formula.h"
-#include "isNumberic.h"
 
 using namespace std;
 
