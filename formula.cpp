@@ -1,5 +1,5 @@
 #include "formula.h"
-#include "utils.h"
+#include "stringUtils.h"
 
 double Formula::formulaWithTwoNumbers(string formula) {
     formula.erase(0, 1);  //removing '=' from the formula;
@@ -180,26 +180,4 @@ bool Formula::foundInPart(const string &str) {
     return false;
 }
 
-void Formula::extractNumbers(vector<string> &rowsCols, const string &str) {
-    regex e(R"(\d+)");
-    sregex_iterator iter(str.begin(), str.end(), e);
-    sregex_iterator end;
-    while (iter != end) {
-        for (unsigned i = 0; i < iter->size(); ++i) {
-            string number = (*iter)[i];
-            rowsCols.push_back(number);
-        }
-        ++iter;
-    }
-}
 
-vector<int> Formula::parseStringVecToIntVec(vector<string> rowsCols) {
-    vector<int> vectorOfNumbers;
-    for (auto &s : rowsCols) {
-        stringstream parser(s);
-        int x = 0;
-        parser >> x;
-        vectorOfNumbers.push_back(x);
-    }
-    return vectorOfNumbers;
-}

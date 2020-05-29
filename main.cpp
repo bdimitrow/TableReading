@@ -14,7 +14,7 @@ int main() {
         if (command == "open") {
             string filename;
             cin >> filename;
-            file.setMat(file.openFile(filename));
+            file.setMatrix(file.openFile(filename));
             file.setFilename(filename);
         } else if (command == "help") {
             file.help();
@@ -30,20 +30,21 @@ int main() {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                file.save(file.getMat(), file.getFilename());
+                file.save(file.getMatrix(), file.getFilename());
             }
         } else if (command == "saveas") {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                file.saveAs(file.getMat());
+                file.saveAs(file.getMatrix());
             }
         } else if (command == "print") {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                Matrix mat(file.getMat());
-                mat.printMatrix();
+                Matrix *mat = mat->getInstance();
+                mat->setMat(file.getMatrix());
+                mat->printMatrix();
             }
         } else if (command == "edit") {
             if (file.getFilename().empty()) {
@@ -54,21 +55,21 @@ int main() {
                 cin >> row;
                 cout << "Enter the column of the cell you'd like to edit: ";
                 cin >> col;
-                matrix beingEditted = file.getMat();
+                matrix beingEditted = file.getMatrix();
                 try {
                     if (row > beingEditted.size() || col > beingEditted[row].size()) {
                         throw invalid_argument(
                                 "ERROR! You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     Matrix *mat = mat->getInstance();
-                    file.setMat(mat->edit(beingEditted, row - 1, col - 1));
+                    file.setMatrix(mat->edit(beingEditted, row - 1, col - 1));
                 } catch (invalid_argument &e) {
                     cout << e.what() << endl;
                 } catch (domain_error &c) {
                     cout << c.what() << endl;
-                    matrix mat = file.getMat();
+                    matrix mat = file.getMatrix();
                     mat[row - 1][col - 1] = "ERROR";
-                    file.setMat(mat);
+                    file.setMatrix(mat);
                 }
             }
         } else {

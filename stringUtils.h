@@ -1,5 +1,5 @@
-#ifndef TABLEREADING_UTILS_H
-#define TABLEREADING_UTILS_H
+#ifndef TABLEREADING_STRINGUTILS_H
+#define TABLEREADING_STRINGUTILS_H
 
 #include <string>
 #include <sstream>
@@ -81,4 +81,28 @@ double stringToNumber(string word) {
     }
 }
 
-#endif //TABLEREADING_UTILS_H
+void extractNumbers(vector<string> &rowsCols, const string &str) {
+    regex e(R"(\d+)");
+    sregex_iterator iter(str.begin(), str.end(), e);
+    sregex_iterator end;
+    while (iter != end) {
+        for (unsigned i = 0; i < iter->size(); ++i) {
+            string number = (*iter)[i];
+            rowsCols.push_back(number);
+        }
+        ++iter;
+    }
+}
+
+vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
+    vector<int> vectorOfNumbers;
+    for (auto &s : rowsCols) {
+        stringstream parser(s);
+        int x = 0;
+        parser >> x;
+        vectorOfNumbers.push_back(x);
+    }
+    return vectorOfNumbers;
+}
+
+#endif //TABLEREADING_STRINGUTILS_H

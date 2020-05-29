@@ -2,7 +2,7 @@
 
 Application::Application(const string &fname) : filename(fname) {}
 
-void Application::setMat(matrix m) { mat = m; }
+void Application::setMatrix(matrix m) { mat = m; }
 
 void Application::setFilename(const string &fname) { filename = fname; }
 

@@ -53,12 +53,6 @@ private:
 
     // used to determine on which side of the operator is the cell in the formula
     bool foundInPart(const string &str);
-
-    // using regex to extract numbers from string(the numbers are saved as strings into a vector)
-    void extractNumbers(vector<string> &rowsCols, const string &str);
-
-    // parsing vector<string> to vector<int>
-    vector<int> parseStringVecToIntVec(vector<string> rowsCols);
 };
 
 #endif //TABLEREADING_FORMULA_H
