@@ -12,9 +12,9 @@ bool isNumeric(const string &str) {
 }
 
 // converting string to int
-int stringToInt(string word) {
-    if (isNumeric(word)) {
-        stringstream ss(word);
+int stringToInt(string numberString) {
+    if (isNumeric(numberString)) {
+        stringstream ss(numberString);
         int resultInt = 0;
         ss >> resultInt;
         return resultInt;
@@ -22,9 +22,9 @@ int stringToInt(string word) {
 }
 
 // converting string to double
-double stringToDouble(string word) {
-    if (isNumeric(word)) {
-        stringstream ss(word);
+double stringToDouble(string numberString) {
+    if (isNumeric(numberString)) {
+        stringstream ss(numberString);
         double resultDouble = 0;
         ss >> resultDouble;
         return resultDouble;
@@ -62,25 +62,26 @@ void removeQuotes(string &str) {
 }
 
 // parsing the string into number
-double stringToNumber(string word) {
-    trim(word);             // removing the spaces from both sides
-    removeQuotes(word);     // removing the quotes whether such exist
+double stringToNumber(string numberString) {
+    trim(numberString);             // removing the spaces from both sides
+    removeQuotes(numberString);     // removing the quotes whether such exist
     int dotCount = 0;          // counting the number of dots
-    for (int i = 0; i < word.size(); ++i) {
-        if (word.at(i) == '.') {
+    for (int i = 0; i < numberString.size(); ++i) {
+        if (numberString.at(i) == '.') {
             ++dotCount;
         }
     }
     // parsing the string into a number
     if (dotCount == 0) {
-        return stringToInt(word);
-    } else if (dotCount == 1 && (isNumeric(word))) {
-        return stringToDouble(word);
+        return stringToInt(numberString);
+    } else if (dotCount == 1 && (isNumeric(numberString))) {
+        return stringToDouble(numberString);
     } else {
         return 0.0;
     }
 }
 
+// using regex to extract numbers from string(the numbers are saved as strings into a vector)
 void extractNumbers(vector<string> &rowsCols, const string &str) {
     regex e(R"(\d+)");
     sregex_iterator iter(str.begin(), str.end(), e);
@@ -94,7 +95,7 @@ void extractNumbers(vector<string> &rowsCols, const string &str) {
     }
 }
 
-vector<int> parseStringVecToIntVec(vector<string> rowsCols) {
+vector<int> parseStringVectorToIntVector(vector<string> rowsCols) {
     vector<int> vectorOfNumbers;
     for (auto &s : rowsCols) {
         stringstream parser(s);

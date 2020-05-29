@@ -29,7 +29,7 @@ double Formula::formulaWithTwoNumbers(string formula) {
 double Formula::formulaWithTwoCells(string formula, const matrix &mat) {
     vector<string> rowsColsAsStrings;
     extractNumbers(rowsColsAsStrings, formula);
-    vector<int> numbersRowsCols = parseStringVecToIntVec(rowsColsAsStrings);
+    vector<int> numbersRowsCols = parseStringVectorToIntVector(rowsColsAsStrings);
     double firstCell = getTheValueOfCell(mat, numbersRowsCols.at(0) - 1, numbersRowsCols.at(1) - 1);
     double secondCell = getTheValueOfCell(mat, numbersRowsCols.at(2) - 1, numbersRowsCols.at(3) - 1);
     for (int i = 0; i < formula.length(); ++i) {
@@ -64,7 +64,7 @@ double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
         // the first part of the formula is the cell
         vector<string> cellCoordinatesAsString;
         extractNumbers(cellCoordinatesAsString, firstPartOfFormula);
-        vector<int> coordinates = parseStringVecToIntVec(cellCoordinatesAsString);
+        vector<int> coordinates = parseStringVectorToIntVector(cellCoordinatesAsString);
         double cellDouble = getTheValueOfCell(mat, coordinates.at(0) - 1, coordinates.at(1) - 1);
         double numberInFormula = stod(secondPartOfFormula);
         if (formula.at(pos) == '+') {
@@ -87,7 +87,7 @@ double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
         // the second part of the formula is the cell
         vector<string> cellCoordinatesAsString;
         extractNumbers(cellCoordinatesAsString, secondPartOfFormula);
-        vector<int> coordinates = parseStringVecToIntVec(cellCoordinatesAsString);
+        vector<int> coordinates = parseStringVectorToIntVector(cellCoordinatesAsString);
         double cellDouble = getTheValueOfCell(mat, coordinates.at(0) - 1, coordinates.at(1) - 1);
         double numberInFormula = stod(firstPartOfFormula);
         if (formula.at(pos) == '+') {
@@ -179,5 +179,3 @@ bool Formula::foundInPart(const string &str) {
     }
     return false;
 }
-
-
