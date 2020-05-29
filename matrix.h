@@ -1,7 +1,3 @@
-//
-// Created by bozhidar on 5/28/20.
-//
-
 #ifndef TABLEREADING_MATRIX_H
 #define TABLEREADING_MATRIX_H
 
@@ -24,10 +20,8 @@ using matrix = vector<vec>;
 
 class Matrix {
 public:
-//    Matrix() {}
-
-    static Matrix *getInstance(){
-        if(!instance){
+    static Matrix *getInstance() {
+        if (!instance) {
             instance = new Matrix;
         }
         return instance;

@@ -1,7 +1,3 @@
-//
-// Created by bozhidar on 5/21/20.
-//
-
 #ifndef TABLEREADING_APPLICATION_H
 #define TABLEREADING_APPLICATION_H
 
@@ -13,83 +9,32 @@
 using namespace std;
 
 class Application {
-private:
-    string filename;
-    matrix mat;
 public:
-    Application(const string &filename = "") : filename(filename) {}
+    Application(const string &fname = "");
 
     matrix getMat() const { return mat; }
 
-    void setMat(matrix m) { mat = m; }
+    void setMat(matrix m);
 
     const string &getFilename() const { return filename; }
 
-    void setFilename(const string &fname) { filename = fname; }
+    void setFilename(const string &fname);
 
-    matrix openFile(string filename) {
-        fstream fout;
-        fout.open(filename, ios::out | ios::in | ios::app);
-        if (fout.is_open()) {
-            cout << "Successfully opened " << filename << endl;
-            Matrix *mat = mat->getInstance();
-            matrix opened = mat->fileToMatrix(filename);
-            return opened;
-        } else
-            cout << "Unable to open " << filename << "!" << endl;
-    }
+    matrix openFile(string filename);
 
-    void close(string filename) {
-        fstream fout;
-        fout.close();
-        cout << "Successfully closed " << filename << endl;
-    }
+    void close(string filename);
 
-    void save(matrix mat, string filename) {
-        ofstream out;
-        out.open(filename, ios::out | ios::trunc);
-        if (!out.is_open()) {
-            cerr << "Unable to open file!\n";
-        }
-        for (vec row : mat) {
-            for (string s : row) {
-                out << s << ",";
-            }
-            out << endl;
-        }
-        out.close();
-        cout << filename << " was successfully saved!" << endl;
-    }
+    void save(matrix mat, string filename);
 
-    void saveAs(matrix mat) {
-        string filename;
-        cin.ignore();
-        getline(cin, filename);
-        ofstream out;
-        out.open(filename, ios::out | ios::trunc);
-        for (vec row : mat) {
-            for (string s : row) {
-                out << s << ",";
-            }
-            out << endl;
-        }
-        out.close();
-    }
+    void saveAs(matrix mat);
 
-    void help() {
-        cout << "The following commands are supported: " << endl
-             << "open <file>  -  opens <file>" << endl
-             << "close  -  closes currently opened file" << endl
-             << "save  -  saves the currently open file" << endl
-             << "saveas <file>  -  saves the currently open file in <file>" << endl
-             << "help  -  prints this information" << endl
-             << "exit  -  exists the program" << endl << endl;
-    }
+    void help();
 
-    void exit() {
-        cout << "Exiting the program!" << endl;
-        ::exit(EXIT_SUCCESS);
-    }
+    void exit();
+
+private:
+    string filename;
+    matrix mat;
 };
 
 #endif //TABLEREADING_APPLICATION_H

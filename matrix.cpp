@@ -3,13 +3,12 @@
 //
 
 #include "matrix.h"
-
-bool isNumeric(const string &str) {
-    return str.find_first_not_of("+-0123456789.") == string::npos;
-}
+//
+//bool isNumeric(const string &str) {
+//    return str.find_first_not_of("+-0123456789.") == string::npos;
+//}
 
 Matrix *Matrix::instance = 0;
-
 
 matrix Matrix::fileToMatrix(string filename) {
     char delimiter = ',';
@@ -191,7 +190,6 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
                         throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     return mat;
-                    break;
             }
         } else {
             cout << "Invalid choice!" << endl;
