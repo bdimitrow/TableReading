@@ -54,8 +54,75 @@ double Formula::formulaWithTwoCells(string formula, const matrix &mat) {
     throw invalid_argument("ERROR! Invalid operator!");
 }
 
+double Formula::getTheValueOfCell(const matrix &mat, int row, int col) {
+    double result;
+    string cellValueAsString;
+    for (int i = 0; i < mat.size(); ++i) {
+        if (i == row) {
+            for (int j = 0; j < mat[i].size(); ++j) {
+                if (j == col) {
+                    cellValueAsString = mat[i][j];
+                }
+            }
+        }
+    }
+    result = stringToNumber(cellValueAsString);
+    return result;
+}
+
+double Formula::resultWhenCellReferenceIsFirst(const matrix &mat, string formula,
+                                               const string &firstPartOfFormula, const string &secondPartOfFormula,
+                                               int pos) {
+    // the first part of the formula is the cell
+    vector<string> cellCoordinatesAsString;
+    extractNumbers(cellCoordinatesAsString, firstPartOfFormula);
+    vector<int> coordinates = parseStringVectorToIntVector(cellCoordinatesAsString);
+    double cellDouble = getTheValueOfCell(mat, coordinates.at(0) - 1, coordinates.at(1) - 1);
+    double numberInFormula = stod(secondPartOfFormula);
+    if (formula.at(pos) == '+') {
+        return cellDouble + numberInFormula;
+    } else if (formula.at(pos) == '-') {
+        return cellDouble - numberInFormula;
+    } else if (formula.at(pos) == '*') {
+        return cellDouble * numberInFormula;
+    } else if (formula.at(pos) == '/') {
+        if (numberInFormula == 0) {
+            throw domain_error("Can not divide by 0!");
+        } else {
+            return cellDouble / numberInFormula;
+        }
+    } else if (formula.at(pos) == '^') {
+        return pow(cellDouble, numberInFormula);
+    }
+}
+
+double Formula::resultWhenCellReferenceIsSecond(const matrix &mat, string formula,
+                                                const string &firstPartOfFormula, const string &secondPartOfFormula,
+                                                int pos) {
+    // the second part of the formula is the cell
+    vector<string> cellCoordinatesAsString;
+    extractNumbers(cellCoordinatesAsString, secondPartOfFormula);
+    vector<int> coordinates = parseStringVectorToIntVector(cellCoordinatesAsString);
+    double cellDouble = getTheValueOfCell(mat, coordinates.at(0) - 1, coordinates.at(1) - 1);
+    double numberInFormula = stod(firstPartOfFormula);
+    if (formula.at(pos) == '+') {
+        return numberInFormula + cellDouble;
+    } else if (formula.at(pos) == '-') {
+        return numberInFormula - cellDouble;
+    } else if (formula.at(pos) == '*') {
+        return numberInFormula * cellDouble;
+    } else if (formula.at(pos) == '/') {
+        if (cellDouble == 0) {
+            throw domain_error("ERROR! Can not divide by 0!");
+        } else {
+            return numberInFormula / cellDouble;
+        }
+    } else if (formula.at(pos) == '^') {
+        return pow(numberInFormula, cellDouble);
+    }
+}
+
 double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
-    // TODO SPLIT
     formula.erase(0, 1);  //removing '=' from the formula;
     if (!isValidFormulaWithNumberAndCell(formula)) {
         throw invalid_argument("ERROR! Invalid formula!");
@@ -66,50 +133,10 @@ double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
     bool foundInFirst = foundInPart(firstPartOfFormula);
     bool foundInSecond = foundInPart(secondPartOfFormula);
     if (foundInFirst && !foundInSecond) {
-        // the first part of the formula is the cell
-        vector<string> cellCoordinatesAsString;
-        extractNumbers(cellCoordinatesAsString, firstPartOfFormula);
-        vector<int> coordinates = parseStringVectorToIntVector(cellCoordinatesAsString);
-        double cellDouble = getTheValueOfCell(mat, coordinates.at(0) - 1, coordinates.at(1) - 1);
-        double numberInFormula = stod(secondPartOfFormula);
-        if (formula.at(pos) == '+') {
-            return cellDouble + numberInFormula;
-        } else if (formula.at(pos) == '-') {
-            return cellDouble - numberInFormula;
-        } else if (formula.at(pos) == '*') {
-            return cellDouble * numberInFormula;
-        } else if (formula.at(pos) == '/') {
-            if (numberInFormula == 0) {
-                throw domain_error("Can not divide by 0!");
-            } else {
-                return cellDouble / numberInFormula;
-            }
-        } else if (formula.at(pos) == '^') {
-            return pow(cellDouble, numberInFormula);
-        }
+        resultWhenCellReferenceIsFirst(mat, formula, firstPartOfFormula, secondPartOfFormula, pos);
     }
     if (!foundInFirst && foundInSecond) {
-        // the second part of the formula is the cell
-        vector<string> cellCoordinatesAsString;
-        extractNumbers(cellCoordinatesAsString, secondPartOfFormula);
-        vector<int> coordinates = parseStringVectorToIntVector(cellCoordinatesAsString);
-        double cellDouble = getTheValueOfCell(mat, coordinates.at(0) - 1, coordinates.at(1) - 1);
-        double numberInFormula = stod(firstPartOfFormula);
-        if (formula.at(pos) == '+') {
-            return numberInFormula + cellDouble;
-        } else if (formula.at(pos) == '-') {
-            return numberInFormula - cellDouble;
-        } else if (formula.at(pos) == '*') {
-            return numberInFormula * cellDouble;
-        } else if (formula.at(pos) == '/') {
-            if (cellDouble == 0) {
-                throw domain_error("ERROR! Can not divide by 0!");
-            } else {
-                return numberInFormula / cellDouble;
-            }
-        } else if (formula.at(pos) == '^') {
-            return pow(numberInFormula, cellDouble);
-        }
+        resultWhenCellReferenceIsSecond(mat, formula, firstPartOfFormula, secondPartOfFormula, pos);
     }
 }
 
@@ -146,21 +173,6 @@ bool Formula::isValidFormulaWithNumberAndCell(const string &formula) {
     return formula.find_first_not_of("0123456789 .+-/^rRcR");
 }
 
-double Formula::getTheValueOfCell(const matrix &mat, int row, int col) {
-    double result;
-    string cellValueAsString;
-    for (int i = 0; i < mat.size(); ++i) {
-        if (i == row) {
-            for (int j = 0; j < mat[i].size(); ++j) {
-                if (j == col) {
-                    cellValueAsString = mat[i][j];
-                }
-            }
-        }
-    }
-    result = stringToNumber(cellValueAsString);
-    return result;
-}
 
 bool Formula::foundInPart(const string &str) {
     for (char i : str) {

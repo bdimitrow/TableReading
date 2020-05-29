@@ -48,11 +48,19 @@ private:
     // throws an exception when the formula is incorrect
     bool isValidFormulaWithNumberAndCell(const string &formula);
 
+    double resultWhenCellReferenceIsFirst(const matrix &mat, string formula, const string &firstPartOfFormula,
+                                          const string &secondPartOfFormula, int pos);
+
+    double resultWhenCellReferenceIsSecond(const matrix &mat, string formula, const string &firstPartOfFormula,
+                                           const string &secondPartOfFormula, int pos);
+
     // return the value of a cell
     double getTheValueOfCell(const matrix &mat, int row, int col);
 
     // used to determine on which side of the operator is the cell in the formula
     bool foundInPart(const string &str);
+
+
 };
 
 #endif //TABLEREADING_FORMULA_H
