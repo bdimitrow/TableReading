@@ -59,30 +59,6 @@ private:
 
     // parsing vector<string> to vector<int>
     vector<int> parseStringVecToIntVec(vector<string> rowsCols);
-
-    // is the string made of just digits and +-.
-    bool isNumeric(const string &str);
-
-    // converting string to int
-    int stringToInt(string word);
-
-    // converting string to double
-    double stringToDouble(string word);
-
-    // removing the spaces from the left side of the stirng
-    string &ltrim(string &str);
-
-    // removing the spaces from the right side of the stirng
-    string &rtrim(string &str);
-
-    // removing the space from both sides of the string
-    string &trim(string &str);
-
-    // removing quotes from the string
-    void removeQuotes(string &str);
-
-    // parsing the string into number
-    double stringToNumber(string word);
 };
 
 #endif //TABLEREADING_FORMULA_H

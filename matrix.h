@@ -38,18 +38,15 @@ public:
     // editting the matrix
     matrix edit(matrix &mat, int row, int col);
 
-    const matrix &getMat() const;
-
-    void setMat(const matrix &mat);
-
 private:
     matrix mat;
 
+    // Signleton pattern
     Matrix() {}
 
     static Matrix *instance;
 
-//     finding the max number of elements on row (from the whole matrix)
+    // finding the max number of elements on row (from the whole matrix)
     int maxElementPerRowWholeTable();
 
     // finds the lenght of the longest cell
@@ -63,13 +60,6 @@ private:
 
     // used when editing cell with data of type string
     void editString(matrix &mat, int rol, int col);
-
-    // is the string a double
-    bool isDouble(const string &str);
-
-    // is the string an integer
-    bool isInteger(const string &str);
-
 };
 
 #endif //TABLEREADING_MATRIX_H

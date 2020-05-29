@@ -1,12 +1,22 @@
-//
-// Created by bozhidar on 5/28/20.
-//
-
 #include "matrix.h"
-//
-//bool isNumeric(const string &str) {
-//    return str.find_first_not_of("+-0123456789.") == string::npos;
-//}
+
+// is the string an integer
+bool isInteger(const string &str) {
+    return str.find_first_not_of("+-0123456789") == string::npos;
+}
+
+// is the string a double
+bool isDouble(const string &str) {
+    int dotCounter = 0;
+    for (int i = 0; i < str.length(); ++i) {
+        if (str[i] == '.') {
+            dotCounter++;
+        } else if (!isdigit(str[i])) {
+            return false;
+        }
+    }
+    return dotCounter == 1;
+}
 
 Matrix *Matrix::instance = 0;
 
@@ -60,14 +70,6 @@ int Matrix::maxElementPerRowWholeTable() {
         elementsCurrentRow = 0;
     }
     return maxElements;
-}
-
-const matrix &Matrix::getMat() const {
-    return mat;
-}
-
-void Matrix::setMat(const matrix &mat) {
-    Matrix::mat = mat;
 }
 
 int Matrix::maxWidthOfCell() {
@@ -195,23 +197,4 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
             cout << "Invalid choice!" << endl;
         }
     } while (true);
-}
-
-
-// is the string an integer
-bool Matrix::isInteger(const string &str) {
-    return str.find_first_not_of("+-0123456789") == string::npos;
-}
-
-// is the string a double
-bool Matrix::isDouble(const string &str) {
-    int dotCounter = 0;
-    for (int i = 0; i < str.length(); ++i) {
-        if (str[i] == '.') {
-            dotCounter++;
-        } else if (!isdigit(str[i])) {
-            return false;
-        }
-    }
-    return dotCounter == 1;
 }
