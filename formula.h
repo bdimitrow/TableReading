@@ -43,10 +43,10 @@ private:
     void splitFormula(const string &formula, string &firstPart, string &secondPart, int &p);
 
     // throws an exception when the formula in incorrect
-    void isValidFormulaWithTwoNumbers(const string &formula);
+    bool isValidFormulaWithTwoNumbers(const string &formula);
 
     // throws an exception when the formula is incorrect
-    void isValidFormulaWithNumberAndCell(const string &formula);
+    bool isValidFormulaWithNumberAndCell(const string &formula);
 
     // return the value of a cell
     double getTheValueOfCell(const matrix &mat, int row, int col);

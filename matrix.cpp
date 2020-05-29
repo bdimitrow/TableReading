@@ -129,6 +129,7 @@ void Matrix::editString(matrix &mat, int row, int col) {
 }
 
 matrix Matrix::edit(matrix &mat, int row, int col) {
+    // TODO SPLIT
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
