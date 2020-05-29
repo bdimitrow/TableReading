@@ -62,7 +62,6 @@ public:
     }
 
     void saveAs(matrix mat) {
-        cout << "Enter the name and the extension where the table should be saved: ";
         string filename;
         cin.ignore();
         getline(cin, filename);

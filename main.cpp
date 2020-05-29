@@ -72,7 +72,7 @@ int main() {
                 }
             }
         } else {
-            cout << "Invalid command!" << endl;
+            cout << "Invalid command!Try: help" << endl;
         }
         cout << "What to do now? " << endl;
     }
