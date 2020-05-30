@@ -47,7 +47,7 @@ public:
      * @return matrix
      */
     // saving the data from CSV file to a matrix of vectors
-    matrix fileToMatrix(const string& filename);
+    matrix fileToMatrix(const string &filename);
 
     /**
      * Method displaying the matrix.
@@ -76,10 +76,12 @@ public:
 
 private:
     matrix mat;
+
     /**
      * A default constructor. It is in the private section because the class uses singleton design pattern.
      */
     Matrix() {}
+
     /**
      * A parametrized constructor. It is in the private section because the class uses singleton design pattern.
      */
@@ -127,6 +129,14 @@ private:
      */
     // used when editing cell with data of type string
     void editString(matrix &mat, int rol, int col);
+
+    /**
+     * Used when editing a cell when the new data type is going to be the result of a formula.
+     * @param mat
+     * @param row
+     * @param col
+     */
+    void editFormula(matrix &mat, int row, int col);
 };
 
 #endif //TABLEREADING_MATRIX_H

@@ -52,26 +52,25 @@ int main() {
             } else {
                 int row, col;
                 cout << "Enter the row of the cell you'd like to edit: ";
-                bool flag = false;
                 do {
                     if (!(cin >> row)) {
                         cout << "Invalid entry! Please enter an integer: ";
                         cin.clear();                            // reset any error flags
                         cin.ignore(10000, '\n');       // ignore any characters in the input buffer                    }
                     } else {
-                        flag = true;
+                        break;
                     }
-                } while (!flag);
+                } while (true);
                 cout << "Enter the column of the cell you'd like to edit: ";
-                do{
-                    if(!(cin >> col)){
+                do {
+                    if (!(cin >> col)) {
                         cout << "Invalid entry! Please enter an integer: ";
                         cin.clear();                            // reset any error flags
                         cin.ignore(10000, '\n');       // ignore any characters in the input buffer                    }
                     } else {
-                        flag = true;
+                        break;
                     }
-                } while(!flag);
+                } while (true);
                 matrix beingEditted = file.getMatrix();
                 try {
                     if (row > beingEditted.size() || col > beingEditted[row].size()) {
@@ -158,4 +157,3 @@ int main() {
  *  Output: Exiting the program!<br>
  *
  */
-

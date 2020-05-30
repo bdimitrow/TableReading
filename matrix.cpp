@@ -128,8 +128,43 @@ void Matrix::editString(matrix &mat, int row, int col) {
     }
 }
 
+void Matrix::editFormula(matrix &mat, int row, int col) {
+    string input;
+    cout << "Enter a formula: ";
+    cin.ignore();
+    getline(cin, input);
+    double newValue = 0;
+    int Rcount = 0, Ccount = 0;
+    for (int i = 0; i < input.length(); ++i) {
+        if (input.at(i) == 'R' || input.at(i) == 'r') Rcount++;
+        if (input.at(i) == 'C' || input.at(i) == 'c') Ccount++;
+    }
+    if (Rcount == 2 && Ccount == 2) {
+        Formula formula(input);
+        newValue = formula.formulaWithTwoCells(mat);
+    } else if (Rcount == 0 && Ccount == 0) {
+        Formula formula(input);
+        newValue = formula.formulaWithTwoNumbers();
+    } else if (Rcount == 1 && Ccount == 1) {
+        Formula formula(input);
+        newValue = formula.formulaWithNumberAndCell(mat);
+    } else if (Rcount != Ccount) {
+        throw invalid_argument("ERROR! Wrong formula!");
+    }
+    if (row < mat.size() && col < mat[row].size()) {
+        string value;
+        if (ceil(newValue) == floor(newValue)) {
+            int number;
+            number = static_cast<int>(newValue);
+            value = to_string(number);
+        } else {
+            value = to_string(newValue);
+        }
+        mat[row][col] = value;
+    }
+}
+
 matrix Matrix::edit(matrix &mat, int row, int col) {
-    // TODO SPLIT
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
@@ -157,39 +192,7 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
                     return mat;
                 }
                 case 4:
-                    string input;
-                    cout << "Enter a formula: ";
-                    cin.ignore();
-                    getline(cin, input);
-                    double newValue = 0;
-                    int Rcount = 0, Ccount = 0;
-                    for (int i = 0; i < input.length(); ++i) {
-                        if (input.at(i) == 'R' || input.at(i) == 'r') Rcount++;
-                        if (input.at(i) == 'C' || input.at(i) == 'c') Ccount++;
-                    }
-                    if (Rcount == 2 && Ccount == 2) {
-                        Formula formula(input);
-                        newValue = formula.formulaWithTwoCells(mat);
-                    } else if (Rcount == 0 && Ccount == 0) {
-                        Formula formula(input);
-                        newValue = formula.formulaWithTwoNumbers();
-                    } else if (Rcount == 1 && Ccount == 1) {
-                        Formula formula(input);
-                        newValue = formula.formulaWithNumberAndCell(mat);
-                    } else if (Rcount != Ccount) {
-                        throw invalid_argument("ERROR! Wrong formula!");
-                    }
-                    if (row < mat.size() && col < mat[row].size()) {
-                        string value;
-                        if (ceil(newValue) == floor(newValue)) {
-                            int number;
-                            number = static_cast<int>(newValue);
-                            value = to_string(number);
-                        } else {
-                            value = to_string(newValue);
-                        }
-                        mat[row][col] = value;
-                    }
+                    editFormula(mat, row, col);
                     return mat;
             }
         } else {
@@ -197,3 +200,4 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
         }
     } while (true);
 }
+
