@@ -11,11 +11,12 @@ A \hyperlink{class_matrix}{Matrix} class using a singleton design pattern.
 
 
 
-Collaboration diagram for Matrix\+:\nopagebreak
+Collaboration diagram for Matrix\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=182pt]{class_matrix__coll__graph}
+\includegraphics[width=311pt]{class_matrix__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -103,10 +104,8 @@ A parametrized constructor. It is in the private section because the class uses 
 \subsubsection{\texorpdfstring{edit()}{edit()}}
 {\footnotesize\ttfamily matrix Matrix\+::edit (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
 
-Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be editted. He can choose from\+: integer, double, string or formula(= reference(to cell)/number -\/ operator -\/ reference(to cell)/number). 
+Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be edited. He can choose from\+: integer, double, string or formula(= reference(to cell)/number -\/ operator -\/ reference(to cell)/number). 
 \begin{DoxyParams}{Parameters}
-{\em mat} & \\
-\hline
 {\em row} & \\
 \hline
 {\em col} & \\
@@ -115,16 +114,14 @@ Method that is used to edit a cell in the matrix. It is accepting two integers(o
 \begin{DoxyReturn}{Returns}
 editted matrix 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_matrix_a34b2269a2b6d06c202439de2e64009ba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -139,23 +136,19 @@ Here is the caller graph for this function\+:
 
 Used when editing a cell when the new data type is going to be a double. 
 \begin{DoxyParams}{Parameters}
-{\em mat} & \\
-\hline
 {\em rol} & \\
 \hline
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=292pt]{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -170,23 +163,19 @@ Here is the caller graph for this function\+:
 
 Used when editing a cell when the new data type is going to be the result of a formula. 
 \begin{DoxyParams}{Parameters}
-{\em mat} & \\
-\hline
 {\em row} & \\
 \hline
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_matrix_af3d26e46fcec1a98380b1af04f008f22_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -201,23 +190,19 @@ Here is the caller graph for this function\+:
 
 Used when editing a cell when the new data type is going to be an integer. 
 \begin{DoxyParams}{Parameters}
-{\em mat} & \\
-\hline
 {\em rol} & \\
 \hline
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=291pt]{class_matrix_a91c66e2961a16adf56b8d58b916d2d46_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,23 +217,19 @@ Here is the caller graph for this function\+:
 
 Used when editing a cell when the new data type is going to be a string. 
 \begin{DoxyParams}{Parameters}
-{\em mat} & \\
-\hline
 {\em rol} & \\
 \hline
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=287pt]{class_matrix_a7029d8a3cd3c691b46adfd777abc880c_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -269,8 +250,7 @@ Method that is reading the information from a file and saves it into a matrix.
 \begin{DoxyReturn}{Returns}
 matrix 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -283,8 +263,7 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
 {\footnotesize\ttfamily static \hyperlink{class_matrix}{Matrix}$\ast$ Matrix\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Method that servers as a constructor but it does not initialize a new object. It is accessing the same instance of this class over and over. Here is the caller graph for this function\+:
-\nopagebreak
+Method that servers as a constructor but it does not initialize a new object. It is accessing the same instance of this class over and over. Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -300,8 +279,7 @@ Method that servers as a constructor but it does not initialize a new object. It
 Getter for matrix. \begin{DoxyReturn}{Returns}
 matrix 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -317,8 +295,7 @@ Here is the caller graph for this function\+:
 Method returns the number of elements on the row with the most elements. \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -332,10 +309,9 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily int Matrix\+::max\+Width\+Of\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Returns the length of the longest cell in the table. \begin{DoxyReturn}{Returns}
-
+int 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -348,16 +324,14 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{print\+Matrix()}{printMatrix()}}
 {\footnotesize\ttfamily void Matrix\+::print\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Method displaying the matrix. Here is the call graph for this function\+:
-\nopagebreak
+Method displaying the matrix. Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_matrix_aa1967ad240a5ffaf492800044b7275d9_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -375,8 +349,7 @@ Method setting a matrix.
 {\em mat} & \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

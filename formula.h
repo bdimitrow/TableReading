@@ -138,7 +138,7 @@ private:
     /**
      * Used to determine in which part of the formula is the reference to a cell.
      * @param str
-     * @return
+     * @return true or false
      */
     // used to determine on which side of the operator is the cell in the formula
     bool foundInPart(const string &str);

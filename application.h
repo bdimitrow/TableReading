@@ -73,21 +73,21 @@ private:
     matrix openFile(string filename);
 
     /**
-     * Method accepting a string(filename) and is closing the file with that name.
+     * Method closing the file with that name.
      * @param filename : string
      */
     void close();
 
     /**
-     * Method accepting a matrix(probably an editted one) and is saving it to the same file.
+     * Method saving a matrix(probably an edited one) to the same file.
      * @param mat : matrix
      * @param filename : string
      */
     void save();
 
     /**
-     * Method accepting a matrix(probably and editted one) and is saving it to a new file. The user
-     * should enter the name of the new file.
+     * Method saving the matrix(probably and edited one) to a new file.
+     * The user should enter the name of the new file.
      * @param mat : matrix
      */
     void saveAs();

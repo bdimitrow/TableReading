@@ -57,9 +57,8 @@ public:
 
     /**
      * Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column).
-     * The user is asked to enter the desired data type for the cell that is going to be editted. He can choose from:
+     * The user is asked to enter the desired data type for the cell that is going to be edited. He can choose from:
      * integer, double, string or formula(= reference(to cell)/number - operator - reference(to cell)/number).
-     * @param mat
      * @param row
      * @param col
      * @return editted matrix
@@ -104,14 +103,13 @@ private:
 
     /**
      * Returns the length of the longest cell in the table.
-     * @return
+     * @return int
      */
     // finds the lenght of the longest cell
     int maxWidthOfCell();
 
     /**
      * Used when editing a cell when the new data type is going to be an integer.
-     * @param mat
      * @param rol
      * @param col
      */
@@ -120,7 +118,6 @@ private:
 
     /**
      * Used when editing a cell when the new data type is going to be a double.
-     * @param mat
      * @param rol
      * @param col
      */
@@ -129,7 +126,6 @@ private:
 
     /**
      * Used when editing a cell when the new data type is going to be a string.
-     * @param mat
      * @param rol
      * @param col
      */
@@ -138,7 +134,6 @@ private:
 
     /**
      * Used when editing a cell when the new data type is going to be the result of a formula.
-     * @param mat
      * @param row
      * @param col
      */

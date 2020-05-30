@@ -9,6 +9,16 @@ A class executing the common operations open, close, save, save as, help and exi
 
 {\ttfamily \#include $<$application.\+h$>$}
 
+
+
+Collaboration diagram for Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_application__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,13 +32,13 @@ const string \& \hyperlink{class_application_a778575fb76de5352152d8928e1c3410f}{
 \item 
 void \hyperlink{class_application_a76de879568ee39ac80484441716928d2}{set\+Filename} (const string \&fname)
 \item 
-void \hyperlink{class_application_a474d8507e340581404d4044c0228f655}{insert\+Command} ()
-\item 
 \mbox{\Hypertarget{class_application_a74cdbc5e93e1f2c6bb4b45a6ad8b8a62}\label{class_application_a74cdbc5e93e1f2c6bb4b45a6ad8b8a62}} 
 const string \& {\bfseries get\+Command} () const
 \item 
 \mbox{\Hypertarget{class_application_ae652f7ff140c5a74c3806f728e9a18f3}\label{class_application_ae652f7ff140c5a74c3806f728e9a18f3}} 
 void {\bfseries set\+Command} (const string \&command)
+\item 
+void \hyperlink{class_application_a474d8507e340581404d4044c0228f655}{insert\+Command} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -96,7 +106,7 @@ A parametrized constructor with a default value.
 \subsubsection{\texorpdfstring{close()}{close()}}
 {\footnotesize\ttfamily void Application\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Method accepting a string(filename) and is closing the file with that name. 
+Method closing the file with that name. 
 \begin{DoxyParams}{Parameters}
 {\em filename} & \+: string \\
 \hline
@@ -278,21 +288,13 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{save()}{save()}}
 {\footnotesize\ttfamily void Application\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Method accepting a matrix(probably an editted one) and is saving it to the same file. 
+Method saving a matrix(probably an edited one) to the same file. 
 \begin{DoxyParams}{Parameters}
 {\em mat} & \+: matrix \\
 \hline
 {\em filename} & \+: string \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=332pt]{class_application_a2cbf94e01d55a814de35f90f4d874647_cgraph}
-\end{center}
-\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -307,19 +309,11 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{save\+As()}{saveAs()}}
 {\footnotesize\ttfamily void Application\+::save\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Method accepting a matrix(probably and editted one) and is saving it to a new file. The user should enter the name of the new file. 
+Method saving the matrix(probably and edited one) to a new file. The user should enter the name of the new file. 
 \begin{DoxyParams}{Parameters}
 {\em mat} & \+: matrix \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=331pt]{class_application_a10d5a48c95593cee25c1b9e0e257b5a7_cgraph}
-\end{center}
-\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]

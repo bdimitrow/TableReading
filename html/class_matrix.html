@@ -78,7 +78,9 @@ $(function() {
 Collaboration diagram for Matrix:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_matrix__coll__graph.png" border="0" usemap="#_matrix_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<map name="_matrix_coll__map" id="_matrix_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -219,9 +221,8 @@ static <a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be editted. He can choose from: integer, double, string or formula(= reference(to cell)/number - operator - reference(to cell)/number). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be edited. He can choose from: integer, double, string or formula(= reference(to cell)/number - operator - reference(to cell)/number). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
     <tr><td class="paramname">row</td><td></td></tr>
     <tr><td class="paramname">col</td><td></td></tr>
   </table>
@@ -310,7 +311,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Used when editing a cell when the new data type is going to be a double. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
     <tr><td class="paramname">rol</td><td></td></tr>
     <tr><td class="paramname">col</td><td></td></tr>
   </table>
@@ -373,7 +373,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Used when editing a cell when the new data type is going to be the result of a formula. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
     <tr><td class="paramname">row</td><td></td></tr>
     <tr><td class="paramname">col</td><td></td></tr>
   </table>
@@ -457,7 +456,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Used when editing a cell when the new data type is going to be an integer. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
     <tr><td class="paramname">rol</td><td></td></tr>
     <tr><td class="paramname">col</td><td></td></tr>
   </table>
@@ -520,7 +518,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Used when editing a cell when the new data type is going to be a string. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td></td></tr>
     <tr><td class="paramname">rol</td><td></td></tr>
     <tr><td class="paramname">col</td><td></td></tr>
   </table>
@@ -711,7 +708,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the length of the longest cell in the table. </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Returns the length of the longest cell in the table. </p><dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
