@@ -20,7 +20,7 @@ bool isDouble(const string &str) {
 
 Matrix *Matrix::instance = 0;
 
-matrix Matrix::fileToMatrix(const string& filename) {
+matrix Matrix::fileToMatrix(const string &filename) {
     char delimiter = ',';
     matrix result;
     string row, item;
@@ -189,8 +189,6 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
                             value = to_string(newValue);
                         }
                         mat[row][col] = value;
-                    } else if (row > mat.size() || col > mat[row].size()) {
-                        throw invalid_argument("You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     return mat;
             }

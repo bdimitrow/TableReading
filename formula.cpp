@@ -145,7 +145,7 @@ double Formula::formulaWithNumberAndCell(const matrix &mat) {
 
 void Formula::splitFormula(const string &formula, string &firstPart, string &secondPart, int &position) {
     char delim = '0';
-    for (int i = 1; i < formula.length(); ++i) {
+    for (int i = 2; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             delim = '+';
             break;

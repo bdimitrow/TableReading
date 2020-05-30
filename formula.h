@@ -21,7 +21,13 @@ using namespace std;
 
 using vec = vector<string>;
 using matrix = vector<vec>;
-
+/*!
+ * \class Formula
+ * \brief The Formula class is used for editing a cell with a formula.
+ *
+ * This class is used to initialize a formula and to read(decipher) it. There are three types of formulas: <br>
+ * 1. number - operator - number ( = 10 ^ 2);
+ */
 // class formula used for editing a cell with data of type formula
 class Formula {
 public:
