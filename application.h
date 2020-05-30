@@ -51,6 +51,10 @@ public:
      */
     void setFilename(const string &fname);
 
+    const string &getCommand() const;
+
+    void setCommand(const string &command);
+
     /**
      * Function asking for command to be executed.
      */
@@ -60,12 +64,6 @@ private:
     string filename;
     matrix mat;
     string command;
-public:
-    const string &getCommand() const;
-
-    void setCommand(const string &command);
-
-private:
 
     /**
      * Method accepting a string(filename) and is opening the file with that name.

@@ -173,11 +173,9 @@ void Application::functionDispatcher() {
 void Application::insertCommand() {
     string command;
     cout << "Enter command: ";
-    cin.ignore();
-    getline(cin, command);
-
-    while (cin >> command) {
+    do {
+        cin >> command;
         this->setCommand(command);
         functionDispatcher();
-    }
+    }while(command != "exit");
 }
