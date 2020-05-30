@@ -46,7 +46,7 @@ public:
      * @return
      */
     // saving the data from CSV file to a matrix of vectors
-    matrix fileToMatrix(string filename);
+    matrix fileToMatrix(const string& filename);
 
     /**
      * Method displaying the matrix.

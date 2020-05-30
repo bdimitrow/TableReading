@@ -1,9 +1,10 @@
 #include "formula.h"
 #include "stringUtils.h"
 
-double Formula::formulaWithTwoNumbers(string formula) {
+double Formula::formulaWithTwoNumbers() {
+    string formula = this->getFormula();
     formula.erase(0, 1);  //removing '=' from the formula;
-    if (!isValidFormulaWithTwoNumbers(formula)) {
+    if (!isValidFormulaWithTwoNumbers(*this)) {
         throw invalid_argument("ERROR! Invalid formula!");
     }
     string firstPartOfFormula, secondPartOfFormula;
@@ -165,12 +166,14 @@ void Formula::splitFormula(const string &formula, string &firstPart, string &sec
     secondPart = formula.substr(position + 1);
 }
 
-bool Formula::isValidFormulaWithTwoNumbers(const string &formula) {
-    return formula.find_first_not_of("0123456789 -+.*/^") == string::npos;
+bool Formula::isValidFormulaWithTwoNumbers(const Formula &form) {
+    string formula = form.getFormula();
+    return formula.find_first_not_of("0123456789 -+.*/^=") == string::npos;
 }
 
-bool Formula::isValidFormulaWithNumberAndCell(const string &formula) {
-    return formula.find_first_not_of("0123456789 .+-/^rRcR");
+bool Formula::isValidFormulaWithNumberAndCell(const Formula &form) {
+    string formula = form.getFormula();
+    return formula.find_first_not_of("0123456789 .+-/^rRcR=");
 }
 
 
@@ -180,4 +183,12 @@ bool Formula::foundInPart(const string &str) {
             return true;
     }
     return false;
+}
+
+const string &Formula::getFormula() const {
+    return formula;
+}
+
+void Formula::setFormula(const string &formula) {
+    Formula::formula = formula;
 }
