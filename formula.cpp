@@ -4,7 +4,7 @@
 double Formula::formulaWithTwoNumbers() {
     string formula = this->getFormula();
     formula.erase(0, 1);  //removing '=' from the formula;
-    if (!isValidFormulaWithTwoNumbers(*this)) {
+    if (!isValidFormulaWithTwoNumbers()) {
         throw invalid_argument("ERROR! Invalid formula!");
     }
     string firstPartOfFormula, secondPartOfFormula;
@@ -127,7 +127,7 @@ double Formula::resultWhenCellReferenceIsSecond(const matrix &mat, string formul
 double Formula::formulaWithNumberAndCell(const matrix &mat) {
     string formula = this->getFormula();
     formula.erase(0, 1);  //removing '=' from the formula;
-    if (!isValidFormulaWithNumberAndCell(*this)) {
+    if (!isValidFormulaWithNumberAndCell()) {
         throw invalid_argument("ERROR! Invalid formula!");
     }
     string firstPartOfFormula, secondPartOfFormula;
@@ -168,13 +168,13 @@ void Formula::splitFormula(const string &formula, string &firstPart, string &sec
     secondPart = formula.substr(position + 1);
 }
 
-bool Formula::isValidFormulaWithTwoNumbers(const Formula &form) {
-    string formula = form.getFormula();
+bool Formula::isValidFormulaWithTwoNumbers() {
+    string formula = this->getFormula();
     return formula.find_first_not_of("0123456789 -+.*/^=") == string::npos;
 }
 
-bool Formula::isValidFormulaWithNumberAndCell(const Formula &form) {
-    string formula = form.getFormula();
+bool Formula::isValidFormulaWithNumberAndCell() {
+    string formula = this->getFormula();
     return formula.find_first_not_of("0123456789 .+-/^rRcR=");
 }
 

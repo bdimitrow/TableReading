@@ -5,7 +5,12 @@
 #include <sstream>
 
 using namespace std;
-
+/**
+ * @file stringUtils.h
+ *
+ * @param str
+ * @return
+ */
 // is the string made of just digits and +-.
 bool isNumeric(const string &str) {
     return str.find_first_not_of("+-0123456789.") == string::npos;

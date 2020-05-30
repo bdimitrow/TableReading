@@ -47,10 +47,10 @@ private:
     void splitFormula(const string &formula, string &firstPart, string &secondPart, int &p);
 
     // throws an exception when the formula in incorrect
-    bool isValidFormulaWithTwoNumbers(const Formula &);
+    bool isValidFormulaWithTwoNumbers();
 
     // throws an exception when the formula is incorrect
-    bool isValidFormulaWithNumberAndCell(const Formula &);
+    bool isValidFormulaWithNumberAndCell();
 
     double resultWhenCellReferenceIsFirst(const matrix &mat, string formula, const string &firstPartOfFormula,
                                           const string &secondPartOfFormula, int pos);
