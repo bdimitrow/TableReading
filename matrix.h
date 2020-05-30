@@ -74,6 +74,10 @@ public:
     // setting a matrix
     void setMatrix(const matrix &mat) { Matrix::mat = mat; }
 
+    /**
+     * Getter for matrix.
+     * @return matrix
+     */
     const matrix &getMat() const;
 
 private:

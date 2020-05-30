@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['save',['save',['../class_application.html#a533bb50380401b3a7bfaef31a9faf7f5',1,'Application']]],
-  ['saveas',['saveAs',['../class_application.html#a26cc9a5dcdf0eebb9e89f6b3a8fa64dd',1,'Application']]],
+  ['save',['save',['../class_application.html#a2cbf94e01d55a814de35f90f4d874647',1,'Application']]],
+  ['saveas',['saveAs',['../class_application.html#a10d5a48c95593cee25c1b9e0e257b5a7',1,'Application']]],
   ['setfilename',['setFilename',['../class_application.html#a76de879568ee39ac80484441716928d2',1,'Application']]],
   ['setformula',['setFormula',['../class_formula.html#aba7633655dad414ed0a1d92cdba38163',1,'Formula']]],
   ['setmatrix',['setMatrix',['../class_application.html#a56b4a55e9eabd40b7f0033ba39631ebe',1,'Application::setMatrix()'],['../class_matrix.html#a8c45dd1354fa25e14065cab23f3074c0',1,'Matrix::setMatrix()']]],

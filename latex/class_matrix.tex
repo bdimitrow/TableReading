@@ -25,9 +25,11 @@ matrix \hyperlink{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}{file\+To\+Matr
 \item 
 void \hyperlink{class_matrix_aa1967ad240a5ffaf492800044b7275d9}{print\+Matrix} ()
 \item 
-matrix \hyperlink{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3}{edit} (matrix \&mat, int row, int col)
+matrix \hyperlink{class_matrix_a34b2269a2b6d06c202439de2e64009ba}{edit} (int row, int col)
 \item 
 void \hyperlink{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}{set\+Matrix} (const matrix \&mat)
+\item 
+const matrix \& \hyperlink{class_matrix_a52d82641f52304c9b6525747cd7f960c}{get\+Mat} () const
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -45,11 +47,13 @@ int \hyperlink{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}{max\+Element\+Per
 \item 
 int \hyperlink{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d}{max\+Width\+Of\+Cell} ()
 \item 
-void \hyperlink{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61}{edit\+Integer} (matrix \&mat, int rol, int col)
+matrix \hyperlink{class_matrix_a91c66e2961a16adf56b8d58b916d2d46}{edit\+Integer} (int rol, int col)
 \item 
-void \hyperlink{class_matrix_af8adf979beb20569c06fd529879870b0}{edit\+Double} (matrix \&mat, int rol, int col)
+matrix \hyperlink{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef}{edit\+Double} (int rol, int col)
 \item 
-void \hyperlink{class_matrix_a3c385c2a6ad67a34306c81a4087789b3}{edit\+String} (matrix \&mat, int rol, int col)
+matrix \hyperlink{class_matrix_a7029d8a3cd3c691b46adfd777abc880c}{edit\+String} (int rol, int col)
+\item 
+matrix \hyperlink{class_matrix_af3d26e46fcec1a98380b1af04f008f22}{edit\+Formula} (int row, int col)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -93,11 +97,11 @@ A default constructor. It is in the private section because the class uses singl
 A parametrized constructor. It is in the private section because the class uses singleton design pattern. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3}\label{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3}} 
+\mbox{\Hypertarget{class_matrix_a34b2269a2b6d06c202439de2e64009ba}\label{class_matrix_a34b2269a2b6d06c202439de2e64009ba}} 
 \index{Matrix@{Matrix}!edit@{edit}}
 \index{edit@{edit}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit()}{edit()}}
-{\footnotesize\ttfamily matrix Matrix\+::edit (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily matrix Matrix\+::edit (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
 
 Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be editted. He can choose from\+: integer, double, string or formula(= reference(to cell)/number -\/ operator -\/ reference(to cell)/number). 
 \begin{DoxyParams}{Parameters}
@@ -111,18 +115,27 @@ Method that is used to edit a cell in the matrix. It is accepting two integers(o
 \begin{DoxyReturn}{Returns}
 editted matrix 
 \end{DoxyReturn}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3_cgraph}
+\includegraphics[width=350pt]{class_matrix_a34b2269a2b6d06c202439de2e64009ba_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_matrix_af8adf979beb20569c06fd529879870b0}\label{class_matrix_af8adf979beb20569c06fd529879870b0}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a34b2269a2b6d06c202439de2e64009ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef}\label{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef}} 
 \index{Matrix@{Matrix}!edit\+Double@{edit\+Double}}
 \index{edit\+Double@{edit\+Double}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+Double()}{editDouble()}}
-{\footnotesize\ttfamily void Matrix\+::edit\+Double (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily matrix Matrix\+::edit\+Double (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be a double. 
 \begin{DoxyParams}{Parameters}
@@ -133,18 +146,58 @@ Used when editing a cell when the new data type is going to be a double.
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=277pt]{class_matrix_af8adf979beb20569c06fd529879870b0_icgraph}
+\includegraphics[width=292pt]{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61}\label{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_af3d26e46fcec1a98380b1af04f008f22}\label{class_matrix_af3d26e46fcec1a98380b1af04f008f22}} 
+\index{Matrix@{Matrix}!edit\+Formula@{edit\+Formula}}
+\index{edit\+Formula@{edit\+Formula}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{edit\+Formula()}{editFormula()}}
+{\footnotesize\ttfamily matrix Matrix\+::edit\+Formula (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Used when editing a cell when the new data type is going to be the result of a formula. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_af3d26e46fcec1a98380b1af04f008f22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_af3d26e46fcec1a98380b1af04f008f22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a91c66e2961a16adf56b8d58b916d2d46}\label{class_matrix_a91c66e2961a16adf56b8d58b916d2d46}} 
 \index{Matrix@{Matrix}!edit\+Integer@{edit\+Integer}}
 \index{edit\+Integer@{edit\+Integer}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+Integer()}{editInteger()}}
-{\footnotesize\ttfamily void Matrix\+::edit\+Integer (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily matrix Matrix\+::edit\+Integer (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be an integer. 
 \begin{DoxyParams}{Parameters}
@@ -155,18 +208,27 @@ Used when editing a cell when the new data type is going to be an integer.
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=276pt]{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61_icgraph}
+\includegraphics[width=291pt]{class_matrix_a91c66e2961a16adf56b8d58b916d2d46_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_matrix_a3c385c2a6ad67a34306c81a4087789b3}\label{class_matrix_a3c385c2a6ad67a34306c81a4087789b3}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a91c66e2961a16adf56b8d58b916d2d46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a7029d8a3cd3c691b46adfd777abc880c}\label{class_matrix_a7029d8a3cd3c691b46adfd777abc880c}} 
 \index{Matrix@{Matrix}!edit\+String@{edit\+String}}
 \index{edit\+String@{edit\+String}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+String()}{editString()}}
-{\footnotesize\ttfamily void Matrix\+::edit\+String (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily matrix Matrix\+::edit\+String (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be a string. 
 \begin{DoxyParams}{Parameters}
@@ -177,11 +239,20 @@ Used when editing a cell when the new data type is going to be a string.
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=272pt]{class_matrix_a3c385c2a6ad67a34306c81a4087789b3_icgraph}
+\includegraphics[width=287pt]{class_matrix_a7029d8a3cd3c691b46adfd777abc880c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a7029d8a3cd3c691b46adfd777abc880c_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}\label{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}} 
@@ -198,11 +269,12 @@ Method that is reading the information from a file and saves it into a matrix.
 \begin{DoxyReturn}{Returns}
 matrix 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{class_matrix_a35eb9dcb01c552fea1f5926db35339ef_icgraph}
+\includegraphics[width=350pt]{class_matrix_a35eb9dcb01c552fea1f5926db35339ef_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc}\label{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc}} 
@@ -211,11 +283,29 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
 {\footnotesize\ttfamily static \hyperlink{class_matrix}{Matrix}$\ast$ Matrix\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Method that servers as a constructor but it does not initialize a new object. It is accessing the same instance of this class over and over. Here is the caller graph for this function\+:\nopagebreak
+Method that servers as a constructor but it does not initialize a new object. It is accessing the same instance of this class over and over. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc_icgraph}
+\includegraphics[width=350pt]{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a52d82641f52304c9b6525747cd7f960c}\label{class_matrix_a52d82641f52304c9b6525747cd7f960c}} 
+\index{Matrix@{Matrix}!get\+Mat@{get\+Mat}}
+\index{get\+Mat@{get\+Mat}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{get\+Mat()}{getMat()}}
+{\footnotesize\ttfamily const matrix \& Matrix\+::get\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for matrix. \begin{DoxyReturn}{Returns}
+matrix 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a52d82641f52304c9b6525747cd7f960c_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}\label{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}} 
@@ -227,7 +317,8 @@ Method that servers as a constructor but it does not initialize a new object. It
 Method returns the number of elements on the row with the most elements. \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -243,11 +334,12 @@ Here is the caller graph for this function\+:\nopagebreak
 Returns the length of the longest cell in the table. \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=333pt]{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d_icgraph}
+\includegraphics[width=350pt]{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_matrix_aa1967ad240a5ffaf492800044b7275d9}\label{class_matrix_aa1967ad240a5ffaf492800044b7275d9}} 
@@ -256,11 +348,20 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection{\texorpdfstring{print\+Matrix()}{printMatrix()}}
 {\footnotesize\ttfamily void Matrix\+::print\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Method displaying the matrix. Here is the call graph for this function\+:\nopagebreak
+Method displaying the matrix. Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_matrix_aa1967ad240a5ffaf492800044b7275d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_aa1967ad240a5ffaf492800044b7275d9_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}\label{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}} 
@@ -274,6 +375,14 @@ Method setting a matrix.
 {\em mat} & \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a8c45dd1354fa25e14065cab23f3074c0_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

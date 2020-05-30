@@ -1,5 +1,9 @@
 <map id="Formula::splitFormula" name="Formula::splitFormula">
 <area shape="rect" id="node2" href="$class_formula.html#a2159ffdb34d80f2bee422eee89fc871a" title="Formula::formulaWithTwoNumbers" alt="" coords="201,5,427,32"/>
-<area shape="rect" id="node4" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="217,57,411,98"/>
-<area shape="rect" id="node3" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="475,35,561,61"/>
+<area shape="rect" id="node8" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="217,57,411,98"/>
+<area shape="rect" id="node3" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="475,35,609,61"/>
+<area shape="rect" id="node4" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="657,35,744,61"/>
+<area shape="rect" id="node5" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="792,35,907,61"/>
+<area shape="rect" id="node6" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="955,35,1157,61"/>
+<area shape="rect" id="node7" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="1205,35,1392,61"/>
 </map>

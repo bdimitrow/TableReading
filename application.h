@@ -52,6 +52,22 @@ public:
     void setFilename(const string &fname);
 
     /**
+     * Function asking for command to be executed.
+     */
+    void insertCommand();
+
+private:
+    string filename;
+    matrix mat;
+    string command;
+public:
+    const string &getCommand() const;
+
+    void setCommand(const string &command);
+
+private:
+
+    /**
      * Method accepting a string(filename) and is opening the file with that name.
      * @param filename : string
      * @return matrix opened
@@ -88,9 +104,16 @@ public:
      */
     void exit();
 
-private:
-    string filename;
-    matrix mat;
+    /**
+     * Method used to edit a cell in the matrix.
+     */
+    void edit();
+
+    /**
+    * Method accepting string(command) and according to it calls another function.
+    * @param command
+    */
+    void functionDispatcher();
 };
 
 #endif //TABLEREADING_APPLICATION_H

@@ -184,7 +184,6 @@ bool Formula::isValidFormulaWithNumberAndCell() {
     return formula.find_first_not_of("0123456789 .+-/^rRcR=");
 }
 
-
 bool Formula::foundInPart(const string &str) {
     for (char i : str) {
         if (i == 'R' || i == 'r')

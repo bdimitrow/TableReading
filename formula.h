@@ -143,7 +143,6 @@ private:
     // used to determine on which side of the operator is the cell in the formula
     bool foundInPart(const string &str);
 
-
 };
 
 #endif //TABLEREADING_FORMULA_H

@@ -4,7 +4,6 @@
 #include <string>
 #include <sstream>
 
-
 using namespace std;
 /**
  * @file stringUtils.h

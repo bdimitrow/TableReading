@@ -22,17 +22,32 @@ const string \& \hyperlink{class_application_a778575fb76de5352152d8928e1c3410f}{
 \item 
 void \hyperlink{class_application_a76de879568ee39ac80484441716928d2}{set\+Filename} (const string \&fname)
 \item 
+void \hyperlink{class_application_a474d8507e340581404d4044c0228f655}{insert\+Command} ()
+\item 
+\mbox{\Hypertarget{class_application_a74cdbc5e93e1f2c6bb4b45a6ad8b8a62}\label{class_application_a74cdbc5e93e1f2c6bb4b45a6ad8b8a62}} 
+const string \& {\bfseries get\+Command} () const
+\item 
+\mbox{\Hypertarget{class_application_ae652f7ff140c5a74c3806f728e9a18f3}\label{class_application_ae652f7ff140c5a74c3806f728e9a18f3}} 
+void {\bfseries set\+Command} (const string \&command)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
 matrix \hyperlink{class_application_ab2f161414a4e2f16e28321c192051006}{open\+File} (string filename)
 \item 
-void \hyperlink{class_application_a9909c3ed5d2e36680b8de11b21925bd5}{close} (string filename)
+void \hyperlink{class_application_a5a7dcf61b6701a2b2665c78e4e074e73}{close} ()
 \item 
-void \hyperlink{class_application_a533bb50380401b3a7bfaef31a9faf7f5}{save} (matrix mat, string filename)
+void \hyperlink{class_application_a2cbf94e01d55a814de35f90f4d874647}{save} ()
 \item 
-void \hyperlink{class_application_a26cc9a5dcdf0eebb9e89f6b3a8fa64dd}{save\+As} (matrix mat)
+void \hyperlink{class_application_a10d5a48c95593cee25c1b9e0e257b5a7}{save\+As} ()
 \item 
 void \hyperlink{class_application_a2c6518d7f121299d9be8c66d31997fbc}{help} ()
 \item 
 void \hyperlink{class_application_a3c8a98d6c10a5b054800488df16cdbcb}{exit} ()
+\item 
+void \hyperlink{class_application_a4b193bf9c8be7105e89a2323ea77b1f4}{edit} ()
+\item 
+void \hyperlink{class_application_a00241f0a09c32b0ef3cb1f068475cc50}{function\+Dispatcher} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -42,6 +57,9 @@ string {\bfseries filename}
 \item 
 \mbox{\Hypertarget{class_application_ae126cc1a7d1f29ad485ddd285dadf3a3}\label{class_application_ae126cc1a7d1f29ad485ddd285dadf3a3}} 
 matrix {\bfseries mat}
+\item 
+\mbox{\Hypertarget{class_application_acffe56e592fb525ce14ad0437c2c3d34}\label{class_application_acffe56e592fb525ce14ad0437c2c3d34}} 
+string {\bfseries command}
 \end{DoxyCompactItemize}
 
 
@@ -62,7 +80,7 @@ This class is used to assign a file to an object of class \hyperlink{class_appli
 \index{Application@{Application}!Application@{Application}}
 \index{Application@{Application}!Application@{Application}}
 \subsubsection{\texorpdfstring{Application()}{Application()}}
-{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const string \&}]{fname = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const string \&}]{fname = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 A parametrized constructor with a default value. 
 \begin{DoxyParams}{Parameters}
@@ -72,24 +90,97 @@ A parametrized constructor with a default value.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_application_a9909c3ed5d2e36680b8de11b21925bd5}\label{class_application_a9909c3ed5d2e36680b8de11b21925bd5}} 
+\mbox{\Hypertarget{class_application_a5a7dcf61b6701a2b2665c78e4e074e73}\label{class_application_a5a7dcf61b6701a2b2665c78e4e074e73}} 
 \index{Application@{Application}!close@{close}}
 \index{close@{close}!Application@{Application}}
 \subsubsection{\texorpdfstring{close()}{close()}}
-{\footnotesize\ttfamily void Application\+::close (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Application\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Method accepting a string(filename) and is closing the file with that name. 
 \begin{DoxyParams}{Parameters}
 {\em filename} & \+: string \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_application_a5a7dcf61b6701a2b2665c78e4e074e73_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a5a7dcf61b6701a2b2665c78e4e074e73_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a4b193bf9c8be7105e89a2323ea77b1f4}\label{class_application_a4b193bf9c8be7105e89a2323ea77b1f4}} 
+\index{Application@{Application}!edit@{edit}}
+\index{edit@{edit}!Application@{Application}}
+\subsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily void Application\+::edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Method used to edit a cell in the matrix. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a4b193bf9c8be7105e89a2323ea77b1f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a4b193bf9c8be7105e89a2323ea77b1f4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_application_a3c8a98d6c10a5b054800488df16cdbcb}\label{class_application_a3c8a98d6c10a5b054800488df16cdbcb}} 
 \index{Application@{Application}!exit@{exit}}
 \index{exit@{exit}!Application@{Application}}
 \subsubsection{\texorpdfstring{exit()}{exit()}}
-{\footnotesize\ttfamily void Application\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Application\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Method exiting the program. \mbox{\Hypertarget{class_application_a778575fb76de5352152d8928e1c3410f}\label{class_application_a778575fb76de5352152d8928e1c3410f}} 
+Method exiting the program. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a3c8a98d6c10a5b054800488df16cdbcb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a00241f0a09c32b0ef3cb1f068475cc50}\label{class_application_a00241f0a09c32b0ef3cb1f068475cc50}} 
+\index{Application@{Application}!function\+Dispatcher@{function\+Dispatcher}}
+\index{function\+Dispatcher@{function\+Dispatcher}!Application@{Application}}
+\subsubsection{\texorpdfstring{function\+Dispatcher()}{functionDispatcher()}}
+{\footnotesize\ttfamily void Application\+::function\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Method accepting string(command) and according to it calls another function. 
+\begin{DoxyParams}{Parameters}
+{\em command} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a00241f0a09c32b0ef3cb1f068475cc50_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a00241f0a09c32b0ef3cb1f068475cc50_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a778575fb76de5352152d8928e1c3410f}\label{class_application_a778575fb76de5352152d8928e1c3410f}} 
 \index{Application@{Application}!get\+Filename@{get\+Filename}}
 \index{get\+Filename@{get\+Filename}!Application@{Application}}
 \subsubsection{\texorpdfstring{get\+Filename()}{getFilename()}}
@@ -98,6 +189,14 @@ Method exiting the program. \mbox{\Hypertarget{class_application_a778575fb76de53
 Getter for filename. \begin{DoxyReturn}{Returns}
 string filename 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a778575fb76de5352152d8928e1c3410f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_application_a67aeb617ca44a18045612d92f1d8afa0}\label{class_application_a67aeb617ca44a18045612d92f1d8afa0}} 
 \index{Application@{Application}!get\+Matrix@{get\+Matrix}}
 \index{get\+Matrix@{get\+Matrix}!Application@{Application}}
@@ -107,17 +206,47 @@ string filename
 Getter for matrix. \begin{DoxyReturn}{Returns}
 matrix mat 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a67aeb617ca44a18045612d92f1d8afa0_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_application_a2c6518d7f121299d9be8c66d31997fbc}\label{class_application_a2c6518d7f121299d9be8c66d31997fbc}} 
 \index{Application@{Application}!help@{help}}
 \index{help@{help}!Application@{Application}}
 \subsubsection{\texorpdfstring{help()}{help()}}
-{\footnotesize\ttfamily void Application\+::help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Application\+::help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Method displaying all supported command by the application. \mbox{\Hypertarget{class_application_ab2f161414a4e2f16e28321c192051006}\label{class_application_ab2f161414a4e2f16e28321c192051006}} 
+Method displaying all supported command by the application. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a2c6518d7f121299d9be8c66d31997fbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a474d8507e340581404d4044c0228f655}\label{class_application_a474d8507e340581404d4044c0228f655}} 
+\index{Application@{Application}!insert\+Command@{insert\+Command}}
+\index{insert\+Command@{insert\+Command}!Application@{Application}}
+\subsubsection{\texorpdfstring{insert\+Command()}{insertCommand()}}
+{\footnotesize\ttfamily void Application\+::insert\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function asking for command to be executed. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a474d8507e340581404d4044c0228f655_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_ab2f161414a4e2f16e28321c192051006}\label{class_application_ab2f161414a4e2f16e28321c192051006}} 
 \index{Application@{Application}!open\+File@{open\+File}}
 \index{open\+File@{open\+File}!Application@{Application}}
 \subsubsection{\texorpdfstring{open\+File()}{openFile()}}
-{\footnotesize\ttfamily matrix Application\+::open\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily matrix Application\+::open\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Method accepting a string(filename) and is opening the file with that name. 
 \begin{DoxyParams}{Parameters}
@@ -127,18 +256,27 @@ Method accepting a string(filename) and is opening the file with that name.
 \begin{DoxyReturn}{Returns}
 matrix opened 
 \end{DoxyReturn}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=324pt]{class_application_ab2f161414a4e2f16e28321c192051006_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_application_a533bb50380401b3a7bfaef31a9faf7f5}\label{class_application_a533bb50380401b3a7bfaef31a9faf7f5}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_ab2f161414a4e2f16e28321c192051006_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a2cbf94e01d55a814de35f90f4d874647}\label{class_application_a2cbf94e01d55a814de35f90f4d874647}} 
 \index{Application@{Application}!save@{save}}
 \index{save@{save}!Application@{Application}}
 \subsubsection{\texorpdfstring{save()}{save()}}
-{\footnotesize\ttfamily void Application\+::save (\begin{DoxyParamCaption}\item[{matrix}]{mat,  }\item[{string}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Application\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Method accepting a matrix(probably an editted one) and is saving it to the same file. 
 \begin{DoxyParams}{Parameters}
@@ -147,17 +285,49 @@ Method accepting a matrix(probably an editted one) and is saving it to the same 
 {\em filename} & \+: string \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_application_a26cc9a5dcdf0eebb9e89f6b3a8fa64dd}\label{class_application_a26cc9a5dcdf0eebb9e89f6b3a8fa64dd}} 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_application_a2cbf94e01d55a814de35f90f4d874647_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a2cbf94e01d55a814de35f90f4d874647_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a10d5a48c95593cee25c1b9e0e257b5a7}\label{class_application_a10d5a48c95593cee25c1b9e0e257b5a7}} 
 \index{Application@{Application}!save\+As@{save\+As}}
 \index{save\+As@{save\+As}!Application@{Application}}
 \subsubsection{\texorpdfstring{save\+As()}{saveAs()}}
-{\footnotesize\ttfamily void Application\+::save\+As (\begin{DoxyParamCaption}\item[{matrix}]{mat }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Application\+::save\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Method accepting a matrix(probably and editted one) and is saving it to a new file. The user should enter the name of the new file. 
 \begin{DoxyParams}{Parameters}
 {\em mat} & \+: matrix \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_application_a10d5a48c95593cee25c1b9e0e257b5a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a10d5a48c95593cee25c1b9e0e257b5a7_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_application_a76de879568ee39ac80484441716928d2}\label{class_application_a76de879568ee39ac80484441716928d2}} 
 \index{Application@{Application}!set\+Filename@{set\+Filename}}
 \index{set\+Filename@{set\+Filename}!Application@{Application}}
@@ -169,6 +339,14 @@ Methdd setting the filename.
 {\em fname} & \+: string \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a76de879568ee39ac80484441716928d2_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_application_a56b4a55e9eabd40b7f0033ba39631ebe}\label{class_application_a56b4a55e9eabd40b7f0033ba39631ebe}} 
 \index{Application@{Application}!set\+Matrix@{set\+Matrix}}
 \index{set\+Matrix@{set\+Matrix}!Application@{Application}}
@@ -180,6 +358,14 @@ Method setting the matrix.
 {\em m} & \+: matrix \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a56b4a55e9eabd40b7f0033ba39631ebe_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

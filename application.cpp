@@ -6,6 +6,11 @@ void Application::setMatrix(matrix m) { mat = m; }
 
 void Application::setFilename(const string &fname) { filename = fname; }
 
+const string &Application::getCommand() const { return command; }
+
+void Application::setCommand(const string &com) { command = com; }
+
+
 matrix Application::openFile(string filename) {
     fstream fout;
     fout.open(filename, ios::out | ios::in | ios::app);
@@ -74,4 +79,105 @@ void Application::help() {
 void Application::exit() {
     cout << "Exiting the program!" << endl;
     ::exit(EXIT_SUCCESS);
+}
+
+void Application::edit() {
+    int row, col;
+    cout << "Enter the row of the cell you'd like to edit: ";
+    do {
+        if (!(cin >> row)) {
+            cout << "Invalid entry! Please enter an integer: ";
+            cin.clear();                            // reset any error flags
+            cin.ignore(10000, '\n');       // ignore any characters in the input buffer                    }
+        } else {
+            break;
+        }
+    } while (true);
+    cout << "Enter the column of the cell you'd like to edit: ";
+    do {
+        if (!(cin >> col)) {
+            cout << "Invalid entry! Please enter an integer: ";
+            cin.clear();                            // reset any error flags
+            cin.ignore(10000, '\n');       // ignore any characters in the input buffer                    }
+        } else {
+            break;
+        }
+    } while (true);
+    matrix beingEditted = this->getMatrix();
+    try {
+        if (row > beingEditted.size() || col > beingEditted[row].size()) {
+            throw invalid_argument(
+                    "ERROR! You are trying to edit a cell that is beyond the ranges of the table");
+        }
+        Matrix *mat = mat->getInstance();
+        this->setMatrix(mat->edit(row - 1, col - 1));
+    } catch (invalid_argument &e) {
+        cout << e.what() << endl;
+    } catch (domain_error &c) {
+        cout << c.what() << endl;
+        matrix mat = this->getMatrix();
+        mat[row - 1][col - 1] = "ERROR";
+        this->setMatrix(mat);
+    }
+}
+
+void Application::functionDispatcher() {
+    string command = this->getCommand();
+    if (command == "open") {
+        string filename;
+        cin >> filename;
+        this->setMatrix(this->openFile(filename));
+        this->setFilename(filename);
+    } else if (command == "help") {
+        this->help();
+    } else if (command == "exit") {
+        this->exit();
+    } else if (command == "close") {
+        if (this->getFilename().empty()) {
+            cout << "First you have to open a file!" << endl;
+        } else {
+            this->close();
+        }
+    } else if (command == "save") {
+        if (this->getFilename().empty()) {
+            cout << "First you have to open a file!" << endl;
+        } else {
+            this->save();
+        }
+    } else if (command == "saveas") {
+        if (this->getFilename().empty()) {
+            cout << "First you have to open a file!" << endl;
+        } else {
+            this->saveAs();
+        }
+    } else if (command == "print") {
+        if (this->getFilename().empty()) {
+            cout << "First you have to open a file!" << endl;
+        } else {
+            Matrix *mat = mat->getInstance();
+            mat->setMatrix(this->getMatrix());
+            mat->printMatrix();
+        }
+    } else if (command == "edit") {
+        if (this->getFilename().empty()) {
+            cout << "First you have to open a file!" << endl;
+        } else {
+            this->edit();
+        }
+    } else {
+        cout << "Invalid command!Try: help" << endl;
+    }
+    cout << "What to do now? " << endl;
+}
+
+void Application::insertCommand() {
+    string command;
+    cout << "Enter command: ";
+    cin.ignore();
+    getline(cin, command);
+
+    while (cin >> command) {
+        this->setCommand(command);
+        functionDispatcher();
+    }
 }

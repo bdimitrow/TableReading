@@ -2,8 +2,12 @@
 <area shape="rect" id="node2" href="$string_utils_8h.html#a0e10b75736c375cf8a40f59579871ef1" title="stringToNumber" alt="" coords="164,64,279,91"/>
 <area shape="rect" id="node3" href="$class_formula.html#a8080ff3cf8fce2d9f1730e772ae21c71" title="Formula::getTheValueOfCell" alt="" coords="327,64,513,91"/>
 <area shape="rect" id="node4" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="836,5,1039,32"/>
-<area shape="rect" id="node6" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="561,57,788,98"/>
-<area shape="rect" id="node8" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="561,122,788,163"/>
-<area shape="rect" id="node5" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="1087,35,1173,61"/>
-<area shape="rect" id="node7" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="841,57,1034,98"/>
+<area shape="rect" id="node10" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="561,57,788,98"/>
+<area shape="rect" id="node12" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="561,122,788,163"/>
+<area shape="rect" id="node5" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="1087,35,1221,61"/>
+<area shape="rect" id="node6" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="1269,35,1356,61"/>
+<area shape="rect" id="node7" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="1404,35,1519,61"/>
+<area shape="rect" id="node8" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="1567,35,1769,61"/>
+<area shape="rect" id="node9" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="1817,35,2004,61"/>
+<area shape="rect" id="node11" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="841,57,1034,98"/>
 </map>

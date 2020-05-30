@@ -103,7 +103,7 @@ matrix Matrix::editInteger(int row, int col) {
     return mat;
 }
 
-matrix Matrix::editDouble( int row, int col) {
+matrix Matrix::editDouble(int row, int col) {
     matrix mat = this->getMat();
     string input;
     cout << "Enter a double: ";
@@ -120,7 +120,7 @@ matrix Matrix::editDouble( int row, int col) {
     return mat;
 }
 
-matrix Matrix::editString( int row, int col) {
+matrix Matrix::editString(int row, int col) {
     matrix mat = this->getMat();
     string input;
     cout << "Enter a string: ";
@@ -217,4 +217,3 @@ matrix Matrix::edit(int row, int col) {
 const matrix &Matrix::getMat() const {
     return mat;
 }
-

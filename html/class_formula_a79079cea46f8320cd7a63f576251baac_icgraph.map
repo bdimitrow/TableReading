@@ -1,4 +1,8 @@
 <map id="Formula::foundInPart" name="Formula::foundInPart">
 <area shape="rect" id="node2" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="197,5,391,47"/>
-<area shape="rect" id="node3" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="439,13,525,39"/>
+<area shape="rect" id="node3" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="439,13,573,39"/>
+<area shape="rect" id="node4" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="621,13,708,39"/>
+<area shape="rect" id="node5" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="756,13,871,39"/>
+<area shape="rect" id="node6" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="919,13,1121,39"/>
+<area shape="rect" id="node7" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="1169,13,1356,39"/>
 </map>

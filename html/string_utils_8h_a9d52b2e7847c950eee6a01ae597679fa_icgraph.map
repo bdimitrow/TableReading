@@ -1,11 +1,15 @@
 <map id="isNumeric" name="isNumeric">
 <area shape="rect" id="node2" href="$string_utils_8h.html#a2ba9357b7f0235a408b4c3fd26526b2d" title="stringToInt" alt="" coords="148,13,232,40"/>
 <area shape="rect" id="node3" href="$string_utils_8h.html#a0e10b75736c375cf8a40f59579871ef1" title="stringToNumber" alt="" coords="293,64,408,91"/>
-<area shape="rect" id="node10" href="$string_utils_8h.html#a5e388b01a5a212fa4f231ea35efa3a78" title="stringToDouble" alt="" coords="135,115,245,141"/>
+<area shape="rect" id="node14" href="$string_utils_8h.html#a5e388b01a5a212fa4f231ea35efa3a78" title="stringToDouble" alt="" coords="135,115,245,141"/>
 <area shape="rect" id="node4" href="$class_formula.html#a8080ff3cf8fce2d9f1730e772ae21c71" title="Formula::getTheValueOfCell" alt="" coords="456,64,643,91"/>
 <area shape="rect" id="node5" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="965,5,1168,32"/>
-<area shape="rect" id="node7" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="691,57,917,98"/>
-<area shape="rect" id="node9" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="691,122,917,163"/>
-<area shape="rect" id="node6" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="1216,35,1303,61"/>
-<area shape="rect" id="node8" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="970,57,1163,98"/>
+<area shape="rect" id="node11" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="691,57,917,98"/>
+<area shape="rect" id="node13" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="691,122,917,163"/>
+<area shape="rect" id="node6" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="1216,35,1351,61"/>
+<area shape="rect" id="node7" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="1399,35,1485,61"/>
+<area shape="rect" id="node8" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="1533,35,1648,61"/>
+<area shape="rect" id="node9" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="1696,35,1899,61"/>
+<area shape="rect" id="node10" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="1947,35,2133,61"/>
+<area shape="rect" id="node12" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="970,57,1163,98"/>
 </map>
