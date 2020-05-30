@@ -24,19 +24,19 @@ int main() {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                file.close(file.getFilename());
+                file.close();
             }
         } else if (command == "save") {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                file.save(file.getMatrix(), file.getFilename());
+                file.save();
             }
         } else if (command == "saveas") {
             if (file.getFilename().empty()) {
                 cout << "First you have to open a file!" << endl;
             } else {
-                file.saveAs(file.getMatrix());
+                file.saveAs();
             }
         } else if (command == "print") {
             if (file.getFilename().empty()) {

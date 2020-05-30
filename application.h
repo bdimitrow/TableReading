@@ -25,7 +25,7 @@ public:
      * A parametrized constructor with a default value.
      * @param fname : string
      */
-    Application(const string &fname = "");
+    explicit Application(const string &fname = "");
 
     /**
      * Getter for matrix.
@@ -62,21 +62,21 @@ public:
      * Method accepting a string(filename) and is closing the file with that name.
      * @param filename : string
      */
-    void close(string filename);
+    void close();
 
     /**
      * Method accepting a matrix(probably an editted one) and is saving it to the same file.
      * @param mat : matrix
      * @param filename : string
      */
-    void save(matrix mat, string filename);
+    void save();
 
     /**
      * Method accepting a matrix(probably and editted one) and is saving it to a new file. The user
      * should enter the name of the new file.
      * @param mat : matrix
      */
-    void saveAs(matrix mat);
+    void saveAs();
 
     /**
      * Method displaying all supported command by the application.

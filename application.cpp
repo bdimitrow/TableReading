@@ -18,13 +18,17 @@ matrix Application::openFile(string filename) {
         cout << "Unable to open " << filename << "!" << endl;
 }
 
-void Application::close(string filename) {
+void Application::close() {
+    string filename = this->getFilename();
     fstream fout;
+    this->setFilename("");
     fout.close();
     cout << "Successfully closed " << filename << endl;
 }
 
-void Application::save(matrix mat, string filename) {
+void Application::save() {
+    matrix mat = this->getMatrix();
+    string filename = this->getFilename();
     ofstream out;
     out.open(filename, ios::out | ios::trunc);
     if (!out.is_open()) {
@@ -40,7 +44,8 @@ void Application::save(matrix mat, string filename) {
     cout << filename << " was successfully saved!" << endl;
 }
 
-void Application::saveAs(matrix mat) {
+void Application::saveAs() {
+    matrix mat = this->getMatrix();
     string filename;
     cin.ignore();
     getline(cin, filename);
@@ -53,6 +58,7 @@ void Application::saveAs(matrix mat) {
         out << endl;
     }
     out.close();
+    cout << "The files was saved as " << filename << "successfully!" << endl;
 }
 
 void Application::help() {
