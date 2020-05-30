@@ -10,7 +10,7 @@ int main() {
     string command;
     cout << "Enter command: ";
     Application file;
-    while (cin >> command ) {
+    while (cin >> command) {
         if (command == "open") {
             string filename;
             cin >> filename;
@@ -52,9 +52,26 @@ int main() {
             } else {
                 int row, col;
                 cout << "Enter the row of the cell you'd like to edit: ";
-                cin >> row;
+                bool flag = false;
+                do {
+                    if (!(cin >> row)) {
+                        cout << "Invalid entry! Please enter an integer: ";
+                        cin.clear();                            // reset any error flags
+                        cin.ignore(10000, '\n');       // ignore any characters in the input buffer                    }
+                    } else {
+                        flag = true;
+                    }
+                } while (!flag);
                 cout << "Enter the column of the cell you'd like to edit: ";
-                cin >> col;
+                do{
+                    if(!(cin >> col)){
+                        cout << "Invalid entry! Please enter an integer: ";
+                        cin.clear();                            // reset any error flags
+                        cin.ignore(10000, '\n');       // ignore any characters in the input buffer                    }
+                    } else {
+                        flag = true;
+                    }
+                } while(!flag);
                 matrix beingEditted = file.getMatrix();
                 try {
                     if (row > beingEditted.size() || col > beingEditted[row].size()) {
