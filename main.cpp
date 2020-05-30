@@ -78,7 +78,7 @@ int main() {
                                 "ERROR! You are trying to edit a cell that is beyond the ranges of the table");
                     }
                     Matrix *mat = mat->getInstance();
-                    file.setMatrix(mat->edit(beingEditted, row - 1, col - 1));
+                    file.setMatrix(mat->edit(row - 1, col - 1));
                 } catch (invalid_argument &e) {
                     cout << e.what() << endl;
                 } catch (domain_error &c) {

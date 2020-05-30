@@ -168,7 +168,7 @@ void Formula::splitFormula(const string &formula, string &firstPart, string &sec
     form.erase(0, 1);
     int pos = form.find(delim);
     position = pos + 1;
-    firstPart = formula.substr(0, position );
+    firstPart = formula.substr(0, position);
     secondPart = formula.substr(position + 1);
     trim(firstPart);
     trim(secondPart);

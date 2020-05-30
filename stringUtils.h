@@ -10,12 +10,12 @@ using namespace std;
  * @file stringUtils.h
  * \brief String modifiers
  */
- /**
- * @fn bool isNumeric(const string &str)
- * Does the string str contains only numeric symbols.
- * @param string
- * @return true or false
- */
+/**
+* @fn bool isNumeric(const string &str)
+* Does the string str contains only numeric symbols.
+* @param string
+* @return true or false
+*/
 // is the string made of just digits and +-.
 bool isNumeric(const string &str) {
     return str.find_first_not_of("+-0123456789.") == string::npos;
@@ -28,7 +28,7 @@ bool isNumeric(const string &str) {
  * @return resultInt
  */
 // converting string to int
-int stringToInt(const string& numberString) {
+int stringToInt(const string &numberString) {
     if (isNumeric(numberString)) {
         stringstream ss(numberString);
         int resultInt = 0;
@@ -45,7 +45,7 @@ int stringToInt(const string& numberString) {
  * @return resultDouble
  */
 // converting string to double
-double stringToDouble(const string& numberString) {
+double stringToDouble(const string &numberString) {
     if (isNumeric(numberString)) {
         stringstream ss(numberString);
         double resultDouble = 0;
@@ -159,7 +159,7 @@ void extractNumbers(vector<string> &rowsCols, const string &str) {
  * @param vector<string> rowsCols
  * @return vector<int>
  */
-vector<int> parseStringVectorToIntVector(const vector<string>& rowsCols) {
+vector<int> parseStringVectorToIntVector(const vector<string> &rowsCols) {
     vector<int> vectorOfNumbers;
     for (auto &s : rowsCols) {
         stringstream parser(s);

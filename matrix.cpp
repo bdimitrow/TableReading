@@ -86,7 +86,8 @@ int Matrix::maxWidthOfCell() {
     return maxWidth;
 }
 
-void Matrix::editInteger(matrix &mat, int row, int col) {
+matrix Matrix::editInteger(int row, int col) {
+    matrix mat = this->getMat();
     string input;
     cout << "Enter an integer: ";
     cin.ignore();
@@ -99,9 +100,11 @@ void Matrix::editInteger(matrix &mat, int row, int col) {
     } else {
         throw invalid_argument("ERROR! Unknown data type!");
     }
+    return mat;
 }
 
-void Matrix::editDouble(matrix &mat, int row, int col) {
+matrix Matrix::editDouble( int row, int col) {
+    matrix mat = this->getMat();
     string input;
     cout << "Enter a double: ";
     cin.ignore();
@@ -114,9 +117,11 @@ void Matrix::editDouble(matrix &mat, int row, int col) {
     } else {
         throw invalid_argument("ERROR! Unknown data type!");
     }
+    return mat;
 }
 
-void Matrix::editString(matrix &mat, int row, int col) {
+matrix Matrix::editString( int row, int col) {
+    matrix mat = this->getMat();
     string input;
     cout << "Enter a string: ";
     cin.ignore();
@@ -126,9 +131,11 @@ void Matrix::editString(matrix &mat, int row, int col) {
     if (row < mat.size() && col < mat[row].size()) {
         mat[row][col] = newValue;
     }
+    return mat;
 }
 
-void Matrix::editFormula(matrix &mat, int row, int col) {
+matrix Matrix::editFormula(int row, int col) {
+    matrix mat = this->getMat();
     string input;
     cout << "Enter a formula: ";
     cin.ignore();
@@ -162,9 +169,11 @@ void Matrix::editFormula(matrix &mat, int row, int col) {
         }
         mat[row][col] = value;
     }
+    return mat;
 }
 
-matrix Matrix::edit(matrix &mat, int row, int col) {
+matrix Matrix::edit(int row, int col) {
+//    matrix matEdited = this->getMat();
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
@@ -180,24 +189,32 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
         } else if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
             switch (choice) {
                 case 1: {
-                    editInteger(mat, row, col);
+                    this->setMatrix(editInteger(row, col));
+                    matrix mat = this->getMat();
                     return mat;
                 }
                 case 2: {
-                    editDouble(mat, row, col);
+                    this->setMatrix(editDouble(row, col));
+                    matrix mat = this->getMat();
                     return mat;
                 }
                 case 3: {
-                    editString(mat, row, col);
+                    this->setMatrix(editString(row, col));
+                    matrix mat = this->getMat();
                     return mat;
                 }
                 case 4:
-                    editFormula(mat, row, col);
+                    this->setMatrix(editFormula(row, col));
+                    matrix mat = this->getMat();
                     return mat;
             }
         } else {
             cout << "Invalid choice!" << endl;
         }
     } while (true);
+}
+
+const matrix &Matrix::getMat() const {
+    return mat;
 }
 

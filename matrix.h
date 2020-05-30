@@ -65,7 +65,7 @@ public:
      * @return editted matrix
      */
     // editting the matrix
-    matrix edit(matrix &mat, int row, int col);
+    matrix edit(int row, int col);
 
     /**
      * Method setting a matrix.
@@ -73,6 +73,8 @@ public:
      */
     // setting a matrix
     void setMatrix(const matrix &mat) { Matrix::mat = mat; }
+
+    const matrix &getMat() const;
 
 private:
     matrix mat;
@@ -110,7 +112,7 @@ private:
      * @param col
      */
     // used when editing cell with data of type int
-    void editInteger(matrix &mat, int rol, int col);
+    matrix editInteger(int rol, int col);
 
     /**
      * Used when editing a cell when the new data type is going to be a double.
@@ -119,7 +121,7 @@ private:
      * @param col
      */
     // used when editing cell with data of type double
-    void editDouble(matrix &mat, int rol, int col);
+    matrix editDouble(int rol, int col);
 
     /**
      * Used when editing a cell when the new data type is going to be a string.
@@ -128,7 +130,7 @@ private:
      * @param col
      */
     // used when editing cell with data of type string
-    void editString(matrix &mat, int rol, int col);
+    matrix editString(int rol, int col);
 
     /**
      * Used when editing a cell when the new data type is going to be the result of a formula.
@@ -136,7 +138,7 @@ private:
      * @param row
      * @param col
      */
-    void editFormula(matrix &mat, int row, int col);
+    matrix editFormula(int row, int col);
 };
 
 #endif //TABLEREADING_MATRIX_H
