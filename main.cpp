@@ -43,7 +43,7 @@ int main() {
                 cout << "First you have to open a file!" << endl;
             } else {
                 Matrix *mat = mat->getInstance();
-                mat->setMat(file.getMatrix());
+                mat->setMatrix(file.getMatrix());
                 mat->printMatrix();
             }
         } else if (command == "edit") {

@@ -7,15 +7,27 @@
 using namespace std;
 /**
  * @file stringUtils.h
- *
+ * \brief String modifiers
+ */
+ /**
+  * @file
+ * @fn isNumberic
+ * Does the string str contains only numeric symbols.
  * @param str
- * @return
+ * @return true or false
  */
 // is the string made of just digits and +-.
 bool isNumeric(const string &str) {
     return str.find_first_not_of("+-0123456789.") == string::npos;
 }
 
+/**
+ * @file
+ * @fn stringToInt
+ * Parsing type string to type int.
+ * @param numberString
+ * @return resultInt
+ */
 // converting string to int
 int stringToInt(string numberString) {
     if (isNumeric(numberString)) {
@@ -26,6 +38,12 @@ int stringToInt(string numberString) {
     }
 }
 
+/**
+ * @fn stringToDouble
+ * Parsing type string to type double.
+ * @param numberString
+ * @return resultDouble
+ */
 // converting string to double
 double stringToDouble(string numberString) {
     if (isNumeric(numberString)) {

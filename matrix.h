@@ -26,7 +26,8 @@ using matrix = vector<vec>;
  */
 
 /**
- * @param mat
+ * @param matrix mat
+ * @param static Matrix* instance
  */
 class Matrix {
 public:
@@ -43,7 +44,7 @@ public:
     /**
      * Method that is reading the information from a file and saves it into a matrix.
      * @param filename
-     * @return
+     * @return matrix
      */
     // saving the data from CSV file to a matrix of vectors
     matrix fileToMatrix(const string& filename);
@@ -71,7 +72,7 @@ public:
      * @param mat
      */
     // setting a matrix
-    void setMat(const matrix &mat) { Matrix::mat = mat; }
+    void setMatrix(const matrix &mat) { Matrix::mat = mat; }
 
 private:
     matrix mat;
@@ -83,23 +84,47 @@ private:
      * A parametrized constructor. It is in the private section because the class uses singleton design pattern.
      */
     Matrix(matrix m) : mat(m) {}
-    /**
-     * 
-     */
+
     static Matrix *instance;
 
+    /**
+     * Method returns the number of elements on the row with the most elements.
+     * @return int
+     */
     // finding the max number of elements on row (from the whole matrix)
     int maxElementPerRowWholeTable();
 
+    /**
+     * Returns the length of the longest cell in the table.
+     * @return
+     */
     // finds the lenght of the longest cell
     int maxWidthOfCell();
 
+    /**
+     * Used when editing a cell when the new data type is going to be an integer.
+     * @param mat
+     * @param rol
+     * @param col
+     */
     // used when editing cell with data of type int
     void editInteger(matrix &mat, int rol, int col);
 
+    /**
+     * Used when editing a cell when the new data type is going to be a double.
+     * @param mat
+     * @param rol
+     * @param col
+     */
     // used when editing cell with data of type double
     void editDouble(matrix &mat, int rol, int col);
 
+    /**
+     * Used when editing a cell when the new data type is going to be a string.
+     * @param mat
+     * @param rol
+     * @param col
+     */
     // used when editing cell with data of type string
     void editString(matrix &mat, int rol, int col);
 };
