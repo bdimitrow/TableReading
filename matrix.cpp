@@ -169,13 +169,13 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
                     }
                     if (Rcount == 2 && Ccount == 2) {
                         Formula formula(input);
-                        newValue = formula.formulaWithTwoCells(input, mat);
+                        newValue = formula.formulaWithTwoCells(mat);
                     } else if (Rcount == 0 && Ccount == 0) {
                         Formula formula(input);
                         newValue = formula.formulaWithTwoNumbers();
                     } else if (Rcount == 1 && Ccount == 1) {
                         Formula formula(input);
-                        newValue = formula.formulaWithNumberAndCell(input, mat);
+                        newValue = formula.formulaWithNumberAndCell(mat);
                     } else if (Rcount != Ccount) {
                         throw invalid_argument("ERROR! Wrong formula!");
                     }

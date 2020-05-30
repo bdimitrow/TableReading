@@ -28,31 +28,29 @@ public:
     Formula(string form) : formula(form) {}
 
     // used to edit a cell with formula made of two cells
-    double formulaWithTwoCells(string formula, const matrix &mat);
+    double formulaWithTwoCells(const matrix &mat);
 
     // used to edit a cell with formula made of two numbers
     double formulaWithTwoNumbers();
 
     // used to edit a cell with formula made of a cell and a number
-    double formulaWithNumberAndCell(string formula, const matrix &mat);
+    double formulaWithNumberAndCell(const matrix &mat);
 
-private:
-    string formula;
-public:
     const string &getFormula() const;
 
     void setFormula(const string &formula);
 
 private:
+    string formula;
 
     // spliting the formula into two part(before the operator and after the operator)
     void splitFormula(const string &formula, string &firstPart, string &secondPart, int &p);
 
     // throws an exception when the formula in incorrect
-    bool isValidFormulaWithTwoNumbers(const Formula&);
+    bool isValidFormulaWithTwoNumbers(const Formula &);
 
     // throws an exception when the formula is incorrect
-    bool isValidFormulaWithNumberAndCell(const Formula&);
+    bool isValidFormulaWithNumberAndCell(const Formula &);
 
     double resultWhenCellReferenceIsFirst(const matrix &mat, string formula, const string &firstPartOfFormula,
                                           const string &secondPartOfFormula, int pos);

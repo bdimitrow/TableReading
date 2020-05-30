@@ -29,7 +29,8 @@ double Formula::formulaWithTwoNumbers() {
     }
 }
 
-double Formula::formulaWithTwoCells(string formula, const matrix &mat) {
+double Formula::formulaWithTwoCells(const matrix &mat) {
+    string formula = this->getFormula();
     vector<string> rowsColsAsStrings;
     extractNumbers(rowsColsAsStrings, formula);
     vector<int> numbersRowsCols = parseStringVectorToIntVector(rowsColsAsStrings);
@@ -123,9 +124,10 @@ double Formula::resultWhenCellReferenceIsSecond(const matrix &mat, string formul
     }
 }
 
-double Formula::formulaWithNumberAndCell(string formula, const matrix &mat) {
+double Formula::formulaWithNumberAndCell(const matrix &mat) {
+    string formula = this->getFormula();
     formula.erase(0, 1);  //removing '=' from the formula;
-    if (!isValidFormulaWithNumberAndCell(formula)) {
+    if (!isValidFormulaWithNumberAndCell(*this)) {
         throw invalid_argument("ERROR! Invalid formula!");
     }
     string firstPartOfFormula, secondPartOfFormula;
