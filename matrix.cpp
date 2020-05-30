@@ -20,7 +20,7 @@ bool isDouble(const string &str) {
 
 Matrix *Matrix::instance = 0;
 
-matrix Matrix::fileToMatrix(string filename) {
+matrix Matrix::fileToMatrix(const string& filename) {
     char delimiter = ',';
     matrix result;
     string row, item;
@@ -172,7 +172,7 @@ matrix Matrix::edit(matrix &mat, int row, int col) {
                         newValue = formula.formulaWithTwoCells(input, mat);
                     } else if (Rcount == 0 && Ccount == 0) {
                         Formula formula(input);
-                        newValue = formula.formulaWithTwoNumbers(input);
+                        newValue = formula.formulaWithTwoNumbers();
                     } else if (Rcount == 1 && Ccount == 1) {
                         Formula formula(input);
                         newValue = formula.formulaWithNumberAndCell(input, mat);
