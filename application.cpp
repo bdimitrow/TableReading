@@ -17,23 +17,18 @@ matrix Application::openFile(string filename) {
     if (fout.is_open()) {
         cout << "Successfully opened " << filename << endl;
         Matrix *mat = mat->getInstance();
-        matrix opened = mat->fileToMatrix(filename);
-        return opened;
-    } else
+        return mat->fileToMatrix(filename);
+    } else {
         cout << "Unable to open " << filename << "!" << endl;
+    }
 }
 
 void Application::close() {
-    string filename = this->getFilename();
-    fstream fout;
     this->setFilename("");
-    fout.close();
     cout << "Successfully closed " << filename << endl;
 }
 
 void Application::save() {
-    matrix mat = this->getMatrix();
-    string filename = this->getFilename();
     ofstream out;
     out.open(filename, ios::out | ios::trunc);
     if (!out.is_open()) {
@@ -50,7 +45,6 @@ void Application::save() {
 }
 
 void Application::saveAs() {
-    matrix mat = this->getMatrix();
     string filename;
     cin.ignore();
     getline(cin, filename);
@@ -103,9 +97,8 @@ void Application::edit() {
             break;
         }
     } while (true);
-    matrix beingEditted = this->getMatrix();
     try {
-        if (row > beingEditted.size() || col > beingEditted[row].size()) {
+        if (row > mat.size() || col > mat[row].size()) {
             throw invalid_argument(
                     "ERROR! You are trying to edit a cell that is beyond the ranges of the table");
         }
@@ -115,7 +108,6 @@ void Application::edit() {
         cout << e.what() << endl;
     } catch (domain_error &c) {
         cout << c.what() << endl;
-        matrix mat = this->getMatrix();
         mat[row - 1][col - 1] = "ERROR";
         this->setMatrix(mat);
     }
