@@ -1,0 +1,282 @@
+\hypertarget{class_matrix}{}\section{Matrix Class Reference}
+\label{class_matrix}\index{Matrix@{Matrix}}
+
+
+A \hyperlink{class_matrix}{Matrix} class using a singleton design pattern.  
+
+
+
+
+{\ttfamily \#include $<$matrix.\+h$>$}
+
+
+
+Collaboration diagram for Matrix\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_matrix__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+matrix \hyperlink{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}{file\+To\+Matrix} (const string \&filename)
+\item 
+void \hyperlink{class_matrix_aa1967ad240a5ffaf492800044b7275d9}{print\+Matrix} ()
+\item 
+matrix \hyperlink{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3}{edit} (matrix \&mat, int row, int col)
+\item 
+void \hyperlink{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}{set\+Matrix} (const matrix \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_matrix}{Matrix} $\ast$ \hyperlink{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matrix_a2dba13c45127354c9f75ef576f49269b}{Matrix} ()
+\item 
+\hyperlink{class_matrix_abc64f3d5a4f22323a24be2bfabf377cb}{Matrix} (matrix m)
+\item 
+int \hyperlink{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}{max\+Element\+Per\+Row\+Whole\+Table} ()
+\item 
+int \hyperlink{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d}{max\+Width\+Of\+Cell} ()
+\item 
+void \hyperlink{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61}{edit\+Integer} (matrix \&mat, int rol, int col)
+\item 
+void \hyperlink{class_matrix_af8adf979beb20569c06fd529879870b0}{edit\+Double} (matrix \&mat, int rol, int col)
+\item 
+void \hyperlink{class_matrix_a3c385c2a6ad67a34306c81a4087789b3}{edit\+String} (matrix \&mat, int rol, int col)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_matrix_a1b0c75c45092426431308172aab92c66}\label{class_matrix_a1b0c75c45092426431308172aab92c66}} 
+matrix {\bfseries mat}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}\label{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}} 
+static \hyperlink{class_matrix}{Matrix} $\ast$ {\bfseries instance} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{class_matrix}{Matrix} class using a singleton design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & mat \\
+\hline
+{\em static} & Matrix$\ast$ instance\\
+\hline
+\end{DoxyParams}
+This class is used to initialize a matrix when opening a file. It uses a singleton pattern becasue after initializing a matrix the program is performing operations only on that particular matrix. That\textquotesingle{}s why we need just one instance of class \hyperlink{class_matrix}{Matrix}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_matrix_a2dba13c45127354c9f75ef576f49269b}\label{class_matrix_a2dba13c45127354c9f75ef576f49269b}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+A default constructor. It is in the private section because the class uses singleton design pattern. \mbox{\Hypertarget{class_matrix_abc64f3d5a4f22323a24be2bfabf377cb}\label{class_matrix_abc64f3d5a4f22323a24be2bfabf377cb}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{matrix}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+A parametrized constructor. It is in the private section because the class uses singleton design pattern. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3}\label{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3}} 
+\index{Matrix@{Matrix}!edit@{edit}}
+\index{edit@{edit}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily matrix Matrix\+::edit (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be editted. He can choose from\+: integer, double, string or formula(= reference(to cell)/number -\/ operator -\/ reference(to cell)/number). 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+editted matrix 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_af7211d71bc56bc860886ef51e2ffb1e3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_af8adf979beb20569c06fd529879870b0}\label{class_matrix_af8adf979beb20569c06fd529879870b0}} 
+\index{Matrix@{Matrix}!edit\+Double@{edit\+Double}}
+\index{edit\+Double@{edit\+Double}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{edit\+Double()}{editDouble()}}
+{\footnotesize\ttfamily void Matrix\+::edit\+Double (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Used when editing a cell when the new data type is going to be a double. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em rol} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_matrix_af8adf979beb20569c06fd529879870b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61}\label{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61}} 
+\index{Matrix@{Matrix}!edit\+Integer@{edit\+Integer}}
+\index{edit\+Integer@{edit\+Integer}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{edit\+Integer()}{editInteger()}}
+{\footnotesize\ttfamily void Matrix\+::edit\+Integer (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Used when editing a cell when the new data type is going to be an integer. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em rol} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_matrix_a9bbbaee1b96cc6dc5e4255a0400a5e61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a3c385c2a6ad67a34306c81a4087789b3}\label{class_matrix_a3c385c2a6ad67a34306c81a4087789b3}} 
+\index{Matrix@{Matrix}!edit\+String@{edit\+String}}
+\index{edit\+String@{edit\+String}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{edit\+String()}{editString()}}
+{\footnotesize\ttfamily void Matrix\+::edit\+String (\begin{DoxyParamCaption}\item[{matrix \&}]{mat,  }\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Used when editing a cell when the new data type is going to be a string. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em rol} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{class_matrix_a3c385c2a6ad67a34306c81a4087789b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}\label{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}} 
+\index{Matrix@{Matrix}!file\+To\+Matrix@{file\+To\+Matrix}}
+\index{file\+To\+Matrix@{file\+To\+Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{file\+To\+Matrix()}{fileToMatrix()}}
+{\footnotesize\ttfamily matrix Matrix\+::file\+To\+Matrix (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+Method that is reading the information from a file and saves it into a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_matrix_a35eb9dcb01c552fea1f5926db35339ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc}\label{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc}} 
+\index{Matrix@{Matrix}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{class_matrix}{Matrix}$\ast$ Matrix\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Method that servers as a constructor but it does not initialize a new object. It is accessing the same instance of this class over and over. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_matrix_a0c8e09a50ddb4d068d39456ea130abcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}\label{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}} 
+\index{Matrix@{Matrix}!max\+Element\+Per\+Row\+Whole\+Table@{max\+Element\+Per\+Row\+Whole\+Table}}
+\index{max\+Element\+Per\+Row\+Whole\+Table@{max\+Element\+Per\+Row\+Whole\+Table}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{max\+Element\+Per\+Row\+Whole\+Table()}{maxElementPerRowWholeTable()}}
+{\footnotesize\ttfamily int Matrix\+::max\+Element\+Per\+Row\+Whole\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Method returns the number of elements on the row with the most elements. \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d}\label{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d}} 
+\index{Matrix@{Matrix}!max\+Width\+Of\+Cell@{max\+Width\+Of\+Cell}}
+\index{max\+Width\+Of\+Cell@{max\+Width\+Of\+Cell}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{max\+Width\+Of\+Cell()}{maxWidthOfCell()}}
+{\footnotesize\ttfamily int Matrix\+::max\+Width\+Of\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Returns the length of the longest cell in the table. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_aa1967ad240a5ffaf492800044b7275d9}\label{class_matrix_aa1967ad240a5ffaf492800044b7275d9}} 
+\index{Matrix@{Matrix}!print\+Matrix@{print\+Matrix}}
+\index{print\+Matrix@{print\+Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{print\+Matrix()}{printMatrix()}}
+{\footnotesize\ttfamily void Matrix\+::print\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method displaying the matrix. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_aa1967ad240a5ffaf492800044b7275d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}\label{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}} 
+\index{Matrix@{Matrix}!set\+Matrix@{set\+Matrix}}
+\index{set\+Matrix@{set\+Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{set\+Matrix()}{setMatrix()}}
+{\footnotesize\ttfamily void Matrix\+::set\+Matrix (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Method setting a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+matrix.\+h\item 
+matrix.\+cpp\end{DoxyCompactItemize}

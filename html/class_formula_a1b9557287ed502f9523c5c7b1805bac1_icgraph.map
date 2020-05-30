@@ -1,0 +1,8 @@
+<map id="Formula::getFormula" name="Formula::getFormula">
+<area shape="rect" id="node2" href="$class_formula.html#a2159ffdb34d80f2bee422eee89fc871a" title="Formula::formulaWithTwoNumbers" alt="" coords="435,42,660,68"/>
+<area shape="rect" id="node4" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="446,96,649,123"/>
+<area shape="rect" id="node5" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="451,148,644,189"/>
+<area shape="rect" id="node6" href="$class_formula.html#a0a2b13b0f741ea650e1ae71269dde9a5" title="Formula::isValidFormulaWith\lTwoNumbers" alt="" coords="196,34,387,76"/>
+<area shape="rect" id="node7" href="$class_formula.html#a83eff8c83a0ea79b3dd21c2e86a546c8" title="Formula::isValidFormulaWith\lNumberAndCell" alt="" coords="196,202,387,244"/>
+<area shape="rect" id="node3" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="708,96,795,123"/>
+</map>

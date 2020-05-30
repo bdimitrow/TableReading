@@ -1,0 +1,9 @@
+<map id="stringToInt" name="stringToInt">
+<area shape="rect" id="node2" href="$string_utils_8h.html#a0e10b75736c375cf8a40f59579871ef1" title="stringToNumber" alt="" coords="137,64,252,91"/>
+<area shape="rect" id="node3" href="$class_formula.html#a8080ff3cf8fce2d9f1730e772ae21c71" title="Formula::getTheValueOfCell" alt="" coords="300,64,487,91"/>
+<area shape="rect" id="node4" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="809,5,1012,32"/>
+<area shape="rect" id="node6" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="535,57,761,98"/>
+<area shape="rect" id="node8" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="535,122,761,163"/>
+<area shape="rect" id="node5" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="1060,35,1147,61"/>
+<area shape="rect" id="node7" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="814,57,1007,98"/>
+</map>

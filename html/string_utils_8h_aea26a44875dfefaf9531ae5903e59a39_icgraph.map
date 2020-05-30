@@ -1,0 +1,8 @@
+<map id="ltrim" name="ltrim">
+<area shape="rect" id="node2" href="$string_utils_8h.html#ad691123aabb504ed29f552b5d0219a11" title="trim" alt="" coords="100,31,144,57"/>
+<area shape="rect" id="node3" href="$string_utils_8h.html#ae79bd017557b754bb1ff0e42a824ffc5" title="removeQuotes" alt="" coords="192,5,299,32"/>
+<area shape="rect" id="node4" href="$string_utils_8h.html#a0e10b75736c375cf8a40f59579871ef1" title="stringToNumber" alt="" coords="347,31,461,57"/>
+<area shape="rect" id="node5" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="509,31,712,57"/>
+<area shape="rect" id="node6" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="760,31,847,57"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="895,31,945,57"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="ltrim" name="ltrim">
+<area shape="rect" id="node2" href="$string_utils_8h.html#af941fe852e0b5d8235ddc3296b8b00d3" title="trim" alt="" coords="100,63,144,89"/>
+<area shape="rect" id="node3" href="$class_formula.html#ae9390fbc99e5ade644589b144c73bfb7" title="Formula::splitFormula" alt="" coords="783,5,931,32"/>
+<area shape="rect" id="node7" href="$string_utils_8h.html#ae79bd017557b754bb1ff0e42a824ffc5" title="removeQuotes" alt="" coords="192,63,299,89"/>
+<area shape="rect" id="node8" href="$string_utils_8h.html#a0e10b75736c375cf8a40f59579871ef1" title="stringToNumber" alt="" coords="347,113,461,140"/>
+<area shape="rect" id="node4" href="$class_formula.html#a2159ffdb34d80f2bee422eee89fc871a" title="Formula::formulaWithTwoNumbers" alt="" coords="1019,5,1244,32"/>
+<area shape="rect" id="node6" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="1035,57,1228,98"/>
+<area shape="rect" id="node5" href="$class_matrix.html#af7211d71bc56bc860886ef51e2ffb1e3" title="Matrix::edit" alt="" coords="1292,64,1379,91"/>
+<area shape="rect" id="node9" href="$class_formula.html#a8080ff3cf8fce2d9f1730e772ae21c71" title="Formula::getTheValueOfCell" alt="" coords="509,124,696,151"/>
+<area shape="rect" id="node10" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="1030,155,1233,181"/>
+<area shape="rect" id="node11" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="744,57,971,98"/>
+<area shape="rect" id="node12" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="744,122,971,163"/>
+</map>

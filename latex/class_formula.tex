@@ -1,0 +1,399 @@
+\hypertarget{class_formula}{}\section{Formula Class Reference}
+\label{class_formula}\index{Formula@{Formula}}
+
+
+The \hyperlink{class_formula}{Formula} class is used for editing a cell with a formula.  
+
+
+
+
+{\ttfamily \#include $<$formula.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_formula_aed38ad076eb638148bcbe867d6acea60}{Formula} (string form)
+\item 
+double \hyperlink{class_formula_a518bc97bd50f1cc5573be7d3f8cb6253}{formula\+With\+Two\+Cells} (const matrix \&mat)
+\item 
+double \hyperlink{class_formula_a2159ffdb34d80f2bee422eee89fc871a}{formula\+With\+Two\+Numbers} ()
+\item 
+double \hyperlink{class_formula_a0f831b2ee98fbeb7df371f83ee7d374d}{formula\+With\+Number\+And\+Cell} (const matrix \&mat)
+\item 
+const string \& \hyperlink{class_formula_a1b9557287ed502f9523c5c7b1805bac1}{get\+Formula} () const
+\item 
+void \hyperlink{class_formula_aba7633655dad414ed0a1d92cdba38163}{set\+Formula} (const string \&formula)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_formula_ae9390fbc99e5ade644589b144c73bfb7}{split\+Formula} (const string \&formula, string \&first\+Part, string \&second\+Part, int \&p)
+\item 
+bool \hyperlink{class_formula_a0a2b13b0f741ea650e1ae71269dde9a5}{is\+Valid\+Formula\+With\+Two\+Numbers} ()
+\item 
+bool \hyperlink{class_formula_a83eff8c83a0ea79b3dd21c2e86a546c8}{is\+Valid\+Formula\+With\+Number\+And\+Cell} ()
+\item 
+double \hyperlink{class_formula_a9a27ccdd3ee3143b1f6e541ec3c6a0ec}{result\+When\+Cell\+Reference\+Is\+First} (const matrix \&mat, string formula, const string \&first\+Part\+Of\+Formula, const string \&second\+Part\+Of\+Formula, int pos)
+\item 
+double \hyperlink{class_formula_ae0edae33b4af295bab04f1f1c06f406f}{result\+When\+Cell\+Reference\+Is\+Second} (const matrix \&mat, string formula, const string \&first\+Part\+Of\+Formula, const string \&second\+Part\+Of\+Formula, int pos)
+\item 
+double \hyperlink{class_formula_a8080ff3cf8fce2d9f1730e772ae21c71}{get\+The\+Value\+Of\+Cell} (const matrix \&mat, int row, int col)
+\item 
+bool \hyperlink{class_formula_a79079cea46f8320cd7a63f576251baac}{found\+In\+Part} (const string \&str)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_formula_a2a3b5b998b48db1fadf57752e59ed4fb}\label{class_formula_a2a3b5b998b48db1fadf57752e59ed4fb}} 
+string {\bfseries formula}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_formula}{Formula} class is used for editing a cell with a formula. 
+
+This class is used to initialize a formula and to read(decipher) it. There are three types of formulas\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item number -\/ operator -\/ number ( = 10 $^\wedge$ 2 );
+\item reference to a cell -\/ operator -\/ number ( = R1\+C1 / 5 );~\newline
+ number -\/ operator -\/ reference to a cell ( = 5 $\ast$ R1\+C1 );
+\item reference to a cell -\/ operator -\/ reference to a cell ( = R2\+C2 -\/ R3\+C4 );
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & fomrula \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_formula_aed38ad076eb638148bcbe867d6acea60}\label{class_formula_aed38ad076eb638148bcbe867d6acea60}} 
+\index{Formula@{Formula}!Formula@{Formula}}
+\index{Formula@{Formula}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{Formula()}{Formula()}}
+{\footnotesize\ttfamily Formula\+::\+Formula (\begin{DoxyParamCaption}\item[{string}]{form }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A parametrized constructor. 
+\begin{DoxyParams}{Parameters}
+{\em form} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_formula_a0f831b2ee98fbeb7df371f83ee7d374d}\label{class_formula_a0f831b2ee98fbeb7df371f83ee7d374d}} 
+\index{Formula@{Formula}!formula\+With\+Number\+And\+Cell@{formula\+With\+Number\+And\+Cell}}
+\index{formula\+With\+Number\+And\+Cell@{formula\+With\+Number\+And\+Cell}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{formula\+With\+Number\+And\+Cell()}{formulaWithNumberAndCell()}}
+{\footnotesize\ttfamily double Formula\+::formula\+With\+Number\+And\+Cell (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat }\end{DoxyParamCaption})}
+
+Method calculating the value of formula with a number and a refenrence to a cell. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a0f831b2ee98fbeb7df371f83ee7d374d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_formula_a0f831b2ee98fbeb7df371f83ee7d374d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a518bc97bd50f1cc5573be7d3f8cb6253}\label{class_formula_a518bc97bd50f1cc5573be7d3f8cb6253}} 
+\index{Formula@{Formula}!formula\+With\+Two\+Cells@{formula\+With\+Two\+Cells}}
+\index{formula\+With\+Two\+Cells@{formula\+With\+Two\+Cells}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{formula\+With\+Two\+Cells()}{formulaWithTwoCells()}}
+{\footnotesize\ttfamily double Formula\+::formula\+With\+Two\+Cells (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat }\end{DoxyParamCaption})}
+
+Method calculating the value of formula with two references to a cell. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a518bc97bd50f1cc5573be7d3f8cb6253_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_formula_a518bc97bd50f1cc5573be7d3f8cb6253_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a2159ffdb34d80f2bee422eee89fc871a}\label{class_formula_a2159ffdb34d80f2bee422eee89fc871a}} 
+\index{Formula@{Formula}!formula\+With\+Two\+Numbers@{formula\+With\+Two\+Numbers}}
+\index{formula\+With\+Two\+Numbers@{formula\+With\+Two\+Numbers}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{formula\+With\+Two\+Numbers()}{formulaWithTwoNumbers()}}
+{\footnotesize\ttfamily double Formula\+::formula\+With\+Two\+Numbers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method calculating the value of formula with two numbers. \begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a2159ffdb34d80f2bee422eee89fc871a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a2159ffdb34d80f2bee422eee89fc871a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a79079cea46f8320cd7a63f576251baac}\label{class_formula_a79079cea46f8320cd7a63f576251baac}} 
+\index{Formula@{Formula}!found\+In\+Part@{found\+In\+Part}}
+\index{found\+In\+Part@{found\+In\+Part}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{found\+In\+Part()}{foundInPart()}}
+{\footnotesize\ttfamily bool Formula\+::found\+In\+Part (\begin{DoxyParamCaption}\item[{const string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Used to determine in which part of the formula is the reference to a cell. 
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a79079cea46f8320cd7a63f576251baac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a1b9557287ed502f9523c5c7b1805bac1}\label{class_formula_a1b9557287ed502f9523c5c7b1805bac1}} 
+\index{Formula@{Formula}!get\+Formula@{get\+Formula}}
+\index{get\+Formula@{get\+Formula}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{get\+Formula()}{getFormula()}}
+{\footnotesize\ttfamily const string \& Formula\+::get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for a formula. \begin{DoxyReturn}{Returns}
+formula 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a1b9557287ed502f9523c5c7b1805bac1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a8080ff3cf8fce2d9f1730e772ae21c71}\label{class_formula_a8080ff3cf8fce2d9f1730e772ae21c71}} 
+\index{Formula@{Formula}!get\+The\+Value\+Of\+Cell@{get\+The\+Value\+Of\+Cell}}
+\index{get\+The\+Value\+Of\+Cell@{get\+The\+Value\+Of\+Cell}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{get\+The\+Value\+Of\+Cell()}{getTheValueOfCell()}}
+{\footnotesize\ttfamily double Formula\+::get\+The\+Value\+Of\+Cell (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Accepts two integers(one for row and one for column) and extracts the value of the cell references with these numbers. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a8080ff3cf8fce2d9f1730e772ae21c71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a8080ff3cf8fce2d9f1730e772ae21c71_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a83eff8c83a0ea79b3dd21c2e86a546c8}\label{class_formula_a83eff8c83a0ea79b3dd21c2e86a546c8}} 
+\index{Formula@{Formula}!is\+Valid\+Formula\+With\+Number\+And\+Cell@{is\+Valid\+Formula\+With\+Number\+And\+Cell}}
+\index{is\+Valid\+Formula\+With\+Number\+And\+Cell@{is\+Valid\+Formula\+With\+Number\+And\+Cell}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{is\+Valid\+Formula\+With\+Number\+And\+Cell()}{isValidFormulaWithNumberAndCell()}}
+{\footnotesize\ttfamily bool Formula\+::is\+Valid\+Formula\+With\+Number\+And\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Checks whether the formula with a number and a reference to a cell is valid. \begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a83eff8c83a0ea79b3dd21c2e86a546c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a83eff8c83a0ea79b3dd21c2e86a546c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a0a2b13b0f741ea650e1ae71269dde9a5}\label{class_formula_a0a2b13b0f741ea650e1ae71269dde9a5}} 
+\index{Formula@{Formula}!is\+Valid\+Formula\+With\+Two\+Numbers@{is\+Valid\+Formula\+With\+Two\+Numbers}}
+\index{is\+Valid\+Formula\+With\+Two\+Numbers@{is\+Valid\+Formula\+With\+Two\+Numbers}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{is\+Valid\+Formula\+With\+Two\+Numbers()}{isValidFormulaWithTwoNumbers()}}
+{\footnotesize\ttfamily bool Formula\+::is\+Valid\+Formula\+With\+Two\+Numbers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Checks whether the formula with two numbers is valid. \begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a0a2b13b0f741ea650e1ae71269dde9a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a0a2b13b0f741ea650e1ae71269dde9a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_a9a27ccdd3ee3143b1f6e541ec3c6a0ec}\label{class_formula_a9a27ccdd3ee3143b1f6e541ec3c6a0ec}} 
+\index{Formula@{Formula}!result\+When\+Cell\+Reference\+Is\+First@{result\+When\+Cell\+Reference\+Is\+First}}
+\index{result\+When\+Cell\+Reference\+Is\+First@{result\+When\+Cell\+Reference\+Is\+First}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{result\+When\+Cell\+Reference\+Is\+First()}{resultWhenCellReferenceIsFirst()}}
+{\footnotesize\ttfamily double Formula\+::result\+When\+Cell\+Reference\+Is\+First (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat,  }\item[{string}]{formula,  }\item[{const string \&}]{first\+Part\+Of\+Formula,  }\item[{const string \&}]{second\+Part\+Of\+Formula,  }\item[{int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Returning the result from the formula when the reference is first in the formula. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em formula} & \\
+\hline
+{\em first\+Part\+Of\+Formula} & \\
+\hline
+{\em second\+Part\+Of\+Formula} & \\
+\hline
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a9a27ccdd3ee3143b1f6e541ec3c6a0ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_a9a27ccdd3ee3143b1f6e541ec3c6a0ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_ae0edae33b4af295bab04f1f1c06f406f}\label{class_formula_ae0edae33b4af295bab04f1f1c06f406f}} 
+\index{Formula@{Formula}!result\+When\+Cell\+Reference\+Is\+Second@{result\+When\+Cell\+Reference\+Is\+Second}}
+\index{result\+When\+Cell\+Reference\+Is\+Second@{result\+When\+Cell\+Reference\+Is\+Second}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{result\+When\+Cell\+Reference\+Is\+Second()}{resultWhenCellReferenceIsSecond()}}
+{\footnotesize\ttfamily double Formula\+::result\+When\+Cell\+Reference\+Is\+Second (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat,  }\item[{string}]{formula,  }\item[{const string \&}]{first\+Part\+Of\+Formula,  }\item[{const string \&}]{second\+Part\+Of\+Formula,  }\item[{int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Returning the result from the formula when the reference is second in the formula. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \\
+\hline
+{\em formula} & \\
+\hline
+{\em first\+Part\+Of\+Formula} & \\
+\hline
+{\em second\+Part\+Of\+Formula} & \\
+\hline
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_ae0edae33b4af295bab04f1f1c06f406f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_ae0edae33b4af295bab04f1f1c06f406f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_formula_aba7633655dad414ed0a1d92cdba38163}\label{class_formula_aba7633655dad414ed0a1d92cdba38163}} 
+\index{Formula@{Formula}!set\+Formula@{set\+Formula}}
+\index{set\+Formula@{set\+Formula}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{set\+Formula()}{setFormula()}}
+{\footnotesize\ttfamily void Formula\+::set\+Formula (\begin{DoxyParamCaption}\item[{const string \&}]{formula }\end{DoxyParamCaption})}
+
+Setter for a formula. 
+\begin{DoxyParams}{Parameters}
+{\em formula} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_formula_ae9390fbc99e5ade644589b144c73bfb7}\label{class_formula_ae9390fbc99e5ade644589b144c73bfb7}} 
+\index{Formula@{Formula}!split\+Formula@{split\+Formula}}
+\index{split\+Formula@{split\+Formula}!Formula@{Formula}}
+\subsubsection{\texorpdfstring{split\+Formula()}{splitFormula()}}
+{\footnotesize\ttfamily void Formula\+::split\+Formula (\begin{DoxyParamCaption}\item[{const string \&}]{formula,  }\item[{string \&}]{first\+Part,  }\item[{string \&}]{second\+Part,  }\item[{int \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function is splitting the formula into two parts and the delimeter is the operator. 
+\begin{DoxyParams}{Parameters}
+{\em formula} & \\
+\hline
+{\em first\+Part} & \\
+\hline
+{\em second\+Part} & \\
+\hline
+{\em two} & strings \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_formula_ae9390fbc99e5ade644589b144c73bfb7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_formula_ae9390fbc99e5ade644589b144c73bfb7_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+formula.\+h\item 
+formula.\+cpp\end{DoxyCompactItemize}

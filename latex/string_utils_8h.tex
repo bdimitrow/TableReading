@@ -1,0 +1,288 @@
+\hypertarget{string_utils_8h}{}\section{string\+Utils.\+h File Reference}
+\label{string_utils_8h}\index{string\+Utils.\+h@{string\+Utils.\+h}}
+
+
+String modifiers.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for string\+Utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{string_utils_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{string_utils_8h_a9d52b2e7847c950eee6a01ae597679fa}{is\+Numeric} (const string \&str)
+\item 
+int \hyperlink{string_utils_8h_a2ba9357b7f0235a408b4c3fd26526b2d}{string\+To\+Int} (const string \&number\+String)
+\item 
+double \hyperlink{string_utils_8h_a5e388b01a5a212fa4f231ea35efa3a78}{string\+To\+Double} (const string \&number\+String)
+\item 
+string \& \hyperlink{string_utils_8h_a92e1949f46533a5674ce0cc6d3350b95}{ltrim} (string \&str)
+\item 
+string \& \hyperlink{string_utils_8h_ac869ec7686a817321f7f80556f5b2bfb}{rtrim} (string \&str)
+\item 
+string \& \hyperlink{string_utils_8h_af941fe852e0b5d8235ddc3296b8b00d3}{trim} (string \&str)
+\item 
+void \hyperlink{string_utils_8h_ae79bd017557b754bb1ff0e42a824ffc5}{remove\+Quotes} (string \&str)
+\item 
+double \hyperlink{string_utils_8h_a0e10b75736c375cf8a40f59579871ef1}{string\+To\+Number} (string number\+String)
+\item 
+void \hyperlink{string_utils_8h_aaa9610e8d77442d8f5cb10a5b77666da}{extract\+Numbers} (vector$<$ string $>$ \&rows\+Cols, const string \&str)
+\item 
+vector$<$ int $>$ \hyperlink{string_utils_8h_ae302876f17c45ff94972bafa8580a3b8}{parse\+String\+Vector\+To\+Int\+Vector} (const vector$<$ string $>$ \&rows\+Cols)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+String modifiers. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{string_utils_8h_aaa9610e8d77442d8f5cb10a5b77666da}\label{string_utils_8h_aaa9610e8d77442d8f5cb10a5b77666da}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!extract\+Numbers@{extract\+Numbers}}
+\index{extract\+Numbers@{extract\+Numbers}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{extract\+Numbers()}{extractNumbers()}}
+{\footnotesize\ttfamily void extract\+Numbers (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{rows\+Cols,  }\item[{const string \&}]{str }\end{DoxyParamCaption})}
+
+Uses regular expression to extract all the coordinates from a reference to a cell. 
+\begin{DoxyParams}{Parameters}
+{\em rows\+Cols} & \\
+\hline
+{\em str} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_aaa9610e8d77442d8f5cb10a5b77666da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_a9d52b2e7847c950eee6a01ae597679fa}\label{string_utils_8h_a9d52b2e7847c950eee6a01ae597679fa}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!is\+Numeric@{is\+Numeric}}
+\index{is\+Numeric@{is\+Numeric}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{is\+Numeric()}{isNumeric()}}
+{\footnotesize\ttfamily bool is\+Numeric (\begin{DoxyParamCaption}\item[{const string \&}]{str }\end{DoxyParamCaption})}
+
+Does the string str contains only numeric symbols. 
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_a9d52b2e7847c950eee6a01ae597679fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_a92e1949f46533a5674ce0cc6d3350b95}\label{string_utils_8h_a92e1949f46533a5674ce0cc6d3350b95}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!ltrim@{ltrim}}
+\index{ltrim@{ltrim}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{ltrim()}{ltrim()}}
+{\footnotesize\ttfamily string \& ltrim (\begin{DoxyParamCaption}\item[{string \&}]{str }\end{DoxyParamCaption})}
+
+Removes the whitespaces from the left side of the string. 
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_a92e1949f46533a5674ce0cc6d3350b95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_ae302876f17c45ff94972bafa8580a3b8}\label{string_utils_8h_ae302876f17c45ff94972bafa8580a3b8}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!parse\+String\+Vector\+To\+Int\+Vector@{parse\+String\+Vector\+To\+Int\+Vector}}
+\index{parse\+String\+Vector\+To\+Int\+Vector@{parse\+String\+Vector\+To\+Int\+Vector}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{parse\+String\+Vector\+To\+Int\+Vector()}{parseStringVectorToIntVector()}}
+{\footnotesize\ttfamily vector$<$int$>$ parse\+String\+Vector\+To\+Int\+Vector (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{rows\+Cols }\end{DoxyParamCaption})}
+
+Accepting vector$<$string$>$ and returns vector$<$int$>$. 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$string$>$} & rows\+Cols \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$int$>$ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_ae302876f17c45ff94972bafa8580a3b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_ae79bd017557b754bb1ff0e42a824ffc5}\label{string_utils_8h_ae79bd017557b754bb1ff0e42a824ffc5}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!remove\+Quotes@{remove\+Quotes}}
+\index{remove\+Quotes@{remove\+Quotes}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{remove\+Quotes()}{removeQuotes()}}
+{\footnotesize\ttfamily void remove\+Quotes (\begin{DoxyParamCaption}\item[{string \&}]{str }\end{DoxyParamCaption})}
+
+Remove the quotes from a string. 
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{string_utils_8h_ae79bd017557b754bb1ff0e42a824ffc5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_ae79bd017557b754bb1ff0e42a824ffc5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_ac869ec7686a817321f7f80556f5b2bfb}\label{string_utils_8h_ac869ec7686a817321f7f80556f5b2bfb}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!rtrim@{rtrim}}
+\index{rtrim@{rtrim}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{rtrim()}{rtrim()}}
+{\footnotesize\ttfamily string \& rtrim (\begin{DoxyParamCaption}\item[{string \&}]{str }\end{DoxyParamCaption})}
+
+Removes the whitespaces from the right side of the string. 
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_ac869ec7686a817321f7f80556f5b2bfb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_a5e388b01a5a212fa4f231ea35efa3a78}\label{string_utils_8h_a5e388b01a5a212fa4f231ea35efa3a78}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!string\+To\+Double@{string\+To\+Double}}
+\index{string\+To\+Double@{string\+To\+Double}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{string\+To\+Double()}{stringToDouble()}}
+{\footnotesize\ttfamily double string\+To\+Double (\begin{DoxyParamCaption}\item[{const string \&}]{number\+String }\end{DoxyParamCaption})}
+
+Parsing type string to type double. 
+\begin{DoxyParams}{Parameters}
+{\em number\+String} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result\+Double 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{string_utils_8h_a5e388b01a5a212fa4f231ea35efa3a78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_a5e388b01a5a212fa4f231ea35efa3a78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_a2ba9357b7f0235a408b4c3fd26526b2d}\label{string_utils_8h_a2ba9357b7f0235a408b4c3fd26526b2d}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!string\+To\+Int@{string\+To\+Int}}
+\index{string\+To\+Int@{string\+To\+Int}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{string\+To\+Int()}{stringToInt()}}
+{\footnotesize\ttfamily int string\+To\+Int (\begin{DoxyParamCaption}\item[{const string \&}]{number\+String }\end{DoxyParamCaption})}
+
+Parsing type string to type int. 
+\begin{DoxyParams}{Parameters}
+{\em number\+String} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result\+Int 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{string_utils_8h_a2ba9357b7f0235a408b4c3fd26526b2d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_a2ba9357b7f0235a408b4c3fd26526b2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_a0e10b75736c375cf8a40f59579871ef1}\label{string_utils_8h_a0e10b75736c375cf8a40f59579871ef1}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!string\+To\+Number@{string\+To\+Number}}
+\index{string\+To\+Number@{string\+To\+Number}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{string\+To\+Number()}{stringToNumber()}}
+{\footnotesize\ttfamily double string\+To\+Number (\begin{DoxyParamCaption}\item[{string}]{number\+String }\end{DoxyParamCaption})}
+
+Parse a string to a number. 
+\begin{DoxyParams}{Parameters}
+{\em number\+String} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_a0e10b75736c375cf8a40f59579871ef1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_a0e10b75736c375cf8a40f59579871ef1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{string_utils_8h_af941fe852e0b5d8235ddc3296b8b00d3}\label{string_utils_8h_af941fe852e0b5d8235ddc3296b8b00d3}} 
+\index{string\+Utils.\+h@{string\+Utils.\+h}!trim@{trim}}
+\index{trim@{trim}!string\+Utils.\+h@{string\+Utils.\+h}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily string \& trim (\begin{DoxyParamCaption}\item[{string \&}]{str }\end{DoxyParamCaption})}
+
+Removes the whitespaces from boht sides of the string. 
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{string_utils_8h_af941fe852e0b5d8235ddc3296b8b00d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{string_utils_8h_af941fe852e0b5d8235ddc3296b8b00d3_icgraph}
+\end{center}
+\end{figure}

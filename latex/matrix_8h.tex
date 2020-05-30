@@ -1,0 +1,56 @@
+\hypertarget{matrix_8h}{}\section{matrix.\+h File Reference}
+\label{matrix_8h}\index{matrix.\+h@{matrix.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}formula.\+h\char`\"{}}\newline
+Include dependency graph for matrix.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{matrix_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_matrix}{Matrix}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{class_matrix}{Matrix} class using a singleton design pattern. This class is used to initialize a matrix when opening a file. It uses a singleton pattern becasue after initializing a matrix the program is performing operations only on that particular matrix. That\textquotesingle{}s why we need just one instance of class \hyperlink{class_matrix}{Matrix}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{matrix_8h_ac4ba865c2f8f6f90e3c64552279f3d21}{vec} = vector$<$ string $>$
+\item 
+using \hyperlink{matrix_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} = vector$<$ \hyperlink{formula_8h_ac4ba865c2f8f6f90e3c64552279f3d21}{vec} $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{matrix_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}\label{matrix_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}} 
+\index{matrix.\+h@{matrix.\+h}!matrix@{matrix}}
+\index{matrix@{matrix}!matrix.\+h@{matrix.\+h}}
+\subsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily using \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} =  vector$<$\hyperlink{formula_8h_ac4ba865c2f8f6f90e3c64552279f3d21}{vec}$>$}
+
+\mbox{\Hypertarget{matrix_8h_ac4ba865c2f8f6f90e3c64552279f3d21}\label{matrix_8h_ac4ba865c2f8f6f90e3c64552279f3d21}} 
+\index{matrix.\+h@{matrix.\+h}!vec@{vec}}
+\index{vec@{vec}!matrix.\+h@{matrix.\+h}}
+\subsubsection{\texorpdfstring{vec}{vec}}
+{\footnotesize\ttfamily using \hyperlink{formula_8h_ac4ba865c2f8f6f90e3c64552279f3d21}{vec} =  vector$<$string$>$}
+

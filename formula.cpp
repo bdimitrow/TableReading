@@ -144,8 +144,10 @@ double Formula::formulaWithNumberAndCell(const matrix &mat) {
 }
 
 void Formula::splitFormula(const string &formula, string &firstPart, string &secondPart, int &position) {
+    string form = formula;
+    trim(form);
     char delim = '0';
-    for (int i = 2; i < formula.length(); ++i) {
+    for (int i = 1; i < formula.length(); ++i) {
         if (formula.at(i) == '+') {
             delim = '+';
             break;
@@ -163,9 +165,13 @@ void Formula::splitFormula(const string &formula, string &firstPart, string &sec
             break;
         }
     }
-    position = formula.find(delim);
-    firstPart = formula.substr(0, position);
+    form.erase(0, 1);
+    int pos = form.find(delim);
+    position = pos + 1;
+    firstPart = formula.substr(0, position );
     secondPart = formula.substr(position + 1);
+    trim(firstPart);
+    trim(secondPart);
 }
 
 bool Formula::isValidFormulaWithTwoNumbers() {

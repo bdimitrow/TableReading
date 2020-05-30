@@ -1,0 +1,188 @@
+\hypertarget{class_application}{}\section{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+A class executing the common operations open, close, save, save as, help and exit.  
+
+
+
+
+{\ttfamily \#include $<$application.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_ade4650e7378dae1d94794b86995fd571}{Application} (const string \&fname=\char`\"{}\char`\"{})
+\item 
+matrix \hyperlink{class_application_a67aeb617ca44a18045612d92f1d8afa0}{get\+Matrix} () const
+\item 
+void \hyperlink{class_application_a56b4a55e9eabd40b7f0033ba39631ebe}{set\+Matrix} (matrix m)
+\item 
+const string \& \hyperlink{class_application_a778575fb76de5352152d8928e1c3410f}{get\+Filename} () const
+\item 
+void \hyperlink{class_application_a76de879568ee39ac80484441716928d2}{set\+Filename} (const string \&fname)
+\item 
+matrix \hyperlink{class_application_ab2f161414a4e2f16e28321c192051006}{open\+File} (string filename)
+\item 
+void \hyperlink{class_application_a9909c3ed5d2e36680b8de11b21925bd5}{close} (string filename)
+\item 
+void \hyperlink{class_application_a533bb50380401b3a7bfaef31a9faf7f5}{save} (matrix mat, string filename)
+\item 
+void \hyperlink{class_application_a26cc9a5dcdf0eebb9e89f6b3a8fa64dd}{save\+As} (matrix mat)
+\item 
+void \hyperlink{class_application_a2c6518d7f121299d9be8c66d31997fbc}{help} ()
+\item 
+void \hyperlink{class_application_a3c8a98d6c10a5b054800488df16cdbcb}{exit} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_a3a20c3178562a91be951369d3356aabd}\label{class_application_a3a20c3178562a91be951369d3356aabd}} 
+string {\bfseries filename}
+\item 
+\mbox{\Hypertarget{class_application_ae126cc1a7d1f29ad485ddd285dadf3a3}\label{class_application_ae126cc1a7d1f29ad485ddd285dadf3a3}} 
+matrix {\bfseries mat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class executing the common operations open, close, save, save as, help and exit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: String \\
+\hline
+{\em mat} & \+: matrix\\
+\hline
+\end{DoxyParams}
+This class is used to assign a file to an object of class \hyperlink{class_application}{Application}. After that the common operations can be performed\+: open, close, save, save as, help and exit. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_application_ade4650e7378dae1d94794b86995fd571}\label{class_application_ade4650e7378dae1d94794b86995fd571}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const string \&}]{fname = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+A parametrized constructor with a default value. 
+\begin{DoxyParams}{Parameters}
+{\em fname} & \+: string \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_a9909c3ed5d2e36680b8de11b21925bd5}\label{class_application_a9909c3ed5d2e36680b8de11b21925bd5}} 
+\index{Application@{Application}!close@{close}}
+\index{close@{close}!Application@{Application}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Application\+::close (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+Method accepting a string(filename) and is closing the file with that name. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_application_a3c8a98d6c10a5b054800488df16cdbcb}\label{class_application_a3c8a98d6c10a5b054800488df16cdbcb}} 
+\index{Application@{Application}!exit@{exit}}
+\index{exit@{exit}!Application@{Application}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void Application\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method exiting the program. \mbox{\Hypertarget{class_application_a778575fb76de5352152d8928e1c3410f}\label{class_application_a778575fb76de5352152d8928e1c3410f}} 
+\index{Application@{Application}!get\+Filename@{get\+Filename}}
+\index{get\+Filename@{get\+Filename}!Application@{Application}}
+\subsubsection{\texorpdfstring{get\+Filename()}{getFilename()}}
+{\footnotesize\ttfamily const string\& Application\+::get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for filename. \begin{DoxyReturn}{Returns}
+string filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_a67aeb617ca44a18045612d92f1d8afa0}\label{class_application_a67aeb617ca44a18045612d92f1d8afa0}} 
+\index{Application@{Application}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!Application@{Application}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}}
+{\footnotesize\ttfamily matrix Application\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for matrix. \begin{DoxyReturn}{Returns}
+matrix mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_a2c6518d7f121299d9be8c66d31997fbc}\label{class_application_a2c6518d7f121299d9be8c66d31997fbc}} 
+\index{Application@{Application}!help@{help}}
+\index{help@{help}!Application@{Application}}
+\subsubsection{\texorpdfstring{help()}{help()}}
+{\footnotesize\ttfamily void Application\+::help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method displaying all supported command by the application. \mbox{\Hypertarget{class_application_ab2f161414a4e2f16e28321c192051006}\label{class_application_ab2f161414a4e2f16e28321c192051006}} 
+\index{Application@{Application}!open\+File@{open\+File}}
+\index{open\+File@{open\+File}!Application@{Application}}
+\subsubsection{\texorpdfstring{open\+File()}{openFile()}}
+{\footnotesize\ttfamily matrix Application\+::open\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+Method accepting a string(filename) and is opening the file with that name. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix opened 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_application_ab2f161414a4e2f16e28321c192051006_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a533bb50380401b3a7bfaef31a9faf7f5}\label{class_application_a533bb50380401b3a7bfaef31a9faf7f5}} 
+\index{Application@{Application}!save@{save}}
+\index{save@{save}!Application@{Application}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Application\+::save (\begin{DoxyParamCaption}\item[{matrix}]{mat,  }\item[{string}]{filename }\end{DoxyParamCaption})}
+
+Method accepting a matrix(probably an editted one) and is saving it to the same file. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \+: matrix \\
+\hline
+{\em filename} & \+: string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_application_a26cc9a5dcdf0eebb9e89f6b3a8fa64dd}\label{class_application_a26cc9a5dcdf0eebb9e89f6b3a8fa64dd}} 
+\index{Application@{Application}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!Application@{Application}}
+\subsubsection{\texorpdfstring{save\+As()}{saveAs()}}
+{\footnotesize\ttfamily void Application\+::save\+As (\begin{DoxyParamCaption}\item[{matrix}]{mat }\end{DoxyParamCaption})}
+
+Method accepting a matrix(probably and editted one) and is saving it to a new file. The user should enter the name of the new file. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & \+: matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_application_a76de879568ee39ac80484441716928d2}\label{class_application_a76de879568ee39ac80484441716928d2}} 
+\index{Application@{Application}!set\+Filename@{set\+Filename}}
+\index{set\+Filename@{set\+Filename}!Application@{Application}}
+\subsubsection{\texorpdfstring{set\+Filename()}{setFilename()}}
+{\footnotesize\ttfamily void Application\+::set\+Filename (\begin{DoxyParamCaption}\item[{const string \&}]{fname }\end{DoxyParamCaption})}
+
+Methdd setting the filename. 
+\begin{DoxyParams}{Parameters}
+{\em fname} & \+: string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_application_a56b4a55e9eabd40b7f0033ba39631ebe}\label{class_application_a56b4a55e9eabd40b7f0033ba39631ebe}} 
+\index{Application@{Application}!set\+Matrix@{set\+Matrix}}
+\index{set\+Matrix@{set\+Matrix}!Application@{Application}}
+\subsubsection{\texorpdfstring{set\+Matrix()}{setMatrix()}}
+{\footnotesize\ttfamily void Application\+::set\+Matrix (\begin{DoxyParamCaption}\item[{matrix}]{m }\end{DoxyParamCaption})}
+
+Method setting the matrix. 
+\begin{DoxyParams}{Parameters}
+{\em m} & \+: matrix \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+application.\+h\item 
+application.\+cpp\end{DoxyCompactItemize}

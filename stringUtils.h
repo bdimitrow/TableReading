@@ -11,10 +11,9 @@ using namespace std;
  * \brief String modifiers
  */
  /**
-  * @file
- * @fn isNumberic
+ * @fn bool isNumeric(const string &str)
  * Does the string str contains only numeric symbols.
- * @param str
+ * @param string
  * @return true or false
  */
 // is the string made of just digits and +-.
@@ -23,38 +22,45 @@ bool isNumeric(const string &str) {
 }
 
 /**
- * @file
- * @fn stringToInt
+ * @fn int stringToInt(const string& numberString)
  * Parsing type string to type int.
  * @param numberString
  * @return resultInt
  */
 // converting string to int
-int stringToInt(string numberString) {
+int stringToInt(const string& numberString) {
     if (isNumeric(numberString)) {
         stringstream ss(numberString);
         int resultInt = 0;
         ss >> resultInt;
         return resultInt;
     }
+    return 0;
 }
 
 /**
- * @fn stringToDouble
+ * @fn double stringToDouble(const string& numberString) {
  * Parsing type string to type double.
  * @param numberString
  * @return resultDouble
  */
 // converting string to double
-double stringToDouble(string numberString) {
+double stringToDouble(const string& numberString) {
     if (isNumeric(numberString)) {
         stringstream ss(numberString);
         double resultDouble = 0;
         ss >> resultDouble;
         return resultDouble;
     }
+    return 0;
 }
 
+/**
+ * @fn string &ltrim(string &str)
+ * Removes the whitespaces from the left side of the string.
+ * @param string
+ * @return string
+ */
 // removing the spaces from the left side of the string
 string &ltrim(string &str) {
     const string &chars = "\t\n\v\f\r ";
@@ -62,6 +68,12 @@ string &ltrim(string &str) {
     return str;
 }
 
+/**
+ * @fn string &rtrim(string &str)
+ * Removes the whitespaces from the right side of the string.
+ * @param string
+ * @return string
+ */
 // removing the spaces from the right side of the string
 string &rtrim(string &str) {
     const string &chars = "\t\n\v\f\r ";
@@ -69,12 +81,23 @@ string &rtrim(string &str) {
     return str;
 }
 
+/**
+ * @fn string &trim(string &str)
+ * Removes the whitespaces from boht sides of the string.
+ * @param string
+ * @return string
+ */
 // removing the space from both sides of the string
 string &trim(string &str) {
     const string &chars = "\t\n\v\f\r ";
     return ltrim(rtrim(str));
 }
 
+/**
+ * @fn void removeQuotes(string &str)
+ * Remove the quotes from a string.
+ * @param str
+ */
 // removing quotes from the string
 void removeQuotes(string &str) {
     trim(str);
@@ -85,6 +108,12 @@ void removeQuotes(string &str) {
     }
 }
 
+/**
+ * @fn double stringToNumber(string numberString)
+ * Parse a string to a number.
+ * @param numberString
+ * @return
+ */
 // parsing the string into number
 double stringToNumber(string numberString) {
     trim(numberString);             // removing the spaces from both sides
@@ -105,6 +134,12 @@ double stringToNumber(string numberString) {
     }
 }
 
+/**
+ * @fn void extractNumbers(vector<string> &rowsCols, const string &str)
+ * Uses regular expression to extract all the coordinates from a reference to a cell.
+ * @param rowsCols
+ * @param str
+ */
 // using regex to extract numbers from string(the numbers are saved as strings into a vector)
 void extractNumbers(vector<string> &rowsCols, const string &str) {
     regex e(R"(\d+)");
@@ -119,7 +154,12 @@ void extractNumbers(vector<string> &rowsCols, const string &str) {
     }
 }
 
-vector<int> parseStringVectorToIntVector(vector<string> rowsCols) {
+/**
+ * Accepting vector<string> and returns vector<int>.
+ * @param vector<string> rowsCols
+ * @return vector<int>
+ */
+vector<int> parseStringVectorToIntVector(const vector<string>& rowsCols) {
     vector<int> vectorOfNumbers;
     for (auto &s : rowsCols) {
         stringstream parser(s);

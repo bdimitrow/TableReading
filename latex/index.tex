@@ -1,0 +1,53 @@
+\hypertarget{index_First}{}\section{Project\textquotesingle{}s aim}\label{index_First}
+The aim of this project is to create an application that represents an information from a text file into a table. Every line in the file is represented by a single row in the table. Also every row can contain different number of elements(cells). Two cells are separeted by a comma. Between two commas there could be nothing. That represents an empty cell. Every cell has its own type. The supported ones are\+: whole number(int), rational number(double), symbolic string(string) and formula. A formula consists of three parts. A single operator in the middle and the other two parts can be a number or a reference to a cell in the table.\hypertarget{index_Github}{}\subsection{Github}\label{index_Github}
+\href{https://github.com/bdimitrow/TableReading}{\tt https\+://github.\+com/bdimitrow/\+Table\+Reading}\hypertarget{index_Second}{}\section{Happy path}\label{index_Second}
+
+\begin{DoxyItemize}
+\item Let\textquotesingle{}s consider having a 3x3 table as file with the name table\+Test.\+txt. ~\newline
+ 1 $\vert$ 2 $\vert$ 4 ~\newline
+ 3 $\vert$ \char`\"{}da\char`\"{} $\vert$ 10.\+5 ~\newline
+ 5.\+5 $\vert$ $\vert$ 11 ~\newline
+
+\end{DoxyItemize}\hypertarget{index_running}{}\subsection{Run the program}\label{index_running}
+Output\+: Welcome to Table\textquotesingle{}s reading app! ~\newline
+ Enter command\+: ~\newline
+ Input\+: open table\+Test.\+txt ~\newline
+ Output\+: Successfully opened table\+Test.\+txt ~\newline
+ What to do now? ~\newline
+ Input\+: print ~\newline
+ Output\+: 1 $\vert$ 2 $\vert$ 4 ~\newline
+ 3 $\vert$ \char`\"{}da\char`\"{} $\vert$ 10.\+5 ~\newline
+ 5.\+5 $\vert$ $\vert$ 11 ~\newline
+ What to do now? ~\newline
+ Input\+: edit ~\newline
+ Output\+: Enter the row of the cell you\textquotesingle{}d like to edit\+: ~\newline
+ Input\+: 1 ~\newline
+ Output\+: Enter the column of the cell you\textquotesingle{}d like to edit\+: ~\newline
+ Input\+: 2 ~\newline
+ Output\+: What type of data would you like to insert?~\newline
+
+\begin{DoxyEnumerate}
+\item Integer~\newline
+
+\item Double~\newline
+
+\item String~\newline
+
+\item \hyperlink{class_formula}{Formula}~\newline
+ Choose an action\+: ~\newline
+ Input\+: 4 ~\newline
+ Output\+: Enter a formula\+: ~\newline
+ Input\+: =R2\+C1$\ast$\+R3\+C1 ~\newline
+ Output\+: What to do now? ~\newline
+ Input\+: print ~\newline
+ Output\+: $\ast$ 1 $\vert$ 16.\+5 $\vert$ 4 ~\newline
+ 3 $\vert$ \char`\"{}da\char`\"{} $\vert$ 10.\+5 ~\newline
+ 5.\+5 $\vert$ $\vert$ 11 ~\newline
+ What to do now? ~\newline
+ Input\+: close ~\newline
+ Output\+: Successfully closed table\+Test.\+txt ~\newline
+ What to do now? ~\newline
+ Input\+: exit ~\newline
+ Output\+: Exiting the program!~\newline
+ 
+\end{DoxyEnumerate}
