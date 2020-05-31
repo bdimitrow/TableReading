@@ -1,5 +1,10 @@
 #include "matrix.h"
 
+string removeSpaces(string str) {
+    str.erase(remove(str.begin(), str.end(), ' '), str.end());
+    return str;
+}
+
 // is the string an integer
 bool isInteger(const string &str) {
     return str.find_first_not_of("+-0123456789") == string::npos;
@@ -140,6 +145,7 @@ matrix Matrix::editFormula(int row, int col) {
     cout << "Enter a formula: ";
     cin.ignore();
     getline(cin, input);
+    string formulaString = removeSpaces(input);
     double newValue = 0;
     int Rcount = 0, Ccount = 0;
     for (int i = 0; i < input.length(); ++i) {
@@ -147,13 +153,13 @@ matrix Matrix::editFormula(int row, int col) {
         if (input.at(i) == 'C' || input.at(i) == 'c') Ccount++;
     }
     if (Rcount == 2 && Ccount == 2) {
-        Formula formula(input);
+        Formula formula(formulaString);
         newValue = formula.formulaWithTwoCells(mat);
     } else if (Rcount == 0 && Ccount == 0) {
-        Formula formula(input);
+        Formula formula(formulaString);
         newValue = formula.formulaWithTwoNumbers();
     } else if (Rcount == 1 && Ccount == 1) {
-        Formula formula(input);
+        Formula formula(formulaString);
         newValue = formula.formulaWithNumberAndCell(mat);
     } else if (Rcount != Ccount) {
         throw invalid_argument("ERROR! Wrong formula!");
@@ -169,7 +175,6 @@ matrix Matrix::editFormula(int row, int col) {
 }
 
 matrix Matrix::edit(int row, int col) {
-//    matrix matEdited = this->getMat();
     cout << "What type of data would you like to insert?" << endl;
     cout << "1. Integer" << endl;
     cout << "2. Double" << endl;
@@ -186,22 +191,18 @@ matrix Matrix::edit(int row, int col) {
             switch (choice) {
                 case 1: {
                     this->setMatrix(editInteger(row, col));
-                    matrix mat = this->getMat();
                     return mat;
                 }
                 case 2: {
                     this->setMatrix(editDouble(row, col));
-                    matrix mat = this->getMat();
                     return mat;
                 }
                 case 3: {
                     this->setMatrix(editString(row, col));
-                    matrix mat = this->getMat();
                     return mat;
                 }
                 case 4:
                     this->setMatrix(editFormula(row, col));
-                    matrix mat = this->getMat();
                     return mat;
             }
         } else {
