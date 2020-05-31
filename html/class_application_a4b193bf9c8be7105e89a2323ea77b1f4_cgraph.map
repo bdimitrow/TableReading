@@ -26,9 +26,9 @@
 <area shape="rect" id="node26" href="$string_utils_8h.html#a5e388b01a5a212fa4f231ea35efa3a78" title="stringToDouble" alt="" coords="1500,372,1611,399"/>
 <area shape="rect" id="node21" href="$string_utils_8h.html#a92e1949f46533a5674ce0cc6d3350b95" title="ltrim" alt="" coords="1789,245,1835,272"/>
 <area shape="rect" id="node22" href="$string_utils_8h.html#ac869ec7686a817321f7f80556f5b2bfb" title="rtrim" alt="" coords="1788,296,1836,323"/>
-<area shape="rect" id="node28" href="$class_formula.html#a0a2b13b0f741ea650e1ae71269dde9a5" title="Formula::isValidFormulaWith\lTwoNumbers" alt="" coords="838,77,1029,118"/>
+<area shape="rect" id="node28" href="$class_formula.html#adada9416ff44be9f258b73eb1d4e1533" title="Formula::isValidFormulaWith\lTwoNumbers" alt="" coords="838,77,1029,118"/>
 <area shape="rect" id="node29" href="$class_formula.html#ae9390fbc99e5ade644589b144c73bfb7" title="Formula::splitFormula" alt="" coords="859,143,1007,169"/>
-<area shape="rect" id="node31" href="$class_formula.html#a83eff8c83a0ea79b3dd21c2e86a546c8" title="Formula::isValidFormulaWith\lNumberAndCell" alt="" coords="838,245,1029,286"/>
+<area shape="rect" id="node31" href="$class_formula.html#aa898bedad69074a59857490ccca37cd7" title="Formula::isValidFormulaWith\lNumberAndCell" alt="" coords="838,245,1029,286"/>
 <area shape="rect" id="node32" href="$class_formula.html#a79079cea46f8320cd7a63f576251baac" title="Formula::foundInPart" alt="" coords="861,311,1005,337"/>
 <area shape="rect" id="node33" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="820,529,1047,570"/>
 <area shape="rect" id="node34" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="820,463,1047,505"/>

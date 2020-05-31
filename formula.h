@@ -93,13 +93,13 @@ private:
      * Checks whether the formula with two numbers is valid.
      * @return true or false
      */
-    bool isValidFormulaWithTwoNumbers();
+    bool isValidFormulaWithTwoNumbers() const;
 
     /**
      * Checks whether the formula with a number and a reference to a cell is valid.
      * @return true or false
      */
-    bool isValidFormulaWithNumberAndCell();
+    bool isValidFormulaWithNumberAndCell() const;
 
     /**
      * Returning the result from the formula when the reference is first in the formula.

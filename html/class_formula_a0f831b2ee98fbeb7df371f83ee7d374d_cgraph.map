@@ -1,6 +1,6 @@
 <map id="Formula::formulaWithNumberAndCell" name="Formula::formulaWithNumberAndCell">
 <area shape="rect" id="node2" href="$class_formula.html#a1b9557287ed502f9523c5c7b1805bac1" title="Formula::getFormula" alt="" coords="547,20,690,47"/>
-<area shape="rect" id="node3" href="$class_formula.html#a83eff8c83a0ea79b3dd21c2e86a546c8" title="Formula::isValidFormulaWith\lNumberAndCell" alt="" coords="265,42,455,84"/>
+<area shape="rect" id="node3" href="$class_formula.html#aa898bedad69074a59857490ccca37cd7" title="Formula::isValidFormulaWith\lNumberAndCell" alt="" coords="265,42,455,84"/>
 <area shape="rect" id="node4" href="$class_formula.html#ae9390fbc99e5ade644589b144c73bfb7" title="Formula::splitFormula" alt="" coords="764,75,912,102"/>
 <area shape="rect" id="node8" href="$class_formula.html#a79079cea46f8320cd7a63f576251baac" title="Formula::foundInPart" alt="" coords="288,291,432,318"/>
 <area shape="rect" id="node9" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="247,160,473,201"/>

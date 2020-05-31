@@ -165,7 +165,7 @@ void Formula::splitFormula(const string &formula, string &firstPart, string &sec
             break;
         }
     }
-    form.erase(0, 1);
+    form.erase(0, 1); // if the first number is negative, removing the '-'
     int pos = form.find(delim);
     position = pos + 1;
     firstPart = formula.substr(0, position);
@@ -174,12 +174,12 @@ void Formula::splitFormula(const string &formula, string &firstPart, string &sec
     trim(secondPart);
 }
 
-bool Formula::isValidFormulaWithTwoNumbers() {
+bool Formula::isValidFormulaWithTwoNumbers() const {
     string formula = this->getFormula();
     return formula.find_first_not_of("0123456789 -+.*/^=") == string::npos;
 }
 
-bool Formula::isValidFormulaWithNumberAndCell() {
+bool Formula::isValidFormulaWithNumberAndCell() const {
     string formula = this->getFormula();
     return formula.find_first_not_of("0123456789 .+-/^rRcR=");
 }

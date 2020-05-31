@@ -1,6 +1,6 @@
 <map id="Formula::formulaWithTwoNumbers" name="Formula::formulaWithTwoNumbers">
 <area shape="rect" id="node2" href="$class_formula.html#a1b9557287ed502f9523c5c7b1805bac1" title="Formula::getFormula" alt="" coords="517,5,660,32"/>
-<area shape="rect" id="node3" href="$class_formula.html#a0a2b13b0f741ea650e1ae71269dde9a5" title="Formula::isValidFormulaWith\lTwoNumbers" alt="" coords="279,27,469,69"/>
+<area shape="rect" id="node3" href="$class_formula.html#adada9416ff44be9f258b73eb1d4e1533" title="Formula::isValidFormulaWith\lTwoNumbers" alt="" coords="279,27,469,69"/>
 <area shape="rect" id="node4" href="$class_formula.html#ae9390fbc99e5ade644589b144c73bfb7" title="Formula::splitFormula" alt="" coords="300,93,448,120"/>
 <area shape="rect" id="node5" href="$string_utils_8h.html#af941fe852e0b5d8235ddc3296b8b00d3" title="trim" alt="" coords="567,93,611,120"/>
 <area shape="rect" id="node6" href="$string_utils_8h.html#a92e1949f46533a5674ce0cc6d3350b95" title="ltrim" alt="" coords="709,68,755,95"/>
