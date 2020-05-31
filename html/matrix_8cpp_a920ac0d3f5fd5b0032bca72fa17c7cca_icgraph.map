@@ -1,4 +1,8 @@
 <map id="isDouble" name="isDouble">
-<area shape="rect" id="node2" href="$class_matrix.html#aa1967ad240a5ffaf492800044b7275d9" title="Matrix::printMatrix" alt="" coords="127,5,253,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="301,5,352,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#a147d3813e96ef757fb0d5ff65e5f97ef" title="Matrix::editDouble" alt="" coords="127,5,255,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="303,5,389,32"/>
+<area shape="rect" id="node4" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="437,5,552,32"/>
+<area shape="rect" id="node5" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="600,5,803,32"/>
+<area shape="rect" id="node6" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="851,5,1037,32"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1085,5,1136,32"/>
 </map>

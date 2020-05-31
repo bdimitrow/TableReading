@@ -1,10 +1,11 @@
 <map id="Matrix::getMat" name="Matrix::getMat">
 <area shape="rect" id="node2" href="$class_matrix.html#a91c66e2961a16adf56b8d58b916d2d46" title="Matrix::editInteger" alt="" coords="164,5,291,32"/>
-<area shape="rect" id="node7" href="$class_matrix.html#a147d3813e96ef757fb0d5ff65e5f97ef" title="Matrix::editDouble" alt="" coords="163,56,291,83"/>
-<area shape="rect" id="node8" href="$class_matrix.html#a7029d8a3cd3c691b46adfd777abc880c" title="Matrix::editString" alt="" coords="167,107,288,133"/>
-<area shape="rect" id="node9" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="160,157,295,184"/>
+<area shape="rect" id="node8" href="$class_matrix.html#a147d3813e96ef757fb0d5ff65e5f97ef" title="Matrix::editDouble" alt="" coords="163,56,291,83"/>
+<area shape="rect" id="node9" href="$class_matrix.html#a7029d8a3cd3c691b46adfd777abc880c" title="Matrix::editString" alt="" coords="167,107,288,133"/>
+<area shape="rect" id="node10" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="160,157,295,184"/>
 <area shape="rect" id="node3" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="343,81,429,108"/>
 <area shape="rect" id="node4" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="477,81,592,108"/>
 <area shape="rect" id="node5" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="640,81,843,108"/>
 <area shape="rect" id="node6" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="891,81,1077,108"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1125,81,1176,108"/>
 </map>

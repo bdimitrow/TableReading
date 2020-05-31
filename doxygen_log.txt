@@ -86,6 +86,17 @@ Parsing code for file matrix.cpp...
 Generating code for file matrix.h...
 Generating code for file stringUtils.h...
 Generating file documentation...
+Generating docs for file application.cpp...
+Generating docs for file application.h...
+Generating docs for file formula.cpp...
+Generating docs for file formula.h...
+Generating docs for file main.cpp...
+Generating call graph for function main
+Generating docs for file matrix.cpp...
+Generating caller graph for function deleteSpacesFromString
+Generating caller graph for function isDouble
+Generating caller graph for function isInteger
+Generating docs for file matrix.h...
 Generating docs for file stringUtils.h...
 Generating caller graph for function extractNumbers
 /home/bozhidar/Desktop/TableReading/stringUtils.h:14: warning: argument 'string' of command @param is not found in the argument list of isNumeric(const string &str)
@@ -122,11 +133,6 @@ Generating page documentation...
 Generating group documentation...
 Generating class documentation...
 Generating docs for compound Application...
-/home/bozhidar/Desktop/TableReading/application.h:54: warning: Member getCommand() const (function) of class Application is not documented.
-/home/bozhidar/Desktop/TableReading/application.h:56: warning: Member setCommand(const string &command) (function) of class Application is not documented.
-/home/bozhidar/Desktop/TableReading/application.h:64: warning: Member filename (variable) of class Application is not documented.
-/home/bozhidar/Desktop/TableReading/application.h:65: warning: Member mat (variable) of class Application is not documented.
-/home/bozhidar/Desktop/TableReading/application.h:66: warning: Member command (variable) of class Application is not documented.
 /home/bozhidar/Desktop/TableReading/application.h:76: warning: argument 'filename' of command @param is not found in the argument list of Application::close()
 Generating call graph for function Application::close
 Generating caller graph for function Application::close
@@ -136,10 +142,12 @@ Generating caller graph for function Application::exit
 /home/bozhidar/Desktop/TableReading/application.h:116: warning: argument 'command' of command @param is not found in the argument list of Application::functionDispatcher()
 Generating call graph for function Application::functionDispatcher
 Generating caller graph for function Application::functionDispatcher
+Generating caller graph for function Application::getCommand
 Generating caller graph for function Application::getFilename
 Generating caller graph for function Application::getMatrix
 Generating caller graph for function Application::help
 Generating call graph for function Application::insertCommand
+Generating caller graph for function Application::insertCommand
 Generating call graph for function Application::openFile
 Generating caller graph for function Application::openFile
 Generating call graph for function Application::print
@@ -149,10 +157,10 @@ Generating caller graph for function Application::print
 Generating caller graph for function Application::save
 /home/bozhidar/Desktop/TableReading/application.h:89: warning: argument 'mat' of command @param is not found in the argument list of Application::saveAs()
 Generating caller graph for function Application::saveAs
+Generating caller graph for function Application::setCommand
 Generating caller graph for function Application::setFilename
 Generating caller graph for function Application::setMatrix
 Generating docs for compound Formula...
-/home/bozhidar/Desktop/TableReading/formula.h:80: warning: Member formula (variable) of class Formula is not documented.
 Generating call graph for function Formula::formulaWithNumberAndCell
 Generating caller graph for function Formula::formulaWithNumberAndCell
 Generating call graph for function Formula::formulaWithTwoCells
@@ -177,8 +185,6 @@ Generating caller graph for function Formula::resultWhenCellReferenceIsSecond
 Generating call graph for function Formula::splitFormula
 Generating caller graph for function Formula::splitFormula
 Generating docs for compound Matrix...
-/home/bozhidar/Desktop/TableReading/matrix.h:83: warning: Member mat (variable) of class Matrix is not documented.
-/home/bozhidar/Desktop/TableReading/matrix.h:95: warning: Member instance (variable) of class Matrix is not documented.
 Generating call graph for function Matrix::edit
 Generating caller graph for function Matrix::edit
 Generating call graph for function Matrix::editDouble
@@ -217,58 +223,180 @@ finalizing index lists...
 writing tag file...
 Running dot...
 Generating dot graphs using 9 parallel threads...
-Running dot for graph 1/48
-Running dot for graph 2/48
-Running dot for graph 3/48
-Running dot for graph 4/48
-Running dot for graph 5/48
-Running dot for graph 6/48
-Running dot for graph 7/48
-Running dot for graph 8/48
-Running dot for graph 9/48
-Running dot for graph 10/48
-Running dot for graph 11/48
-Running dot for graph 12/48
-Running dot for graph 13/48
-Running dot for graph 14/48
-Running dot for graph 15/48
-Running dot for graph 16/48
-Running dot for graph 17/48
-Running dot for graph 18/48
-Running dot for graph 19/48
-Running dot for graph 20/48
-Running dot for graph 21/48
-Running dot for graph 22/48
-Running dot for graph 23/48
-Running dot for graph 24/48
-Running dot for graph 25/48
-Running dot for graph 26/48
-Running dot for graph 27/48
-Running dot for graph 28/48
-Running dot for graph 29/48
-Running dot for graph 30/48
-Running dot for graph 31/48
-Running dot for graph 32/48
-Running dot for graph 33/48
-Running dot for graph 34/48
-Running dot for graph 35/48
-Running dot for graph 36/48
-Running dot for graph 37/48
-Running dot for graph 38/48
-Running dot for graph 39/48
-Running dot for graph 40/48
-Running dot for graph 41/48
-Running dot for graph 42/48
-Running dot for graph 43/48
-Running dot for graph 44/48
-Running dot for graph 45/48
-Running dot for graph 46/48
-Running dot for graph 47/48
-Running dot for graph 48/48
-Patching output file 1/4
-Patching output file 2/4
-Patching output file 3/4
-Patching output file 4/4
-lookup cache used 166/65536 hits=955 misses=167
+Running dot for graph 1/162
+Running dot for graph 2/162
+Running dot for graph 3/162
+Running dot for graph 4/162
+Running dot for graph 5/162
+Running dot for graph 6/162
+Running dot for graph 7/162
+Running dot for graph 8/162
+Running dot for graph 9/162
+Running dot for graph 10/162
+Running dot for graph 11/162
+Running dot for graph 12/162
+Running dot for graph 13/162
+Running dot for graph 14/162
+Running dot for graph 15/162
+Running dot for graph 16/162
+Running dot for graph 17/162
+Running dot for graph 18/162
+Running dot for graph 19/162
+Running dot for graph 20/162
+Running dot for graph 21/162
+Running dot for graph 22/162
+Running dot for graph 23/162
+Running dot for graph 24/162
+Running dot for graph 25/162
+Running dot for graph 26/162
+Running dot for graph 27/162
+Running dot for graph 28/162
+Running dot for graph 29/162
+Running dot for graph 30/162
+Running dot for graph 31/162
+Running dot for graph 32/162
+Running dot for graph 33/162
+Running dot for graph 34/162
+Running dot for graph 35/162
+Running dot for graph 36/162
+Running dot for graph 37/162
+Running dot for graph 38/162
+Running dot for graph 39/162
+Running dot for graph 40/162
+Running dot for graph 41/162
+Running dot for graph 42/162
+Running dot for graph 43/162
+Running dot for graph 44/162
+Running dot for graph 45/162
+Running dot for graph 46/162
+Running dot for graph 47/162
+Running dot for graph 48/162
+Running dot for graph 49/162
+Running dot for graph 50/162
+Running dot for graph 51/162
+Running dot for graph 52/162
+Running dot for graph 53/162
+Running dot for graph 54/162
+Running dot for graph 55/162
+Running dot for graph 56/162
+Running dot for graph 57/162
+Running dot for graph 58/162
+Running dot for graph 59/162
+Running dot for graph 60/162
+Running dot for graph 61/162
+Running dot for graph 62/162
+Running dot for graph 63/162
+Running dot for graph 64/162
+Running dot for graph 65/162
+Running dot for graph 66/162
+Running dot for graph 67/162
+Running dot for graph 68/162
+Running dot for graph 69/162
+Running dot for graph 70/162
+Running dot for graph 71/162
+Running dot for graph 72/162
+Running dot for graph 73/162
+Running dot for graph 74/162
+Running dot for graph 75/162
+Running dot for graph 76/162
+Running dot for graph 77/162
+Running dot for graph 78/162
+Running dot for graph 79/162
+Running dot for graph 80/162
+Running dot for graph 81/162
+Running dot for graph 82/162
+Running dot for graph 83/162
+Running dot for graph 84/162
+Running dot for graph 85/162
+Running dot for graph 86/162
+Running dot for graph 87/162
+Running dot for graph 88/162
+Running dot for graph 89/162
+Running dot for graph 90/162
+Running dot for graph 91/162
+Running dot for graph 92/162
+Running dot for graph 93/162
+Running dot for graph 94/162
+Running dot for graph 95/162
+Running dot for graph 96/162
+Running dot for graph 97/162
+Running dot for graph 98/162
+Running dot for graph 99/162
+Running dot for graph 100/162
+Running dot for graph 101/162
+Running dot for graph 102/162
+Running dot for graph 103/162
+Running dot for graph 104/162
+Running dot for graph 105/162
+Running dot for graph 106/162
+Running dot for graph 107/162
+Running dot for graph 108/162
+Running dot for graph 109/162
+Running dot for graph 110/162
+Running dot for graph 111/162
+Running dot for graph 112/162
+Running dot for graph 113/162
+Running dot for graph 114/162
+Running dot for graph 115/162
+Running dot for graph 116/162
+Running dot for graph 117/162
+Running dot for graph 118/162
+Running dot for graph 119/162
+Running dot for graph 120/162
+Running dot for graph 121/162
+Running dot for graph 122/162
+Running dot for graph 123/162
+Running dot for graph 124/162
+Running dot for graph 125/162
+Running dot for graph 126/162
+Running dot for graph 127/162
+Running dot for graph 128/162
+Running dot for graph 129/162
+Running dot for graph 130/162
+Running dot for graph 131/162
+Running dot for graph 132/162
+Running dot for graph 133/162
+Running dot for graph 134/162
+Running dot for graph 135/162
+Running dot for graph 136/162
+Running dot for graph 137/162
+Running dot for graph 138/162
+Running dot for graph 139/162
+Running dot for graph 140/162
+Running dot for graph 141/162
+Running dot for graph 142/162
+Running dot for graph 143/162
+Running dot for graph 144/162
+Running dot for graph 145/162
+Running dot for graph 146/162
+Running dot for graph 147/162
+Running dot for graph 148/162
+Running dot for graph 149/162
+Running dot for graph 150/162
+Running dot for graph 151/162
+Running dot for graph 152/162
+Running dot for graph 153/162
+Running dot for graph 154/162
+Running dot for graph 155/162
+Running dot for graph 156/162
+Running dot for graph 157/162
+Running dot for graph 158/162
+Running dot for graph 159/162
+Running dot for graph 160/162
+Running dot for graph 161/162
+Running dot for graph 162/162
+Patching output file 1/12
+Patching output file 2/12
+Patching output file 3/12
+Patching output file 4/12
+Patching output file 5/12
+Patching output file 6/12
+Patching output file 7/12
+Patching output file 8/12
+Patching output file 9/12
+Patching output file 10/12
+Patching output file 11/12
+Patching output file 12/12
+lookup cache used 166/65536 hits=943 misses=167
 finished...
 *** Doxygen has finished

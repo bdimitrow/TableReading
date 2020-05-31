@@ -11,7 +11,8 @@ A \hyperlink{class_matrix}{Matrix} class using a singleton design pattern.
 
 
 
-Collaboration diagram for Matrix\+:\nopagebreak
+Collaboration diagram for Matrix\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,15 +22,15 @@ Collaboration diagram for Matrix\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-matrix \hyperlink{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}{file\+To\+Matrix} (const string \&filename)
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_a35eb9dcb01c552fea1f5926db35339ef}{file\+To\+Matrix} (const string \&filename)
 \item 
 void \hyperlink{class_matrix_aa1967ad240a5ffaf492800044b7275d9}{print\+Matrix} ()
 \item 
-matrix \hyperlink{class_matrix_a34b2269a2b6d06c202439de2e64009ba}{edit} (int row, int col)
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_a34b2269a2b6d06c202439de2e64009ba}{edit} (int row, int col)
 \item 
-void \hyperlink{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}{set\+Matrix} (const matrix \&mat)
+void \hyperlink{class_matrix_a8c45dd1354fa25e14065cab23f3074c0}{set\+Matrix} (const \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \&\hyperlink{class_matrix_a1b0c75c45092426431308172aab92c66}{mat})
 \item 
-const matrix \& \hyperlink{class_matrix_a52d82641f52304c9b6525747cd7f960c}{get\+Mat} () const
+const \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \& \hyperlink{class_matrix_a52d82641f52304c9b6525747cd7f960c}{get\+Mat} () const
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -41,31 +42,29 @@ static \hyperlink{class_matrix}{Matrix} $\ast$ \hyperlink{class_matrix_a0c8e09a5
 \item 
 \hyperlink{class_matrix_a2dba13c45127354c9f75ef576f49269b}{Matrix} ()
 \item 
-\hyperlink{class_matrix_abc64f3d5a4f22323a24be2bfabf377cb}{Matrix} (matrix m)
+\hyperlink{class_matrix_abc64f3d5a4f22323a24be2bfabf377cb}{Matrix} (\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} m)
 \item 
 int \hyperlink{class_matrix_a8620c5426a31cf8fe0072df32bb3f65d}{max\+Element\+Per\+Row\+Whole\+Table} ()
 \item 
 int \hyperlink{class_matrix_a60dac9b70e73a12d2adb32d6be9ff65d}{max\+Width\+Of\+Cell} ()
 \item 
-matrix \hyperlink{class_matrix_a91c66e2961a16adf56b8d58b916d2d46}{edit\+Integer} (int rol, int col)
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_a91c66e2961a16adf56b8d58b916d2d46}{edit\+Integer} (int rol, int col)
 \item 
-matrix \hyperlink{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef}{edit\+Double} (int rol, int col)
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef}{edit\+Double} (int rol, int col)
 \item 
-matrix \hyperlink{class_matrix_a7029d8a3cd3c691b46adfd777abc880c}{edit\+String} (int rol, int col)
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_a7029d8a3cd3c691b46adfd777abc880c}{edit\+String} (int rol, int col)
 \item 
-matrix \hyperlink{class_matrix_af3d26e46fcec1a98380b1af04f008f22}{edit\+Formula} (int row, int col)
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_af3d26e46fcec1a98380b1af04f008f22}{edit\+Formula} (int row, int col)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_matrix_a1b0c75c45092426431308172aab92c66}\label{class_matrix_a1b0c75c45092426431308172aab92c66}} 
-matrix {\bfseries mat}
+\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \hyperlink{class_matrix_a1b0c75c45092426431308172aab92c66}{mat}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}\label{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}} 
-static \hyperlink{class_matrix}{Matrix} $\ast$ {\bfseries instance} = 0
+static \hyperlink{class_matrix}{Matrix} $\ast$ \hyperlink{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}{instance} = 0
 \end{DoxyCompactItemize}
 
 
@@ -92,7 +91,7 @@ A default constructor. It is in the private section because the class uses singl
 \index{Matrix@{Matrix}!Matrix@{Matrix}}
 \index{Matrix@{Matrix}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{matrix}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 A parametrized constructor. It is in the private section because the class uses singleton design pattern. 
 
@@ -101,7 +100,7 @@ A parametrized constructor. It is in the private section because the class uses 
 \index{Matrix@{Matrix}!edit@{edit}}
 \index{edit@{edit}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit()}{edit()}}
-{\footnotesize\ttfamily matrix Matrix\+::edit (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::edit (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
 
 Method that is used to edit a cell in the matrix. It is accepting two integers(one for row and one for column). The user is asked to enter the desired data type for the cell that is going to be edited. He can choose from\+: integer, double, string or formula(= reference(to cell)/number -\/ operator -\/ reference(to cell)/number). 
 \begin{DoxyParams}{Parameters}
@@ -121,7 +120,8 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_matrix_a34b2269a2b6d06c202439de2e64009ba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -132,7 +132,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{Matrix@{Matrix}!edit\+Double@{edit\+Double}}
 \index{edit\+Double@{edit\+Double}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+Double()}{editDouble()}}
-{\footnotesize\ttfamily matrix Matrix\+::edit\+Double (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::edit\+Double (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be a double. 
 \begin{DoxyParams}{Parameters}
@@ -141,14 +141,16 @@ Used when editing a cell when the new data type is going to be a double.
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=292pt]{class_matrix_a147d3813e96ef757fb0d5ff65e5f97ef_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,7 +161,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{Matrix@{Matrix}!edit\+Formula@{edit\+Formula}}
 \index{edit\+Formula@{edit\+Formula}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+Formula()}{editFormula()}}
-{\footnotesize\ttfamily matrix Matrix\+::edit\+Formula (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::edit\+Formula (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be the result of a formula. 
 \begin{DoxyParams}{Parameters}
@@ -168,14 +170,16 @@ Used when editing a cell when the new data type is going to be the result of a f
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_matrix_af3d26e46fcec1a98380b1af04f008f22_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -186,7 +190,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{Matrix@{Matrix}!edit\+Integer@{edit\+Integer}}
 \index{edit\+Integer@{edit\+Integer}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+Integer()}{editInteger()}}
-{\footnotesize\ttfamily matrix Matrix\+::edit\+Integer (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::edit\+Integer (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be an integer. 
 \begin{DoxyParams}{Parameters}
@@ -195,14 +199,16 @@ Used when editing a cell when the new data type is going to be an integer.
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=291pt]{class_matrix_a91c66e2961a16adf56b8d58b916d2d46_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -213,7 +219,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{Matrix@{Matrix}!edit\+String@{edit\+String}}
 \index{edit\+String@{edit\+String}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{edit\+String()}{editString()}}
-{\footnotesize\ttfamily matrix Matrix\+::edit\+String (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::edit\+String (\begin{DoxyParamCaption}\item[{int}]{rol,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Used when editing a cell when the new data type is going to be a string. 
 \begin{DoxyParams}{Parameters}
@@ -222,14 +228,16 @@ Used when editing a cell when the new data type is going to be a string.
 {\em col} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=287pt]{class_matrix_a7029d8a3cd3c691b46adfd777abc880c_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,7 +248,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{Matrix@{Matrix}!file\+To\+Matrix@{file\+To\+Matrix}}
 \index{file\+To\+Matrix@{file\+To\+Matrix}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{file\+To\+Matrix()}{fileToMatrix()}}
-{\footnotesize\ttfamily matrix Matrix\+::file\+To\+Matrix (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::file\+To\+Matrix (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
 
 Method that is reading the information from a file and saves it into a matrix. 
 \begin{DoxyParams}{Parameters}
@@ -250,7 +258,8 @@ Method that is reading the information from a file and saves it into a matrix.
 \begin{DoxyReturn}{Returns}
 matrix 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -275,7 +284,7 @@ Method that servers as a constructor but it does not initialize a new object. It
 \index{Matrix@{Matrix}!get\+Mat@{get\+Mat}}
 \index{get\+Mat@{get\+Mat}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{get\+Mat()}{getMat()}}
-{\footnotesize\ttfamily const matrix \& Matrix\+::get\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \& Matrix\+::get\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Getter for matrix. \begin{DoxyReturn}{Returns}
 matrix 
@@ -348,7 +357,7 @@ Here is the caller graph for this function\+:
 \index{Matrix@{Matrix}!set\+Matrix@{set\+Matrix}}
 \index{set\+Matrix@{set\+Matrix}!Matrix@{Matrix}}
 \subsubsection{\texorpdfstring{set\+Matrix()}{setMatrix()}}
-{\footnotesize\ttfamily void Matrix\+::set\+Matrix (\begin{DoxyParamCaption}\item[{const matrix \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Matrix\+::set\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Method setting a matrix. 
 \begin{DoxyParams}{Parameters}
@@ -365,7 +374,22 @@ Here is the caller graph for this function\+:
 \end{figure}
 
 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}\label{class_matrix_adbe13eefa6a6ea2f02f45da26400f22e}} 
+\index{Matrix@{Matrix}!instance@{instance}}
+\index{instance@{instance}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \hyperlink{class_matrix}{Matrix} $\ast$ Matrix\+::instance = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_matrix_a1b0c75c45092426431308172aab92c66}\label{class_matrix_a1b0c75c45092426431308172aab92c66}} 
+\index{Matrix@{Matrix}!mat@{mat}}
+\index{mat@{mat}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily \hyperlink{formula_8h_a869e2a5deeb3daa4c82d6bc91cf20d92}{matrix} Matrix\+::mat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-matrix.\+h\item 
-matrix.\+cpp\end{DoxyCompactItemize}
+\hyperlink{matrix_8h}{matrix.\+h}\item 
+\hyperlink{matrix_8cpp}{matrix.\+cpp}\end{DoxyCompactItemize}

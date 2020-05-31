@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vec',['vec',['../formula_8h.html#ac4ba865c2f8f6f90e3c64552279f3d21',1,'vec():&#160;formula.h'],['../matrix_8h.html#ac4ba865c2f8f6f90e3c64552279f3d21',1,'vec():&#160;matrix.h']]]
+  ['table_20reading_20app_20documentation',['Table Reading App Documentation',['../index.html',1,'']]],
+  ['trim',['trim',['../string_utils_8h.html#af941fe852e0b5d8235ddc3296b8b00d3',1,'stringUtils.h']]]
 ];

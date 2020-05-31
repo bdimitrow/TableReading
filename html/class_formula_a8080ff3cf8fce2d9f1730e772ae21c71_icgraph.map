@@ -1,11 +1,12 @@
 <map id="Formula::getTheValueOfCell" name="Formula::getTheValueOfCell">
 <area shape="rect" id="node2" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="515,5,717,32"/>
-<area shape="rect" id="node8" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="240,57,467,98"/>
-<area shape="rect" id="node10" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="240,122,467,163"/>
+<area shape="rect" id="node9" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="240,57,467,98"/>
+<area shape="rect" id="node11" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="240,122,467,163"/>
 <area shape="rect" id="node3" href="$class_matrix.html#af3d26e46fcec1a98380b1af04f008f22" title="Matrix::editFormula" alt="" coords="765,35,900,61"/>
 <area shape="rect" id="node4" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="948,35,1035,61"/>
 <area shape="rect" id="node5" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="1083,35,1197,61"/>
 <area shape="rect" id="node6" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="1245,35,1448,61"/>
 <area shape="rect" id="node7" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="1496,35,1683,61"/>
-<area shape="rect" id="node9" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="519,57,713,98"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1731,35,1781,61"/>
+<area shape="rect" id="node10" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="519,57,713,98"/>
 </map>
