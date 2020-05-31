@@ -160,13 +160,9 @@ matrix Matrix::editFormula(int row, int col) {
     }
     if (row < mat.size() && col < mat[row].size()) {
         string value;
-        if (ceil(newValue) == floor(newValue)) {
-            int number;
-            number = static_cast<int>(newValue);
-            value = to_string(number);
-        } else {
-            value = to_string(newValue);
-        }
+        stringstream ss;
+        ss << newValue;
+        value = ss.str();
         mat[row][col] = value;
     }
     return mat;
