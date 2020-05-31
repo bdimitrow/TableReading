@@ -108,6 +108,11 @@ private:
     void edit();
 
     /**
+     * Method used to print the table.
+     */
+    void print();
+
+    /**
     * Method accepting string(command) and according to it calls another function.
     * @param command
     */

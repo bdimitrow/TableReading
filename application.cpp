@@ -2,7 +2,7 @@
 
 Application::Application(const string &fname) : filename(fname) {}
 
-void Application::setMatrix(matrix m) { mat = m; }
+void Application::setMatrix(matrix _mat) { mat = _mat; }
 
 void Application::setFilename(const string &fname) { filename = fname; }
 
@@ -10,13 +10,12 @@ const string &Application::getCommand() const { return command; }
 
 void Application::setCommand(const string &com) { command = com; }
 
-
 matrix Application::openFile(string filename) {
     fstream fout;
     fout.open(filename, ios::out | ios::in | ios::app);
     if (fout.is_open()) {
         cout << "Successfully opened " << filename << endl;
-        Matrix *mat = mat->getInstance();
+        Matrix *mat = Matrix::getInstance();
         return mat->fileToMatrix(filename);
     } else {
         cout << "Unable to open " << filename << "!" << endl;
@@ -73,6 +72,12 @@ void Application::help() {
 void Application::exit() {
     cout << "Exiting the program!" << endl;
     ::exit(EXIT_SUCCESS);
+}
+
+void Application::print() {
+    Matrix *mat = mat->getInstance();
+    mat->setMatrix(this->getMatrix());
+    mat->printMatrix();
 }
 
 void Application::edit() {
@@ -146,9 +151,7 @@ void Application::functionDispatcher() {
         if (this->getFilename().empty()) {
             cout << "First you have to open a file!" << endl;
         } else {
-            Matrix *mat = mat->getInstance();
-            mat->setMatrix(this->getMatrix());
-            mat->printMatrix();
+           this->print();
         }
     } else if (command == "edit") {
         if (this->getFilename().empty()) {
