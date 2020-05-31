@@ -1,0 +1,8 @@
+<map id="Application::print" name="Application::print">
+<area shape="rect" id="node2" href="$class_matrix.html#a0c8e09a50ddb4d068d39456ea130abcc" title="Matrix::getInstance" alt="" coords="179,5,313,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#a8c45dd1354fa25e14065cab23f3074c0" title="Matrix::setMatrix" alt="" coords="186,56,306,83"/>
+<area shape="rect" id="node4" href="$class_application.html#a67aeb617ca44a18045612d92f1d8afa0" title="Application::getMatrix" alt="" coords="172,107,320,133"/>
+<area shape="rect" id="node5" href="$class_matrix.html#aa1967ad240a5ffaf492800044b7275d9" title="Matrix::printMatrix" alt="" coords="183,157,309,184"/>
+<area shape="rect" id="node6" href="$class_matrix.html#a8620c5426a31cf8fe0072df32bb3f65d" title="Matrix::maxElementPerRow\lWholeTable" alt="" coords="368,121,555,162"/>
+<area shape="rect" id="node7" href="$class_matrix.html#a60dac9b70e73a12d2adb32d6be9ff65d" title="Matrix::maxWidthOfCell" alt="" coords="380,187,543,213"/>
+</map>

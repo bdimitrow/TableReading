@@ -8,7 +8,7 @@ void Application::setFilename(const string &fname) { filename = fname; }
 
 const string &Application::getCommand() const { return command; }
 
-void Application::setCommand(const string &com) { command = com; }
+void Application::setCommand(const string &cmd) { command = cmd; }
 
 matrix Application::openFile(string filename) {
     fstream fout;
@@ -33,8 +33,8 @@ void Application::save() {
     if (!out.is_open()) {
         cerr << "Unable to open file!\n";
     }
-    for (vec row : mat) {
-        for (string s : row) {
+    for (const vec& row : mat) {
+        for (const string& s : row) {
             out << s << ",";
         }
         out << endl;
@@ -49,8 +49,8 @@ void Application::saveAs() {
     getline(cin, filename);
     ofstream out;
     out.open(filename, ios::out | ios::trunc);
-    for (vec row : mat) {
-        for (string s : row) {
+    for (const vec& row : mat) {
+        for (const string& s : row) {
             out << s << ",";
         }
         out << endl;
@@ -75,7 +75,7 @@ void Application::exit() {
 }
 
 void Application::print() {
-    Matrix *mat = mat->getInstance();
+    Matrix *mat = Matrix::getInstance();
     mat->setMatrix(this->getMatrix());
     mat->printMatrix();
 }
@@ -166,11 +166,11 @@ void Application::functionDispatcher() {
 }
 
 void Application::insertCommand() {
-    string command;
+    string cmd;
     cout << "Enter command: ";
     do {
-        cin >> command;
-        this->setCommand(command);
+        cin >> cmd;
+        this->setCommand(cmd);
         functionDispatcher();
-    }while(command != "exit");
+    }while(cmd != "exit");
 }

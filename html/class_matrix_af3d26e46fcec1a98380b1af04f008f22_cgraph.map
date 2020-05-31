@@ -1,0 +1,24 @@
+<map id="Matrix::editFormula" name="Matrix::editFormula">
+<area shape="rect" id="node2" href="$class_matrix.html#a52d82641f52304c9b6525747cd7f960c" title="Matrix::getMat" alt="" coords="247,59,354,85"/>
+<area shape="rect" id="node3" href="$class_formula.html#a518bc97bd50f1cc5573be7d3f8cb6253" title="Formula::formulaWithTwoCells" alt="" coords="473,336,676,363"/>
+<area shape="rect" id="node16" href="$class_formula.html#a2159ffdb34d80f2bee422eee89fc871a" title="Formula::formulaWithTwoNumbers" alt="" coords="188,109,413,136"/>
+<area shape="rect" id="node19" href="$class_formula.html#a0f831b2ee98fbeb7df371f83ee7d374d" title="Formula::formulaWithNumber\lAndCell" alt="" coords="204,219,397,261"/>
+<area shape="rect" id="node4" href="$class_formula.html#a1b9557287ed502f9523c5c7b1805bac1" title="Formula::getFormula" alt="" coords="762,227,905,253"/>
+<area shape="rect" id="node5" href="$string_utils_8h.html#aaa9610e8d77442d8f5cb10a5b77666da" title="extractNumbers" alt="" coords="776,444,891,471"/>
+<area shape="rect" id="node6" href="$string_utils_8h.html#ae302876f17c45ff94972bafa8580a3b8" title="parseStringVectorToIntVector" alt="" coords="736,393,931,420"/>
+<area shape="rect" id="node7" href="$class_formula.html#a8080ff3cf8fce2d9f1730e772ae21c71" title="Formula::getTheValueOfCell" alt="" coords="740,339,927,365"/>
+<area shape="rect" id="node8" href="$string_utils_8h.html#a0e10b75736c375cf8a40f59579871ef1" title="stringToNumber" alt="" coords="979,296,1093,323"/>
+<area shape="rect" id="node9" href="$string_utils_8h.html#af941fe852e0b5d8235ddc3296b8b00d3" title="trim" alt="" coords="1319,169,1363,196"/>
+<area shape="rect" id="node12" href="$string_utils_8h.html#ae79bd017557b754bb1ff0e42a824ffc5" title="removeQuotes" alt="" coords="1143,220,1250,247"/>
+<area shape="rect" id="node13" href="$string_utils_8h.html#a2ba9357b7f0235a408b4c3fd26526b2d" title="stringToInt" alt="" coords="1155,271,1239,297"/>
+<area shape="rect" id="node14" href="$string_utils_8h.html#a9d52b2e7847c950eee6a01ae597679fa" title="isNumeric" alt="" coords="1300,321,1381,348"/>
+<area shape="rect" id="node15" href="$string_utils_8h.html#a5e388b01a5a212fa4f231ea35efa3a78" title="stringToDouble" alt="" coords="1141,321,1252,348"/>
+<area shape="rect" id="node10" href="$string_utils_8h.html#a92e1949f46533a5674ce0cc6d3350b95" title="ltrim" alt="" coords="1430,144,1477,171"/>
+<area shape="rect" id="node11" href="$string_utils_8h.html#ac869ec7686a817321f7f80556f5b2bfb" title="rtrim" alt="" coords="1429,195,1477,221"/>
+<area shape="rect" id="node17" href="$class_formula.html#a0a2b13b0f741ea650e1ae71269dde9a5" title="Formula::isValidFormulaWith\lTwoNumbers" alt="" coords="479,102,670,143"/>
+<area shape="rect" id="node18" href="$class_formula.html#ae9390fbc99e5ade644589b144c73bfb7" title="Formula::splitFormula" alt="" coords="501,51,649,77"/>
+<area shape="rect" id="node20" href="$class_formula.html#a83eff8c83a0ea79b3dd21c2e86a546c8" title="Formula::isValidFormulaWith\lNumberAndCell" alt="" coords="479,219,670,261"/>
+<area shape="rect" id="node21" href="$class_formula.html#a79079cea46f8320cd7a63f576251baac" title="Formula::foundInPart" alt="" coords="503,168,647,195"/>
+<area shape="rect" id="node22" href="$class_formula.html#a9a27ccdd3ee3143b1f6e541ec3c6a0ec" title="Formula::resultWhenCellReference\lIsFirst" alt="" coords="461,387,688,429"/>
+<area shape="rect" id="node23" href="$class_formula.html#ae0edae33b4af295bab04f1f1c06f406f" title="Formula::resultWhenCellReference\lIsSecond" alt="" coords="461,453,688,494"/>
+</map>

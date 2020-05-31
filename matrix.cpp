@@ -1,6 +1,6 @@
 #include "matrix.h"
 
-string removeSpaces(string str) {
+string deleteSpacesFromString(string str) {
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
     return str;
 }
@@ -145,7 +145,7 @@ matrix Matrix::editFormula(int row, int col) {
     cout << "Enter a formula: ";
     cin.ignore();
     getline(cin, input);
-    string formulaString = removeSpaces(input);
+    string formulaString = deleteSpacesFromString(input);
     double newValue = 0;
     int Rcount = 0, Ccount = 0;
     for (int i = 0; i < input.length(); ++i) {

@@ -1,0 +1,6 @@
+<map id="Matrix::editString" name="Matrix::editString">
+<area shape="rect" id="node2" href="$class_matrix.html#a34b2269a2b6d06c202439de2e64009ba" title="Matrix::edit" alt="" coords="175,5,261,32"/>
+<area shape="rect" id="node3" href="$class_application.html#a4b193bf9c8be7105e89a2323ea77b1f4" title="Application::edit" alt="" coords="309,5,424,32"/>
+<area shape="rect" id="node4" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="472,5,675,32"/>
+<area shape="rect" id="node5" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="723,5,909,32"/>
+</map>

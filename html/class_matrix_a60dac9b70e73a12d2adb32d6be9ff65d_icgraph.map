@@ -1,5 +1,6 @@
 <map id="Matrix::maxWidthOfCell" name="Matrix::maxWidthOfCell">
 <area shape="rect" id="node2" href="$class_matrix.html#aa1967ad240a5ffaf492800044b7275d9" title="Matrix::printMatrix" alt="" coords="216,5,343,32"/>
-<area shape="rect" id="node3" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="391,5,593,32"/>
-<area shape="rect" id="node4" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="641,5,828,32"/>
+<area shape="rect" id="node3" href="$class_application.html#a2bc1937440cb9e71dace95c3fe7ed4ea" title="Application::print" alt="" coords="391,5,509,32"/>
+<area shape="rect" id="node4" href="$class_application.html#a00241f0a09c32b0ef3cb1f068475cc50" title="Application::functionDispatcher" alt="" coords="557,5,760,32"/>
+<area shape="rect" id="node5" href="$class_application.html#a474d8507e340581404d4044c0228f655" title="Application::insertCommand" alt="" coords="808,5,995,32"/>
 </map>
